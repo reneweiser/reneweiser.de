@@ -5,6 +5,7 @@
 	import TechStack from '$lib/components/TechStack.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Contact from '$lib/components/Contact.svelte';
+	import Impressum from '$lib/components/Impressum.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
 	const siteUrl = 'https://reneweiser.de';
@@ -92,6 +93,7 @@
 		<TechStack />
 		<Projects />
 		<Contact />
+		<Impressum />
 	</main>
 	<Footer />
 </div>
