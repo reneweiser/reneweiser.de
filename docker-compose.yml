@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        - PUBLIC_IMPRESSUM_NAME=${PUBLIC_IMPRESSUM_NAME}
+        - PUBLIC_IMPRESSUM_STREET=${PUBLIC_IMPRESSUM_STREET}
+        - PUBLIC_IMPRESSUM_CITY=${PUBLIC_IMPRESSUM_CITY}
+        - PUBLIC_IMPRESSUM_EMAIL=${PUBLIC_IMPRESSUM_EMAIL}
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
