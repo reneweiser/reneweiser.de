@@ -1,42 +1,119 @@
-# sv
+# reneweiser.de
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+German portfolio website for a full-stack web developer. Single-page static site with anchor navigation.
 
-## Creating a project
+**Stack:** SvelteKit 2 (Svelte 5) · TypeScript · Tailwind CSS 4 · Bun
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Local Development
 
-```sh
-# create a new project
-npx sv create my-app
+### Prerequisites
+
+- [Bun](https://bun.sh/) (v1.0+)
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/reneweiser/reneweiser.de.git
+cd reneweiser.de
+
+# Install dependencies
+bun install
+
+# Copy environment variables
+cp .env.example .env
+# Edit .env with your Impressum details
 ```
 
-To recreate this project with the same configuration:
+### Commands
 
-```sh
-# recreate this project
-bun x sv create --template minimal --types ts --add prettier tailwindcss="plugins:typography,forms" mcp="ide:claude-code+setup:local" --install bun reneweiser-de
+```bash
+bun run dev       # Start dev server at http://localhost:5173
+bun run build     # Production build to ./build
+bun run preview   # Preview production build
+bun run check     # TypeScript/Svelte type checking
+bun run lint      # Check formatting (Prettier)
+bun run format    # Auto-format code
 ```
 
-## Developing
+## Docker
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Build locally
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+docker build \
+  --build-arg PUBLIC_IMPRESSUM_NAME="Your Name" \
+  --build-arg PUBLIC_IMPRESSUM_STREET="Your Street" \
+  --build-arg PUBLIC_IMPRESSUM_CITY="12345 Your City" \
+  --build-arg PUBLIC_IMPRESSUM_EMAIL="your@email.de" \
+  -t reneweiser.de .
 ```
 
-## Building
+### Run locally
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+docker run -p 8080:8080 reneweiser.de
 ```
 
-You can preview the production build with `npm run preview`.
+### Using docker-compose
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+# Uses values from .env file
+docker compose up --build
+```
+
+## Deployment
+
+### GitHub Actions
+
+The repository includes a GitHub Actions workflow that automatically builds and pushes the Docker image to GitHub Container Registry on every push to `main`.
+
+**Image:** `ghcr.io/reneweiser/reneweiser.de:main`
+
+#### Required Secrets
+
+Configure these in your repository settings under *Settings → Secrets and variables → Actions*:
+
+| Secret | Description |
+|--------|-------------|
+| `PUBLIC_IMPRESSUM_NAME` | Legal name for Impressum |
+| `PUBLIC_IMPRESSUM_STREET` | Street address |
+| `PUBLIC_IMPRESSUM_CITY` | City with postal code |
+| `PUBLIC_IMPRESSUM_EMAIL` | Contact email |
+
+#### Versioned Releases
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+This creates additional image tags: `1.0.0`, `1.0`
+
+### Pull and Run
+
+```bash
+docker pull ghcr.io/reneweiser/reneweiser.de:main
+docker run -p 8080:8080 ghcr.io/reneweiser/reneweiser.de:main
+```
+
+The container runs nginx on port 8080 as a non-root user.
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── assets/        # Images, favicon
+│   └── components/    # Svelte components
+└── routes/
+    ├── +layout.svelte # Root layout
+    ├── +layout.ts     # Prerender config
+    ├── +page.svelte   # Main page
+    ├── +error.svelte  # 404 page
+    └── layout.css     # Global styles (Tailwind)
+```
+
+## License
+
+All rights reserved.
