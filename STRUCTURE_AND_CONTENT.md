@@ -48,20 +48,23 @@ Links: **Über mich** · **Stack** · **Projekte** · **Kontakt**
 This is your headline — the first thing anyone reads. Keep it tight.
 
 #### Headline:
+
 ```
 Full-Stack Webentwickler.
 Vom Frontend bis zum Server.
 ```
 
 #### Subline:
+
 ```
-Ich entwickle und betreibe Webanwendungen end-to-end — von der 
-Benutzeroberfläche über die Backend-Architektur bis zum Deployment. 
-Seit fast zehn Jahren, mit eigenem Unternehmen und dem Anspruch, 
+Ich entwickle und betreibe Webanwendungen end-to-end — von der
+Benutzeroberfläche über die Backend-Architektur bis zum Deployment.
+Seit fast zehn Jahren, mit eigenem Unternehmen und dem Anspruch,
 Software zu liefern, die im echten Betrieb funktioniert.
 ```
 
 #### CTA:
+
 A single button or text link: **Projekte ansehen ↓** (anchor to projects section)
 
 **Design note:** Clean, lots of whitespace. No hero image needed — you're not a designer, you're a developer. A subtle code-themed background element or a monospace accent font can set the tone without trying too hard.
@@ -73,22 +76,22 @@ A single button or text link: **Projekte ansehen ↓** (anchor to projects secti
 This section bridges who you are with why someone should hire you. Not a biography — a value proposition with context.
 
 ```
-Ich bin Full-Stack-Webentwickler mit knapp zehn Jahren Berufserfahrung 
-und einem Hintergrund als selbstständiger Unternehmer. In dieser Zeit 
-habe ich Projekte von der ersten Anforderungsanalyse bis zum produktiven 
-Betrieb verantwortet — und dabei gelernt, dass gute Software nicht nur 
-technisch sauber sein muss, sondern auch unter realen Bedingungen 
+Ich bin Full-Stack-Webentwickler mit knapp zehn Jahren Berufserfahrung
+und einem Hintergrund als selbstständiger Unternehmer. In dieser Zeit
+habe ich Projekte von der ersten Anforderungsanalyse bis zum produktiven
+Betrieb verantwortet — und dabei gelernt, dass gute Software nicht nur
+technisch sauber sein muss, sondern auch unter realen Bedingungen
 zuverlässig funktionieren muss.
 
-Mein Schwerpunkt liegt auf dem Laravel-Ökosystem im Backend, Vue.js 
-und Svelte im Frontend sowie Linux-basierter Infrastruktur mit Docker 
-und CI/CD. Was mich von vielen Entwicklern unterscheidet: Ich kann — 
-und will — Verantwortung für den gesamten Stack übernehmen. Ob 
-Frontend-Bug, Datenbankoptimierung oder Serverkonfiguration — ich 
+Mein Schwerpunkt liegt auf dem Laravel-Ökosystem im Backend, Vue.js
+und Svelte im Frontend sowie Linux-basierter Infrastruktur mit Docker
+und CI/CD. Was mich von vielen Entwicklern unterscheidet: Ich kann —
+und will — Verantwortung für den gesamten Stack übernehmen. Ob
+Frontend-Bug, Datenbankoptimierung oder Serverkonfiguration — ich
 übergebe Probleme nicht, ich löse sie.
 
-Aktuell suche ich eine Festanstellung in einem Team, das Handwerk, 
-Pragmatismus und Eigenverantwortung schätzt. Ich ziehe 2025 innerhalb 
+Aktuell suche ich eine Festanstellung in einem Team, das Handwerk,
+Pragmatismus und Eigenverantwortung schätzt. Ich ziehe 2025 innerhalb
 Deutschlands um und bin offen für Vor-Ort- und Hybrid-Modelle.
 ```
 
@@ -103,19 +106,23 @@ Visual, scannable. A clean grid showing your core technologies, grouped by area.
 #### Structure:
 
 **Frontend**
+
 - HTML · CSS · JavaScript
 - Vue.js · Svelte
 
 **Backend**
+
 - PHP · Laravel
 - REST APIs · Relationale Datenbanken · Eloquent ORM
 
 **Infrastruktur**
+
 - Linux · Docker
 - CI/CD (GitHub Actions)
 - Server-Administration · Monitoring
 
 **Workflow**
+
 - Git · Code Review
 - Agile Entwicklung · Technische Dokumentation
 
@@ -144,7 +151,7 @@ This is the most important section for credibility. Show 3–4 projects max. Qua
 Projektname
 Kurzbeschreibung in einem Satz.
 
-Mein Beitrag: Was genau ich gebaut, entworfen oder verantwortet habe. 
+Mein Beitrag: Was genau ich gebaut, entworfen oder verantwortet habe.
 Konkret und spezifisch — keine Floskeln.
 
 Stack: Vue.js · Laravel · Docker · GitHub Actions
@@ -172,11 +179,12 @@ Simple and direct. No contact form with a backend — a mailto link is perfectly
 ```
 Interesse geweckt?
 
-Ich freue mich über eine Nachricht — ob konkrete Stelle, 
+Ich freue mich über eine Nachricht — ob konkrete Stelle,
 Initiativgespräch oder einfach ein fachlicher Austausch.
 ```
 
 **Links:**
+
 - ✉ E-Mail (mailto link)
 - GitHub (icon + link)
 - LinkedIn (icon + link)
