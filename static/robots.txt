@@ -1,3 +1,6 @@
-# allow crawling everything by default
+# allow crawling everything
 User-agent: *
 Disallow:
+
+# Sitemap location
+Sitemap: https://reneweiser.de/sitemap.xml
