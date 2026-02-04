@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap");
+@import url("https://fonts.bunny.net/css?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
@@ -11,8 +10,8 @@
 
 @theme {
   /* Typography — Distinctive pairing */
-  --font-display: "Instrument Serif", "Georgia", serif;
-  --font-body: "Satoshi", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "DM Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   /* Color System — Warm dark with copper accents */
@@ -33,36 +32,6 @@
 
   /* Transitions */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   Font Imports
-   ───────────────────────────────────────────────────────────────────────────── */
-
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("https://fonts.gstatic.com/s/instrumentserif/v4/jizBRFtNs2ka5fXjeivQ4LroWlx-2zIZh1LRAg.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("https://fonts.gstatic.com/s/instrumentserif/v4/jizHRFtNs2ka5fXjeivQ4LroWlx-6zATi3TNgNg.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Satoshi";
-  src: url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
