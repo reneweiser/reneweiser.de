@@ -27,10 +27,12 @@
 	<meta property="og:url" content="{siteUrl}/blog" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
+	<meta property="og:image" content="{siteUrl}/og-default.png" />
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
 
 	<link
 		rel="alternate"

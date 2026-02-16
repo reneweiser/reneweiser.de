@@ -5,11 +5,38 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	const siteUrl = 'https://reneweiser.de';
+	let title = $derived(`Posts tagged "${data.tag}" — René Weiser`);
+	let description = $derived(
+		`${data.posts.length} blog ${data.posts.length === 1 ? 'post' : 'posts'} tagged with ${data.tag}. Technical writing on web development.`
+	);
+	let tagUrl = $derived(`${siteUrl}/blog/tag/${encodeURIComponent(data.tag)}`);
 </script>
 
 <svelte:head>
-	<title>Posts tagged "{data.tag}" — René Weiser</title>
-	<meta name="description" content="Blog posts tagged with {data.tag}" />
+	<title>{title}</title>
+	<meta name="title" content={title} />
+	<meta name="description" content={description} />
+	<link rel="canonical" href={tagUrl} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={tagUrl} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content="{siteUrl}/og-default.png" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
+
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="René Weiser — Blog"
+		href="/feed.xml"
+	/>
 </svelte:head>
 
 <div class="grain min-h-screen">

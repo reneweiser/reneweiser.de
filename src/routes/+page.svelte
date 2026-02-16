@@ -72,6 +72,7 @@
 	<meta property="og:url" content={siteUrl} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
+	<meta property="og:image" content="{siteUrl}/og-default.png" />
 	<meta property="og:locale" content="de_DE" />
 	<meta property="og:site_name" content="René Weiser" />
 
@@ -80,6 +81,7 @@
 	<meta name="twitter:url" content={siteUrl} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
 
 	<!-- Additional SEO -->
 	<meta name="geo.region" content="DE" />

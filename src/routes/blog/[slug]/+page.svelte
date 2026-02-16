@@ -9,6 +9,7 @@
 	const siteUrl = 'https://reneweiser.de';
 
 	let postUrl = $derived(`${siteUrl}/blog/${data.post.slug}`);
+	let ogImage = $derived(`${siteUrl}/og-blog-${data.post.slug}.png`);
 
 	let jsonLd = $derived({
 		'@context': 'https://schema.org',
@@ -44,6 +45,7 @@
 	<meta property="og:url" content={postUrl} />
 	<meta property="og:title" content={data.post.title} />
 	<meta property="og:description" content={data.post.description} />
+	<meta property="og:image" content={ogImage} />
 	<meta property="article:published_time" content={data.post.date} />
 	{#if data.post.updated}
 		<meta property="article:modified_time" content={data.post.updated} />
@@ -55,6 +57,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={data.post.title} />
 	<meta name="twitter:description" content={data.post.description} />
+	<meta name="twitter:image" content={ogImage} />
 
 	<link
 		rel="alternate"
