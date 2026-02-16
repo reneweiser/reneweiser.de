@@ -72,14 +72,14 @@ The repository includes a GitHub Actions workflow that automatically builds and 
 
 #### Required Secrets
 
-Configure these in your repository settings under *Settings → Secrets and variables → Actions*:
+Configure these in your repository settings under _Settings → Secrets and variables → Actions_:
 
-| Secret | Description |
-|--------|-------------|
-| `PUBLIC_IMPRESSUM_NAME` | Legal name for Impressum |
-| `PUBLIC_IMPRESSUM_STREET` | Street address |
-| `PUBLIC_IMPRESSUM_CITY` | City with postal code |
-| `PUBLIC_IMPRESSUM_EMAIL` | Contact email |
+| Secret                    | Description              |
+| ------------------------- | ------------------------ |
+| `PUBLIC_IMPRESSUM_NAME`   | Legal name for Impressum |
+| `PUBLIC_IMPRESSUM_STREET` | Street address           |
+| `PUBLIC_IMPRESSUM_CITY`   | City with postal code    |
+| `PUBLIC_IMPRESSUM_EMAIL`  | Contact email            |
 
 #### Versioned Releases
 

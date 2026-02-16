@@ -4,9 +4,13 @@
 	import About from '$lib/components/About.svelte';
 	import TechStack from '$lib/components/TechStack.svelte';
 	import Projects from '$lib/components/Projects.svelte';
+	import BlogPreview from '$lib/components/blog/BlogPreview.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Impressum from '$lib/components/Impressum.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
 
 	const siteUrl = 'https://reneweiser.de';
 	const title = 'René Weiser — Full-Stack Webentwickler';
@@ -92,6 +96,7 @@
 		<About />
 		<TechStack />
 		<Projects />
+		<BlogPreview posts={data.posts} />
 		<Contact />
 		<Impressum />
 	</main>

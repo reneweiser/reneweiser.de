@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-German portfolio website for a full-stack web developer. Single-page static site with anchor navigation.
+German portfolio website for a full-stack web developer. Single-page static site with anchor navigation, plus an English-language blog.
 
 **Stack:** SvelteKit 2 (Svelte 5) · TypeScript (strict) · Tailwind CSS 4 · Vite 7 · Bun
 
@@ -22,22 +22,31 @@ bun run format       # Auto-format code
 
 ## Architecture
 
-- **Single-page layout** with anchor navigation (no SvelteKit routing)
-- **Static deployment** via adapter-auto (Vercel/Netlify)
+- **Single-page layout** with anchor navigation for portfolio sections
+- **Blog** at `/blog` (English) using mdsvex for Markdown processing — posts live in `src/content/blog/*.md`
+- **Static deployment** via adapter-static (prerendered)
 - **Global styles** in `src/routes/layout.css` (Tailwind imports)
 - **`$lib` alias** resolves to `src/lib/`
 
 ### Site Sections
 
-Header → Hero → Über mich → Tech-Stack → Projekte (3-4) → Kontakt → Footer
+Header → Hero → Über mich → Tech-Stack → Projekte → Blog Preview → Kontakt → Footer
+
+### Blog Routes
+
+- `/blog` — Post index with tag filtering
+- `/blog/[slug]` — Individual posts (mdsvex-rendered Markdown)
+- `/blog/tag/[tag]` — Posts filtered by tag
+- `/feed.xml` — RSS feed
 
 See `STRUCTURE_AND_CONTENT.md` for detailed content specifications and German copy.
 
 ## Content Guidelines
 
-- **Language:** German (target market is German employers)
+- **Portfolio language:** German (target market is German employers)
+- **Blog language:** English (broader developer audience)
 - **Tone:** Professional, specific, no fluff — competence over confidence
-- **Skip:** Blog, testimonials, skill bars, elaborate animations, dark mode toggle
+- **Skip:** Testimonials, skill bars, elaborate animations, dark mode toggle
 - **Show, don't tell:** Clean code, fast loads, accessibility basics (semantic HTML, good contrast, keyboard nav)
 
 ## Svelte MCP Tools

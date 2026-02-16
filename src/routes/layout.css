@@ -162,6 +162,52 @@ body {
   outline-offset: 4px;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Blog Prose — Editorial typography for article content
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.blog-prose {
+  --tw-prose-body: var(--color-ink-muted);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-copper);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-paper-muted);
+  --tw-prose-quotes: var(--color-ink-soft);
+  --tw-prose-quote-borders: var(--color-copper);
+}
+
+.blog-prose :is(h2, h3, h4) {
+  font-family: var(--font-display);
+}
+
+.blog-prose h2 {
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.blog-prose :is(code, pre) {
+  font-family: var(--font-mono);
+}
+
+.blog-prose pre {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  border-radius: 0.5rem;
+}
+
+.blog-prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-copper);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all 0.2s;
+}
+
+.blog-prose a:hover {
+  text-decoration-thickness: 2px;
+  color: var(--color-copper-dark);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -5,7 +5,7 @@
 	<div class="relative mx-auto max-w-6xl">
 		<!-- Section header -->
 		<div class="mb-12 flex items-baseline gap-4">
-			<span class="font-mono text-sm text-copper">04.</span>
+			<span class="font-mono text-sm text-copper">05.</span>
 			<h2 class="font-display text-4xl tracking-tight text-ink md:text-5xl">Kontakt</h2>
 			<div class="hidden h-px flex-1 bg-ink/10 sm:block"></div>
 		</div>

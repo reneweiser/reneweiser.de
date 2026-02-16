@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/state';
+
 	let isScrolled = $state(false);
 	let isMobileMenuOpen = $state(false);
 
@@ -6,11 +8,22 @@
 		{ href: '#ueber-mich', label: 'Über mich' },
 		{ href: '#stack', label: 'Stack' },
 		{ href: '#projekte', label: 'Projekte' },
+		{ href: '/blog', label: 'Blog' },
 		{ href: '#kontakt', label: 'Kontakt' }
 	];
 
+	let isHome = $derived(page.url.pathname === '/');
+
 	function handleScroll() {
 		isScrolled = window.scrollY > 50;
+	}
+
+	function handleLogoClick() {
+		if (isHome) {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		} else {
+			window.location.href = '/';
+		}
 	}
 
 	function closeMobileMenu() {
@@ -29,7 +42,7 @@
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
 		<!-- Logo / Name -->
 		<button
-			onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+			onclick={handleLogoClick}
 			class="font-display text-xl tracking-tight text-ink transition-colors hover:text-copper animate-fade-in"
 		>
 			René Weiser
@@ -37,10 +50,10 @@
 
 		<!-- Desktop Navigation -->
 		<ul class="hidden items-center gap-8 md:flex">
-			{#each navItems as item, i}
+			{#each navItems as item, i (item.href)}
 				<li class="animate-fade-in" style="animation-delay: {(i + 1) * 0.1}s">
 					<a
-						href={item.href}
+						href={item.href.startsWith('#') && !isHome ? `/${item.href}` : item.href}
 						class="font-mono text-sm text-ink-muted transition-colors hover:text-copper"
 					>
 						<span class="text-copper/60">0{i + 1}.</span>
@@ -82,9 +95,9 @@
 			aria-modal="true"
 		>
 			<nav class="flex h-full flex-col items-center justify-center gap-8">
-				{#each navItems as item, i}
+				{#each navItems as item, i (item.href)}
 					<a
-						href={item.href}
+						href={item.href.startsWith('#') && !isHome ? `/${item.href}` : item.href}
 						onclick={closeMobileMenu}
 						class="font-display text-3xl text-ink transition-colors hover:text-copper animate-fade-up"
 						style="animation-delay: {i * 0.1}s"
