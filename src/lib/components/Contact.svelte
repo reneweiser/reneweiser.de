@@ -23,13 +23,13 @@
 
 				<!-- Primary CTA -->
 				<a
-					href="mailto:kontakt@reneweiser.de"
+					href="mailto:hello@reneweiser.de"
 					class="group inline-flex items-center gap-3 rounded-lg bg-ink px-6 py-4 font-mono text-sm font-medium text-paper transition-all hover:bg-copper hover:shadow-lg hover:shadow-copper/20"
 				>
 					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 					</svg>
-					kontakt@reneweiser.de
+					hello@reneweiser.de
 					<span class="transition-transform group-hover:translate-x-1">→</span>
 				</a>
 			</div>
@@ -64,7 +64,7 @@
 
 					<!-- LinkedIn -->
 					<a
-						href="https://linkedin.com/in/reneweiser"
+						href="https://www.linkedin.com/in/reneweiser"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group flex items-center gap-4 rounded-lg border border-ink/10 bg-paper p-4 transition-all hover:border-copper/30 hover:shadow-md"

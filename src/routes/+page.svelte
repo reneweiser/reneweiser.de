@@ -51,7 +51,7 @@
 				],
 				sameAs: [
 					'https://github.com/reneweiser',
-					'https://linkedin.com/in/reneweiser'
+					'https://www.linkedin.com/in/reneweiser'
 				]
 			}
 		]

@@ -10,11 +10,14 @@
 
 	const projects: Project[] = [
 		{
-			title: 'E-Commerce-Plattform',
-			description: 'Maßgeschneiderte Online-Shop-Lösung für einen mittelständischen Händler.',
+			title: 'CRM-Plattform',
+			description:
+				'Persönliche CRM-Plattform für freiberufliche Webentwickler und IT-Berater. Gebaut mit Laravel 12 und Filament 4.',
 			contribution:
-				'Vollständige Entwicklung von Backend und Frontend. REST API mit Laravel, Vue.js-basiertes Storefront, Admin-Dashboard mit Echtzeit-Bestandsverwaltung.',
-			stack: ['Laravel', 'Vue.js', 'MySQL', 'Redis', 'Docker']
+				'Vollständige Entwicklung von Architektur und Implementierung. Kontakt- und Projektverwaltung, Aufgabenplanung und Reporting über ein Filament-basiertes Admin-Dashboard.',
+			stack: ['Laravel', 'Filament 4', 'Livewire', 'Eloquent ORM', 'Docker'],
+			liveUrl: 'https://reneweiser.github.io/freelancer-crm/',
+			githubUrl: 'https://github.com/reneweiser/freelancer-crm'
 		},
 		{
 			title: 'SaaS-Buchungsplattform',
