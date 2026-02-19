@@ -18,14 +18,6 @@
 		isScrolled = window.scrollY > 50;
 	}
 
-	function handleLogoClick() {
-		if (isHome) {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		} else {
-			window.location.href = '/';
-		}
-	}
-
 	function closeMobileMenu() {
 		isMobileMenuOpen = false;
 	}
@@ -41,12 +33,18 @@
 >
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
 		<!-- Logo / Name -->
-		<button
-			onclick={handleLogoClick}
+		<a
+			href="/"
+			onclick={(e) => {
+				if (isHome) {
+					e.preventDefault();
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				}
+			}}
 			class="font-display text-xl tracking-tight text-ink transition-colors hover:text-copper animate-fade-in"
 		>
 			René Weiser
-		</button>
+		</a>
 
 		<!-- Desktop Navigation -->
 		<ul class="hidden items-center gap-8 md:flex">

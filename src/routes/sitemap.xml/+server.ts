@@ -28,7 +28,7 @@ export const GET: RequestHandler = () => {
     const tagPosts = posts.filter((p) => p.tags.includes(tag));
     const latestTagDate = tagPosts[0]?.date ?? today;
     urls.push({
-      loc: `/blog/tag/${encodeURIComponent(tag)}`,
+      loc: `/blog/tag/${encodeURIComponent(tag.toLowerCase())}`,
       lastmod: latestTagDate,
       priority: "0.5",
     });

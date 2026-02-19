@@ -13,8 +13,27 @@
 	);
 
 	const siteUrl = 'https://reneweiser.de';
-	const title = 'Blog — René Weiser';
+	const title = 'Web Development Blog — René Weiser';
 	const description = 'Technical writing on web development, Laravel, SvelteKit, and DevOps.';
+
+	const breadcrumbLd = {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Home',
+				item: siteUrl
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Blog',
+				item: `${siteUrl}/blog`
+			}
+		]
+	};
 </script>
 
 <svelte:head>
@@ -28,8 +47,9 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:locale" content="en_US" />
 
-	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
@@ -40,6 +60,8 @@
 		title="René Weiser — Blog"
 		href="/feed.xml"
 	/>
+
+	{@html `<script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>`}
 </svelte:head>
 
 <div class="grain min-h-screen">

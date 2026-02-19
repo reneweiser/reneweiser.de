@@ -11,7 +11,32 @@
 	let description = $derived(
 		`${data.posts.length} blog ${data.posts.length === 1 ? 'post' : 'posts'} tagged with ${data.tag}. Technical writing on web development.`
 	);
-	let tagUrl = $derived(`${siteUrl}/blog/tag/${encodeURIComponent(data.tag)}`);
+	let tagUrl = $derived(`${siteUrl}/blog/tag/${encodeURIComponent(data.tag.toLowerCase())}`);
+
+	let breadcrumbLd = $derived({
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Home',
+				item: siteUrl
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Blog',
+				item: `${siteUrl}/blog`
+			},
+			{
+				'@type': 'ListItem',
+				position: 3,
+				name: data.tag,
+				item: tagUrl
+			}
+		]
+	});
 </script>
 
 <svelte:head>
@@ -25,8 +50,9 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:locale" content="en_US" />
 
-	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
@@ -37,6 +63,8 @@
 		title="René Weiser — Blog"
 		href="/feed.xml"
 	/>
+
+	{@html `<script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>`}
 </svelte:head>
 
 <div class="grain min-h-screen">

@@ -13,25 +13,52 @@
 
 	let jsonLd = $derived({
 		'@context': 'https://schema.org',
-		'@type': 'BlogPosting',
-		headline: data.post.title,
-		description: data.post.description,
-		datePublished: data.post.date,
-		dateModified: data.post.updated || data.post.date,
-		author: {
-			'@type': 'Person',
-			name: 'René Weiser',
-			url: siteUrl
-		},
-		publisher: {
-			'@type': 'Person',
-			name: 'René Weiser'
-		},
-		mainEntityOfPage: {
-			'@type': 'WebPage',
-			'@id': postUrl
-		},
-		keywords: data.post.tags.join(', ')
+		'@graph': [
+			{
+				'@type': 'BlogPosting',
+				headline: data.post.title,
+				description: data.post.description,
+				datePublished: data.post.date,
+				dateModified: data.post.updated || data.post.date,
+				author: {
+					'@type': 'Person',
+					name: 'René Weiser',
+					url: siteUrl
+				},
+				publisher: {
+					'@type': 'Person',
+					name: 'René Weiser'
+				},
+				mainEntityOfPage: {
+					'@type': 'WebPage',
+					'@id': postUrl
+				},
+				keywords: data.post.tags.join(', ')
+			},
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Home',
+						item: siteUrl
+					},
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: 'Blog',
+						item: `${siteUrl}/blog`
+					},
+					{
+						'@type': 'ListItem',
+						position: 3,
+						name: data.post.title,
+						item: postUrl
+					}
+				]
+			}
+		]
 	});
 </script>
 
@@ -46,6 +73,7 @@
 	<meta property="og:title" content={data.post.title} />
 	<meta property="og:description" content={data.post.description} />
 	<meta property="og:image" content={ogImage} />
+	<meta property="og:locale" content="en_US" />
 	<meta property="article:published_time" content={data.post.date} />
 	{#if data.post.updated}
 		<meta property="article:modified_time" content={data.post.updated} />
@@ -53,6 +81,7 @@
 	{#each data.post.tags as tag (tag)}
 		<meta property="article:tag" content={tag} />
 	{/each}
+	<meta property="article:author" content="René Weiser" />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={data.post.title} />
@@ -101,7 +130,7 @@
 			<div class="mt-6 flex flex-wrap gap-2">
 				{#each data.post.tags as tag (tag)}
 					<a
-						href="/blog/tag/{encodeURIComponent(tag)}"
+						href="/blog/tag/{encodeURIComponent(tag.toLowerCase())}"
 						class="rounded-full border border-ink/10 bg-paper-muted/50 px-3 py-1 font-mono text-xs text-ink-muted transition-all hover:border-copper/30 hover:bg-copper/5 hover:text-copper"
 					>
 						{tag}
