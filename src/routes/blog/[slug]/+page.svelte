@@ -18,6 +18,7 @@
 				'@type': 'BlogPosting',
 				headline: data.post.title,
 				description: data.post.description,
+				...(data.post.image && { image: `${siteUrl}${data.post.image}` }),
 				datePublished: data.post.date,
 				dateModified: data.post.updated || data.post.date,
 				author: {
@@ -138,6 +139,15 @@
 				{/each}
 			</div>
 		</header>
+
+		<!-- Title Card Image -->
+		{#if data.post.image}
+			<img
+				src={data.post.image}
+				alt=""
+				class="mb-12 w-full rounded-lg border border-ink/10"
+			/>
+		{/if}
 
 		<!-- Post Content (mdsvex component) -->
 		<div class="blog-prose prose prose-lg max-w-none">

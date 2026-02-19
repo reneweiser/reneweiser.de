@@ -2,6 +2,7 @@
 title: "AI Skills Are Not SaaS Products"
 description: "AI generation is one step in a larger workflow. Learn why persistent state, scheduling, and opinionated interfaces turn AI capabilities into real products."
 date: "2026-02-19"
+image: "/blog/wrapping-ai-skills/title.webp"
 tags:
   - Architecture
   - Workflow

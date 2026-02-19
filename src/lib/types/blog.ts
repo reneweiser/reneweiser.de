@@ -4,6 +4,7 @@ export interface BlogPost {
   description: string;
   date: string;
   updated?: string;
+  image?: string;
   tags: string[];
   published: boolean;
   readingTime: string;

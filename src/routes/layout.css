@@ -208,6 +208,11 @@ body {
   color: var(--color-copper-dark);
 }
 
+.blog-prose img {
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
