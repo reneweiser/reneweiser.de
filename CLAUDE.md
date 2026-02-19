@@ -39,6 +39,8 @@ Header → Hero → Über mich → Tech-Stack → Projekte → Blog Preview → 
 - `/blog/tag/[tag]` — Posts filtered by tag
 - `/feed.xml` — RSS feed
 
+Content strategy docs (voice guide, editorial calendar, SEO strategy, post templates, distribution playbook) live in `~/projects/content-strategy/`.
+
 See `STRUCTURE_AND_CONTENT.md` for detailed content specifications and German copy.
 
 ## Content Guidelines

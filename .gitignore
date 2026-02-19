@@ -29,6 +29,3 @@ npm-debug.log*
 .vercel/
 .netlify/
 .claude/
-
-# Content strategy (AI agent reference, not published)
-src/content/strategy/
