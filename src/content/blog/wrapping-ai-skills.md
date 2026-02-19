@@ -1,11 +1,11 @@
 ---
 title: "AI Skills Are Not SaaS Products"
 description: "AI generation is one step in a larger workflow. Learn why persistent state, scheduling, and opinionated interfaces turn AI capabilities into real products."
-date: "2026-02-16"
+date: "2026-02-19"
 tags:
   - Architecture
   - Workflow
-published: false
+published: true
 ---
 
 Every AI skill, no matter how good, handles exactly one step in a workflow. The product value isn't in the generation. It's in everything that happens before and after: workflow orchestration, persistent state, and opinionated interfaces that make the AI's output consistently useful.
