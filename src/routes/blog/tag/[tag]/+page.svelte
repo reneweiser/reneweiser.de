@@ -2,11 +2,10 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import BlogList from '$lib/components/blog/BlogList.svelte';
+	import { siteUrl } from '$lib/config';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-
-	const siteUrl = 'https://reneweiser.de';
 	let title = $derived(`Posts tagged "${data.tag}" — René Weiser`);
 	let description = $derived(
 		`${data.posts.length} blog ${data.posts.length === 1 ? 'post' : 'posts'} tagged with ${data.tag}. Technical writing on web development.`
@@ -51,6 +50,8 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="René Weiser" />
 

@@ -2,6 +2,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import BlogList from '$lib/components/blog/BlogList.svelte';
+	import { siteUrl } from '$lib/config';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -11,8 +12,6 @@
 	let filteredPosts = $derived(
 		activeTag ? data.posts.filter((p) => p.tags.includes(activeTag!)) : data.posts
 	);
-
-	const siteUrl = 'https://reneweiser.de';
 	const title = 'Web Development Blog — René Weiser';
 	const description =
 		'Articles on web development, Laravel, SvelteKit, and DevOps. Practical insights from a full-stack developer with nearly ten years of experience.';
@@ -48,6 +47,8 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="René Weiser" />
 

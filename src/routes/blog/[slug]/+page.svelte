@@ -1,12 +1,11 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { siteUrl } from '$lib/config';
 	import { formatDate } from '$lib/utils/blog';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-
-	const siteUrl = 'https://reneweiser.de';
 
 	let postUrl = $derived(`${siteUrl}/blog/${data.post.slug}`);
 	let ogImage = $derived(`${siteUrl}/og-blog-${data.post.slug}.png`);
@@ -74,6 +73,8 @@
 	<meta property="og:title" content={data.post.title} />
 	<meta property="og:description" content={data.post.description} />
 	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="René Weiser" />
 	<meta property="article:published_time" content={data.post.date} />

@@ -8,11 +8,10 @@
 	import Contact from '$lib/components/Contact.svelte';
 	import Impressum from '$lib/components/Impressum.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { siteUrl } from '$lib/config';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-
-	const siteUrl = 'https://reneweiser.de';
 	const title = 'René Weiser — Full-Stack Webentwickler';
 	const description =
 		'Full-Stack Webentwickler mit knapp zehn Jahren Berufserfahrung. Laravel, Vue.js, Svelte, Docker. Vom Frontend bis zum Server.';
@@ -73,6 +72,8 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:locale" content="de_DE" />
 	<meta property="og:site_name" content="René Weiser" />
 
@@ -86,6 +87,13 @@
 	<!-- Additional SEO -->
 	<meta name="geo.region" content="DE" />
 	<meta name="geo.placename" content="Deutschland" />
+
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="René Weiser — Blog"
+		href="/feed.xml"
+	/>
 
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}

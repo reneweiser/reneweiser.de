@@ -1,10 +1,10 @@
+import { siteUrl } from "$lib/config";
 import { loadBlogPosts } from "$lib/utils/blog";
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
 
 export const GET: RequestHandler = () => {
-  const siteUrl = "https://reneweiser.de";
   const posts = loadBlogPosts();
 
   const today = new Date().toISOString().split("T")[0];
