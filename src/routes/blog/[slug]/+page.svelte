@@ -144,7 +144,7 @@
 		{#if data.post.image}
 			<img
 				src={data.post.image}
-				alt=""
+				alt={data.post.imageAlt || data.post.title}
 				class="mb-12 w-full rounded-lg border border-ink/10"
 			/>
 		{/if}

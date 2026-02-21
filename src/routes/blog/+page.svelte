@@ -14,7 +14,8 @@
 
 	const siteUrl = 'https://reneweiser.de';
 	const title = 'Web Development Blog — René Weiser';
-	const description = 'Technical writing on web development, Laravel, SvelteKit, and DevOps.';
+	const description =
+		'Articles on web development, Laravel, SvelteKit, and DevOps. Practical insights from a full-stack developer with nearly ten years of experience.';
 
 	const breadcrumbLd = {
 		'@context': 'https://schema.org',

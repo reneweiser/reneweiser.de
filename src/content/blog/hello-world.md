@@ -1,6 +1,6 @@
 ---
 title: Hello, World
-description: First post on the new blog. Why I'm writing, what to expect, and how this site is built.
+description: "First post on the new blog. Why I'm writing, what topics to expect, and the tech stack behind this site — SvelteKit, Tailwind CSS, and static deployment."
 date: "2026-02-16"
 tags:
   - Meta

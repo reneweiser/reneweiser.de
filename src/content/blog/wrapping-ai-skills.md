@@ -3,6 +3,7 @@ title: "AI Skills Are Not SaaS Products"
 description: "AI generation is one step in a larger workflow. Learn why persistent state, scheduling, and opinionated interfaces turn AI capabilities into real products."
 date: "2026-02-19"
 image: "/blog/wrapping-ai-skills/title.webp"
+imageAlt: "Diagram showing the gap between a raw AI skill and a complete product workflow"
 tags:
   - Architecture
   - Workflow
@@ -25,6 +26,11 @@ But "generate a good LinkedIn post" is one step in a workflow that has at least 
 
 Structured questions solve the input problem. They don't solve the decision problem. A non-technical user will get a decent post, but still needs to figure out: should I even be posting on LinkedIn today? How do I know if this is working over time? These are workflow, scheduling, and decision-support problems. The skill handles generation. Everything else is on the user.
 
+<figure>
+  <img src="/blog/wrapping-ai-skills/figure-1-workflow-gap.svg" alt="Diagram showing AI skill handling only the generation step, while workflow steps like scheduling, posting, and analysis remain manual" />
+  <figcaption>Figure 1: An AI skill covers generation — one step in a multi-step workflow. Everything before and after remains on the user.</figcaption>
+</figure>
+
 ## Opinionated Interfaces Encode Best Practices
 
 A SaaS product built around an AI skill makes the skill's output consistently good by constraining how it's used.
@@ -33,11 +39,21 @@ Consider the difference:
 
 **Raw skill:** The user types "write me a LinkedIn post about our new product launch" and gets a reasonable result. Maybe great, maybe mediocre, depending on how much context they provided.
 
+<figure>
+  <img src="/blog/wrapping-ai-skills/figure-2-raw-vs-wrapped.svg" alt="Side-by-side comparison showing a raw AI skill receiving minimal context versus a wrapped product providing stored brand voice, history, and scheduling" />
+  <figcaption>Figure 2: A raw skill relies on what the user remembers to provide. A wrapped product supplies the context automatically.</figcaption>
+</figure>
+
 **Wrapped product:** The user's product details are already stored. The product knows their brand voice, their posting history, their audience demographics. It suggests posting about the launch on Tuesday morning because that's when their audience is most active. It generates the post using all available context, rather than only what the user remembered to include in their prompt. After posting, it schedules a follow-up reminder for Thursday.
 
 The second scenario produces better results not because the AI is smarter, but because the product's interface ensures the AI has what it needs. The opinionated interface does the work that the user would otherwise have to do manually. And it does so more consistently.
 
 ## The Infrastructure AI Skills Cannot Provide
+
+<figure>
+  <img src="/blog/wrapping-ai-skills/figure-3-layer-stack.svg" alt="Layer stack diagram with the AI skill at the center, surrounded by scheduling, persistence, notifications, and domain logic layers" />
+  <figcaption>Figure 3: The infrastructure stack that turns an AI skill into a product — scheduling, persistence, notifications, and domain-specific logic.</figcaption>
+</figure>
 
 Skills don't run themselves. They need scheduling, persistence, and notifications — infrastructure that sits outside the generation step. Open-source agent frameworks prove the point. [OpenClaw](https://github.com/openclaw/openclaw), with over 145k GitHub stars, exists precisely because developers recognized that skills alone weren't enough. It provides a persistent daemon with cron scheduling, file-based memory via `MEMORY.md`, and multi-channel notifications across Telegram, Slack, Discord, and a dozen other platforms. The "boring infrastructure" had to be built.
 
@@ -47,11 +63,23 @@ The deeper you look, the more those decisions matter.
 
 ### Memory Across Sessions
 
-OpenClaw gives you a `MEMORY.md` file, a place to persist facts between conversations. A social media product decides *what* to remember (engagement rates by platform, audience demographics, posting cadence that actually worked) and *how* to use it (auto-adjusting scheduling, refining content strategy, surfacing patterns the user wouldn't notice). The design decisions are the value, not the storage mechanism. Each conversation with a general-purpose agent starts from that agent's memory file. A product maintains structured history and compounds it over time. Month three is smarter than month one because the product has domain-specific data and logic, not just a persistence layer. Even analyses sympathetic to the "unbundling" thesis [acknowledge this gap](https://www.uncoveralpha.com/p/the-great-saas-unbundling-why-ai): LLMs lack the deterministic consistency that persistent, stateful systems provide.
+OpenClaw gives you a `MEMORY.md` file, a place to persist facts between conversations. A social media product decides *what* to remember (engagement rates by platform, audience demographics, posting cadence that actually worked) and *how* to use it (auto-adjusting scheduling, refining content strategy, surfacing patterns the user wouldn't notice). The design decisions are the value, not the storage mechanism.
+
+<figure>
+  <img src="/blog/wrapping-ai-skills/figure-4-memory-comparison.svg" alt="Comparison of flat file-based memory in an agent framework versus structured, compounding memory in a domain-specific product" />
+  <figcaption>Figure 4: Agent frameworks persist raw facts. Products structure memory around domain-specific patterns and compound it over time.</figcaption>
+</figure>
+
+Each conversation with a general-purpose agent starts from that agent's memory file. A product maintains structured history and compounds it over time. Month three is smarter than month one because the product has domain-specific data and logic, not just a persistence layer. Even analyses sympathetic to the "unbundling" thesis [acknowledge this gap](https://www.uncoveralpha.com/p/the-great-saas-unbundling-why-ai): LLMs lack the deterministic consistency that persistent, stateful systems provide.
 
 ### Feedback Loops
 
 A general-purpose framework can store outcomes. A product interprets them. The post that got twice the engagement on Tuesday? A framework logs it. A product remembers, adjusts its scheduling suggestions, and refines the content strategy — without the user having to notice the pattern themselves. These feedback loops require domain-specific logic: what counts as success, what to adjust, how aggressively to change course. A framework gives you the plumbing. A product makes the calls.
+
+<figure>
+  <img src="/blog/wrapping-ai-skills/figure-5-feedback-loop.svg" alt="Circular feedback loop diagram showing action, outcome measurement, interpretation through domain logic, and adjusted strategy" />
+  <figcaption>Figure 5: Products close the feedback loop — measuring outcomes, interpreting them through domain logic, and adjusting strategy automatically.</figcaption>
+</figure>
 
 Bain & Company's [analysis of agentic AI and SaaS](https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/) reaches the same conclusion from the enterprise side. Systems of record — the data layer, access controls, compliance rules — remain foundational because agents need persistent state to function. Their advice to incumbents: double down on capturing proprietary data and encoding domain logic that outsiders cannot replicate.
 

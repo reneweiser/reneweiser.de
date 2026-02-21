@@ -1,4 +1,4 @@
-import { loadBlogPosts, getAllTags } from "$lib/utils/blog";
+import { loadBlogPosts } from "$lib/utils/blog";
 import type { RequestHandler } from "./$types";
 
 export const prerender = true;
@@ -6,7 +6,6 @@ export const prerender = true;
 export const GET: RequestHandler = () => {
   const siteUrl = "https://reneweiser.de";
   const posts = loadBlogPosts();
-  const tags = getAllTags();
 
   const today = new Date().toISOString().split("T")[0];
   const latestPostDate = posts[0]?.date ?? today;
@@ -21,16 +20,6 @@ export const GET: RequestHandler = () => {
       loc: `/blog/${post.slug}`,
       lastmod: post.updated ?? post.date,
       priority: "0.7",
-    });
-  }
-
-  for (const tag of tags) {
-    const tagPosts = posts.filter((p) => p.tags.includes(tag));
-    const latestTagDate = tagPosts[0]?.date ?? today;
-    urls.push({
-      loc: `/blog/tag/${encodeURIComponent(tag.toLowerCase())}`,
-      lastmod: latestTagDate,
-      priority: "0.5",
     });
   }
 

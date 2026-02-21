@@ -43,6 +43,7 @@
 	<title>{title}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
+	<meta name="robots" content="noindex, follow" />
 	<link rel="canonical" href={tagUrl} />
 
 	<meta property="og:type" content="website" />
