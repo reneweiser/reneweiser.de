@@ -4,6 +4,14 @@
 	let isScrolled = $state(false);
 	let isMobileMenuOpen = $state(false);
 
+	$effect(() => {
+		if (isMobileMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	});
+
 	const navItems = [
 		{ href: '#ueber-mich', label: 'Über mich' },
 		{ href: '#stack', label: 'Stack' },
@@ -84,30 +92,30 @@
 			></span>
 		</button>
 	</nav>
-
-	<!-- Mobile Menu Overlay -->
-	{#if isMobileMenuOpen}
-		<div
-			class="fixed inset-0 z-40 bg-paper/98 backdrop-blur-lg md:hidden"
-			role="dialog"
-			aria-modal="true"
-		>
-			<nav class="flex h-full flex-col items-center justify-center gap-8">
-				{#each navItems as item, i (item.href)}
-					<a
-						href={item.href.startsWith('#') && !isHome ? `/${item.href}` : item.href}
-						onclick={closeMobileMenu}
-						class="font-display text-3xl text-ink transition-colors hover:text-copper animate-fade-up"
-						style="animation-delay: {i * 0.1}s"
-					>
-						<span class="font-mono text-base text-copper/60">0{i + 1}.</span>
-						{item.label}
-					</a>
-				{/each}
-			</nav>
-		</div>
-	{/if}
 </header>
+
+<!-- Mobile Menu Overlay (outside <header> to avoid backdrop-filter containing block) -->
+{#if isMobileMenuOpen}
+	<div
+		class="fixed inset-0 z-40 bg-paper/98 backdrop-blur-lg md:hidden"
+		role="dialog"
+		aria-modal="true"
+	>
+		<nav class="flex h-full flex-col items-center justify-center gap-8">
+			{#each navItems as item, i (item.href)}
+				<a
+					href={item.href.startsWith('#') && !isHome ? `/${item.href}` : item.href}
+					onclick={closeMobileMenu}
+					class="font-display text-3xl text-ink transition-colors hover:text-copper animate-fade-up"
+					style="animation-delay: {i * 0.1}s"
+				>
+					<span class="font-mono text-base text-copper/60">0{i + 1}.</span>
+					{item.label}
+				</a>
+			{/each}
+		</nav>
+	</div>
+{/if}
 
 <style>
 	.bg-paper {
