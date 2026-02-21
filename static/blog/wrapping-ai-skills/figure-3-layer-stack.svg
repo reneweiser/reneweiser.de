@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 260">
+  <rect width="780" height="260" fill="#faf8f5" rx="6"/>
+
+  <!-- Top layer: Domain Logic (copper) -->
+  <rect x="40" y="25" width="420" height="58" rx="8" fill="#c17f59"/>
+  <text x="250" y="48" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#faf8f5">Domain Logic</text>
+  <text x="250" y="67" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="rgba(250,248,245,0.75)">What to store · When to act · How to interpret</text>
+
+  <!-- Middle layer: Infrastructure (sage) -->
+  <rect x="40" y="98" width="420" height="58" rx="8" fill="#e8ebe3" stroke="#a8b09c" stroke-width="1"/>
+  <text x="250" y="121" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#7d8471">Infrastructure</text>
+  <text x="250" y="140" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#7d8471">Scheduling · Persistence · Notifications</text>
+
+  <!-- Bottom layer: AI Skill (neutral) -->
+  <rect x="40" y="171" width="420" height="58" rx="8" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="250" y="194" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#3d3a37">AI Skill</text>
+  <text x="250" y="213" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Generation capability</text>
+
+  <!-- Right-side annotations -->
+  <line x1="462" y1="54" x2="478" y2="54" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="485" y="54" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#c17f59" font-weight="500">The product decides this</text>
+
+  <line x1="462" y1="127" x2="478" y2="127" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="485" y="127" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#7d8471">Frameworks provide this</text>
+
+  <line x1="462" y1="200" x2="478" y2="200" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="485" y="200" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560">Anyone with an API key</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 290">
+  <defs>
+    <marker id="a4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#b0aaa3"/>
+    </marker>
+    <marker id="a4c" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#c17f59"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="290" fill="#faf8f5" rx="6"/>
+
+  <!-- LEFT: MEMORY.md -->
+  <text x="30" y="22" font-family="JetBrains Mono, Fira Code, monospace" font-size="13" fill="#6b6560" font-weight="600">MEMORY.md</text>
+
+  <!-- Code block background -->
+  <rect x="30" y="35" width="340" height="175" rx="6" fill="#0a0908"/>
+
+  <!-- Code content -->
+  <text x="48" y="60" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560"># User preferences</text>
+  <text x="48" y="78" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- Morning posts preferred</text>
+  <text x="48" y="96" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- Professional tone</text>
+  <text x="48" y="114" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- LinkedIn and X</text>
+  <text x="48" y="142" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560"># Notes</text>
+  <text x="48" y="160" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- Product launch did well</text>
+  <text x="48" y="178" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- Tuesdays > other days</text>
+  <text x="48" y="196" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#f0ece5">- Avg engagement: ~2.3%</text>
+
+  <!-- RIGHT: Product data model -->
+  <text x="420" y="22" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#6b6560" font-weight="600">Product data model</text>
+
+  <!-- Table 1: engagement_data -->
+  <rect x="420" y="40" width="330" height="52" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="420" y1="62" x2="750" y2="62" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="435" y="54" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#3d3a37" font-weight="600">engagement_data</text>
+  <text x="435" y="80" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">platform · date · impressions · clicks · rate</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="585" y1="92" x2="585" y2="113" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a4)"/>
+
+  <!-- Table 2: content_strategy -->
+  <rect x="420" y="115" width="330" height="52" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="420" y1="137" x2="750" y2="137" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="435" y="130" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#3d3a37" font-weight="600">content_strategy</text>
+  <text x="435" y="155" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">pillar · best_time · audience · frequency</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="585" y1="167" x2="585" y2="188" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a4)"/>
+
+  <!-- Table 3: performance_trends -->
+  <rect x="420" y="190" width="330" height="52" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="420" y1="212" x2="750" y2="212" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="435" y="205" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#3d3a37" font-weight="600">performance_trends</text>
+  <text x="435" y="230" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">metric · 7d_avg · 30d_avg · direction</text>
+
+  <!-- "Compounds over time" label -->
+  <text x="585" y="268" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#c17f59" font-weight="500" font-style="italic">Compounds over time</text>
+  <!-- Curved arrow suggesting accumulation -->
+  <path d="M 755,230 Q 770,180 755,110" fill="none" stroke="#c17f59" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#a4c)"/>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400">
+  <defs>
+    <marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#b0aaa3"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="400" fill="#faf8f5" rx="6"/>
+
+  <!-- Divider -->
+  <line x1="380" y1="16" x2="380" y2="384" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- LEFT COLUMN: Raw skill -->
+  <text x="175" y="28" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#3d3a37">Raw skill</text>
+
+  <rect x="100" y="140" width="150" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="175" y="160" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37">User types prompt</text>
+
+  <line x1="175" y1="180" x2="175" y2="208" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="100" y="210" width="150" height="40" rx="6" fill="#f4ece5" stroke="#c17f59" stroke-width="1.5"/>
+  <text x="175" y="230" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="500">AI Skill</text>
+
+  <line x1="175" y1="250" x2="175" y2="278" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <rect x="100" y="280" width="150" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="175" y="300" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37">Output</text>
+
+  <!-- RIGHT COLUMN: Wrapped product -->
+  <text x="585" y="28" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#3d3a37">Wrapped product</text>
+
+  <!-- Context boxes -->
+  <rect x="433" y="55" width="90" height="30" rx="5" fill="#e8ebe3" stroke="#a8b09c" stroke-width="1"/>
+  <text x="478" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#7d8471">Brand voice</text>
+
+  <rect x="540" y="55" width="90" height="30" rx="5" fill="#e8ebe3" stroke="#a8b09c" stroke-width="1"/>
+  <text x="585" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#7d8471">Post history</text>
+
+  <rect x="647" y="55" width="90" height="30" rx="5" fill="#e8ebe3" stroke="#a8b09c" stroke-width="1"/>
+  <text x="692" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#7d8471">Audience</text>
+
+  <!-- Context label -->
+  <text x="585" y="48" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#a8b09c" font-style="italic">stored context</text>
+
+  <!-- Convergence arrows from context to junction -->
+  <line x1="478" y1="85" x2="575" y2="108" stroke="#a8b09c" stroke-width="1.2"/>
+  <line x1="585" y1="85" x2="585" y2="108" stroke="#a8b09c" stroke-width="1.2"/>
+  <line x1="692" y1="85" x2="595" y2="108" stroke="#a8b09c" stroke-width="1.2"/>
+  <circle cx="585" cy="108" r="3" fill="#a8b09c"/>
+
+  <!-- Junction to AI Skill -->
+  <line x1="585" y1="111" x2="585" y2="138" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <!-- AI Skill box -->
+  <rect x="510" y="140" width="150" height="40" rx="6" fill="#f4ece5" stroke="#c17f59" stroke-width="1.5"/>
+  <text x="585" y="160" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="500">AI Skill</text>
+
+  <line x1="585" y1="180" x2="585" y2="208" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <!-- Post draft -->
+  <rect x="510" y="210" width="150" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="585" y="230" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37">Post draft</text>
+
+  <line x1="585" y1="250" x2="585" y2="278" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <!-- Schedule -->
+  <rect x="510" y="280" width="150" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="585" y="300" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37">Schedule Tue 9am</text>
+
+  <line x1="585" y1="320" x2="585" y2="348" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a2)"/>
+
+  <!-- Follow-up -->
+  <rect x="510" y="350" width="150" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="585" y="370" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37">Remind Thursday</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 310">
+  <defs>
+    <marker id="a5g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#b0aaa3"/>
+    </marker>
+    <marker id="a5c" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#c17f59"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="310" fill="#faf8f5" rx="6"/>
+
+  <!-- Node: Post (top center) — neutral -->
+  <rect x="325" y="36" width="130" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="390" y="56" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#3d3a37" font-weight="500">Post</text>
+
+  <!-- Node: Measure (right) — neutral -->
+  <rect x="565" y="120" width="130" height="40" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="630" y="140" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#3d3a37" font-weight="500">Measure</text>
+
+  <!-- Node: Interpret (bottom center) — copper -->
+  <rect x="325" y="204" width="130" height="40" rx="6" fill="#c17f59" stroke="#8b5a3c" stroke-width="1.5"/>
+  <text x="390" y="224" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#faf8f5" font-weight="500">Interpret</text>
+
+  <!-- Node: Adjust (left) — copper -->
+  <rect x="85" y="120" width="130" height="40" rx="6" fill="#c17f59" stroke="#8b5a3c" stroke-width="1.5"/>
+  <text x="150" y="140" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#faf8f5" font-weight="500">Adjust</text>
+
+  <!-- Arrow: Post → Measure (gray) -->
+  <path d="M 455,62 C 510,62 565,90 565,120" fill="none" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a5g)"/>
+
+  <!-- Arrow: Measure → Interpret (gray) -->
+  <path d="M 630,160 C 630,200 500,224 455,224" fill="none" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#a5g)"/>
+
+  <!-- Arrow: Interpret → Adjust (copper) -->
+  <path d="M 325,224 C 270,224 150,190 150,160" fill="none" stroke="#c17f59" stroke-width="1.5" marker-end="url(#a5c)"/>
+
+  <!-- Arrow: Adjust → Post (copper) -->
+  <path d="M 150,120 C 150,80 270,56 325,56" fill="none" stroke="#c17f59" stroke-width="1.5" marker-end="url(#a5c)"/>
+
+  <!-- Legend -->
+  <rect x="240" y="275" width="14" height="14" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="262" y="285" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560" dominant-baseline="central">Framework handles</text>
+
+  <rect x="430" y="275" width="14" height="14" rx="3" fill="#c17f59"/>
+  <text x="452" y="285" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560" dominant-baseline="central">Domain logic required</text>
+</svg>
