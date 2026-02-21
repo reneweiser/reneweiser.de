@@ -57,5 +57,6 @@ jobs:
             PUBLIC_IMPRESSUM_STREET=${{ secrets.PUBLIC_IMPRESSUM_STREET }}
             PUBLIC_IMPRESSUM_CITY=${{ secrets.PUBLIC_IMPRESSUM_CITY }}
             PUBLIC_IMPRESSUM_EMAIL=${{ secrets.PUBLIC_IMPRESSUM_EMAIL }}
+            PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.PUBLIC_GOOGLE_SITE_VERIFICATION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
