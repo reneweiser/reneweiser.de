@@ -1,6 +1,6 @@
 ---
 title: Building a Static Blog with SvelteKit and mdsvex
-description: "Step-by-step guide to adding a fully static, prerendered blog to a SvelteKit site using mdsvex. Covers Markdown processing, dynamic routing, syntax highlighting with Shiki, and type-safe post loading."
+description: "Step-by-step guide to adding a static, prerendered blog to a SvelteKit site with mdsvex. Covers Markdown processing, routing, Shiki syntax highlighting, and type-safe post loading."
 date: "2026-02-17"
 tags:
   - SvelteKit

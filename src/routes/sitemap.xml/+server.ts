@@ -11,7 +11,7 @@ export const GET: RequestHandler = () => {
   const latestPostDate = posts[0]?.date ?? today;
 
   const urls: { loc: string; lastmod: string; priority: string }[] = [
-    { loc: "/", lastmod: today, priority: "1.0" },
+    { loc: "", lastmod: today, priority: "1.0" },
     { loc: "/blog", lastmod: latestPostDate, priority: "0.8" },
   ];
 

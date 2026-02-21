@@ -75,6 +75,7 @@
 	<meta property="og:description" content={data.post.description} />
 	<meta property="og:image" content={ogImage} />
 	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="René Weiser" />
 	<meta property="article:published_time" content={data.post.date} />
 	{#if data.post.updated}
 		<meta property="article:modified_time" content={data.post.updated} />
@@ -145,6 +146,8 @@
 			<img
 				src={data.post.image}
 				alt={data.post.imageAlt || data.post.title}
+				width="1536"
+				height="1024"
 				class="mb-12 w-full rounded-lg border border-ink/10"
 			/>
 		{/if}

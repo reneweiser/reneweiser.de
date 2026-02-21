@@ -40,7 +40,7 @@ export const GET: RequestHandler = () => {
       <title>${escapeXml(post.title)}</title>
       <link>${siteUrl}/blog/${post.slug}</link>
       <description>${escapeXml(post.description)}</description>
-      <pubDate>${new Date(post.date + "T00:00:00").toUTCString()}</pubDate>
+      <pubDate>${new Date(post.date + "T12:00:00Z").toUTCString()}</pubDate>
       <guid isPermaLink="true">${siteUrl}/blog/${post.slug}</guid>
       ${post.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join("\n      ")}
     </item>`,
