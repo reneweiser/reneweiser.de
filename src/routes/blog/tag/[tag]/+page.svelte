@@ -49,7 +49,7 @@
 	<meta property="og:url" content={tagUrl} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="{siteUrl}/og-default.png" />
+	<meta property="og:image" content="{siteUrl}/og-default.webp" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:locale" content="en_US" />
@@ -58,7 +58,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="{siteUrl}/og-default.png" />
+	<meta name="twitter:image" content="{siteUrl}/og-default.webp" />
 
 	<link
 		rel="alternate"

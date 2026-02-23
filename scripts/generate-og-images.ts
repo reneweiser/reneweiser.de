@@ -4,12 +4,12 @@
  * Usage: bun run scripts/generate-og-images.ts
  *
  * Outputs:
- *   static/og-default.png   — Default branded card (1200×630)
- *   static/og-blog-*.png    — Per-post cards with title
+ *   static/og-default.webp   — Default branded card (1200×630)
+ *   static/og-blog-*.webp    — Per-post cards with title
  */
 
 import sharp from "sharp";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const WIDTH = 1200;
@@ -101,8 +101,9 @@ function buildSvg(options: {
 }
 
 async function generateImage(svg: string, outputPath: string): Promise<void> {
-  await sharp(Buffer.from(svg)).png().toFile(outputPath);
-  console.log(`  ✓ ${outputPath}`);
+  await sharp(Buffer.from(svg)).webp({ quality: 80 }).toFile(outputPath);
+  const sizeKB = (statSync(outputPath).size / 1024).toFixed(1);
+  console.log(`  ✓ ${outputPath} (${sizeKB} KB)`);
 }
 
 function buildPhotoTextOverlay(title: string): string {
@@ -143,9 +144,10 @@ async function generatePhotoOgImage(
   await sharp(imagePath)
     .resize(WIDTH, HEIGHT, { fit: "cover", position: "centre" })
     .composite([{ input: Buffer.from(overlay), top: 0, left: 0 }])
-    .png()
+    .webp({ quality: 80 })
     .toFile(outputPath);
-  console.log(`  ✓ ${outputPath} (photo-based)`);
+  const sizeKB = (statSync(outputPath).size / 1024).toFixed(1);
+  console.log(`  ✓ ${outputPath} (photo-based, ${sizeKB} KB)`);
 }
 
 // --- Generate default OG image ---
@@ -156,7 +158,7 @@ const defaultSvg = buildSvg({
   subtitle: "Full-Stack Web Developer",
   footer: "reneweiser.de",
 });
-await generateImage(defaultSvg, "static/og-default.png");
+await generateImage(defaultSvg, "static/og-default.webp");
 
 // --- Generate per-post OG images ---
 const blogDir = join(import.meta.dir, "..", "src", "content", "blog");
@@ -176,7 +178,7 @@ for (const file of mdFiles) {
 
   const title = titleMatch[1].trim().replace(/^["']|["']$/g, "");
   const slug = file.replace(/\.md$/, "");
-  const outputPath = `static/og-blog-${slug}.png`;
+  const outputPath = `static/og-blog-${slug}.webp`;
 
   const imageSrc = imageMatch?.[1].trim().replace(/^["']|["']$/g, "");
   const imageFile = imageSrc ? join("static", imageSrc) : null;

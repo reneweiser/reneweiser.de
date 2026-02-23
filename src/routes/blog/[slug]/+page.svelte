@@ -8,7 +8,7 @@
 	let { data }: PageProps = $props();
 
 	let postUrl = $derived(`${siteUrl}/blog/${data.post.slug}`);
-	let ogImage = $derived(`${siteUrl}/og-blog-${data.post.slug}.png`);
+	let ogImage = $derived(`${siteUrl}/og-blog-${data.post.slug}.webp`);
 
 	let jsonLd = $derived({
 		'@context': 'https://schema.org',
