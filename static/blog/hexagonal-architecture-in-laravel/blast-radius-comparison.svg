@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" role="img" aria-label="Blast radius comparison — conventional structure touches 6 scattered files, hexagonal touches 2 files in one domain">
+  <rect width="780" height="420" fill="#faf8f5" rx="6"/>
+
+  <!-- Divider -->
+  <line x1="390" y1="20" x2="390" y2="400" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- LEFT: Convention-first -->
+  <text x="195" y="40" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Convention-first</text>
+
+  <!-- File tree — left -->
+  <text x="40" y="75" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">app/</text>
+
+  <!-- Http/Controllers/ -->
+  <text x="56" y="97" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Http/</text>
+  <text x="72" y="117" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Controllers/</text>
+  <rect x="84" y="126" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="88" y="137" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">InvoiceController.php</text>
+
+  <!-- Services/ -->
+  <text x="56" y="163" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Services/</text>
+  <rect x="68" y="172" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="72" y="183" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">InvoiceService.php</text>
+
+  <!-- Observers/ -->
+  <text x="56" y="209" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Observers/</text>
+  <rect x="68" y="218" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="72" y="229" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">InvoiceObserver.php</text>
+
+  <!-- Mail/ -->
+  <text x="56" y="255" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Mail/</text>
+  <rect x="68" y="264" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="72" y="275" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">InvoiceMailable.php</text>
+
+  <!-- resources/ -->
+  <text x="40" y="301" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">resources/views/invoices/</text>
+  <rect x="52" y="310" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="56" y="321" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">pdf.blade.php</text>
+
+  <!-- routes/ -->
+  <text x="40" y="347" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">routes/</text>
+  <rect x="52" y="356" width="220" height="22" rx="4" fill="#c17f59" opacity="0.15"/>
+  <text x="56" y="367" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#c17f59" font-weight="600">web.php</text>
+
+  <!-- Left summary -->
+  <rect x="80" y="389" width="230" height="24" rx="6" fill="#c17f59" opacity="0.12"/>
+  <text x="195" y="401" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="600">6 files across 4 directories</text>
+
+  <!-- RIGHT: Hexagonal -->
+  <text x="585" y="40" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Hexagonal</text>
+
+  <!-- Domain tree -->
+  <text x="420" y="75" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">app/</text>
+  <text x="436" y="97" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Domain/</text>
+  <text x="452" y="117" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Billing/</text>
+  <text x="468" y="137" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Entities/</text>
+  <text x="468" y="157" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Ports/</text>
+  <text x="468" y="177" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">UseCases/</text>
+  <rect x="480" y="186" width="240" height="22" rx="4" fill="#7d8471" opacity="0.15"/>
+  <text x="484" y="197" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#7d8471" font-weight="600">GenerateInvoicePdf.php</text>
+
+  <!-- Infrastructure tree -->
+  <text x="436" y="227" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Infrastructure/</text>
+  <text x="452" y="247" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Billing/</text>
+  <rect x="464" y="256" width="240" height="22" rx="4" fill="#7d8471" opacity="0.15"/>
+  <text x="468" y="267" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#7d8471" font-weight="600">DompdfGenerator.php</text>
+  <text x="468" y="291" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Http/</text>
+  <text x="484" y="311" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Controllers/</text>
+
+  <!-- Untouched files -->
+  <text x="436" y="341" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Models/</text>
+  <text x="436" y="361" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#6b6560">Providers/</text>
+
+  <!-- Right summary -->
+  <rect x="470" y="389" width="230" height="24" rx="6" fill="#7d8471" opacity="0.12"/>
+  <text x="585" y="401" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#7d8471" font-weight="600">2 files in 1 domain</text>
+
+  <!-- Legend -->
+  <rect x="40" y="30" width="10" height="10" rx="2" fill="#c17f59" opacity="0.3"/>
+  <text x="55" y="35" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560" dominant-baseline="central">Touched</text>
+
+  <rect x="115" y="30" width="10" height="10" rx="2" fill="#7d8471" opacity="0.3"/>
+  <text x="130" y="35" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560" dominant-baseline="central">Touched</text>
+
+  <text x="40" y="17" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Editing invoice PDF generation:</text>
+</svg>
