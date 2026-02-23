@@ -2,7 +2,6 @@
 title: "Hexagonal Architecture in Laravel: Worth It Now"
 description: "When hexagonal architecture fits a Laravel project, what to move out of conventions, what to keep, and why AI agents make the investment pay off faster."
 date: "2026-02-23"
-slug: hexagonal-architecture-laravel
 tags:
   - Laravel
   - Architecture

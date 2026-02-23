@@ -40,6 +40,7 @@
 	<title>{title}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
+	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href="{siteUrl}/blog" />
 
 	<meta property="og:type" content="website" />

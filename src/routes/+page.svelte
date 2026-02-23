@@ -14,7 +14,7 @@
 	let { data }: PageProps = $props();
 	const title = 'René Weiser — Full-Stack Webentwickler';
 	const description =
-		'Full-Stack Webentwickler mit knapp zehn Jahren Berufserfahrung. Laravel, Vue.js, Svelte, Docker. Vom Frontend bis zum Server.';
+		'Full-Stack Webentwickler mit knapp zehn Jahren Berufserfahrung — Laravel, Vue.js, Svelte, Docker. Vom sauberen Frontend bis zur skalierbaren Serverarchitektur.';
 
 	// JSON-LD structured data for Person + WebSite
 	const jsonLd = {

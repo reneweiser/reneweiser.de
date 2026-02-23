@@ -66,6 +66,7 @@
 	<title>{data.post.title} — René Weiser</title>
 	<meta name="title" content={data.post.title} />
 	<meta name="description" content={data.post.description} />
+	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href={postUrl} />
 
 	<meta property="og:type" content="article" />

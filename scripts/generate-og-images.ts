@@ -9,7 +9,7 @@
  */
 
 import sharp from "sharp";
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const WIDTH = 1200;
@@ -105,6 +105,49 @@ async function generateImage(svg: string, outputPath: string): Promise<void> {
   console.log(`  ✓ ${outputPath}`);
 }
 
+function buildPhotoTextOverlay(title: string): string {
+  const { lines, fontSize } = wrapText(title, 28);
+  const lineHeight = fontSize * 1.3;
+  const footerY = HEIGHT - 40;
+  const accentY = footerY - 24 - lines.length * lineHeight - 16;
+  const titleStartY = accentY + 28;
+
+  const titleLines = lines
+    .map(
+      (line, i) =>
+        `<text x="60" y="${titleStartY + i * lineHeight}" fill="${PAPER}" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="600">${escapeXml(line)}</text>`,
+    )
+    .join("\n    ");
+
+  return `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${INK}" stop-opacity="0.15"/>
+      <stop offset="40%" stop-color="${INK}" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="${INK}" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad)"/>
+  <line x1="60" y1="${accentY}" x2="160" y2="${accentY}" stroke="${COPPER}" stroke-width="3"/>
+    ${titleLines}
+  <text x="60" y="${footerY}" fill="${COPPER}" font-family="'Courier New', monospace" font-size="14">reneweiser.de/blog</text>
+</svg>`;
+}
+
+async function generatePhotoOgImage(
+  imagePath: string,
+  title: string,
+  outputPath: string,
+): Promise<void> {
+  const overlay = buildPhotoTextOverlay(title);
+  await sharp(imagePath)
+    .resize(WIDTH, HEIGHT, { fit: "cover", position: "centre" })
+    .composite([{ input: Buffer.from(overlay), top: 0, left: 0 }])
+    .png()
+    .toFile(outputPath);
+  console.log(`  ✓ ${outputPath} (photo-based)`);
+}
+
 // --- Generate default OG image ---
 console.log("Generating OG images...\n");
 
@@ -127,17 +170,26 @@ for (const file of mdFiles) {
   const fm = frontmatterMatch[1];
   const titleMatch = fm.match(/^title:\s*(.+)$/m);
   const publishedMatch = fm.match(/^published:\s*(.+)$/m);
+  const imageMatch = fm.match(/^image:\s*(.+)$/m);
 
   if (!titleMatch || publishedMatch?.[1].trim() !== "true") continue;
 
-  const title = titleMatch[1].trim();
+  const title = titleMatch[1].trim().replace(/^["']|["']$/g, "");
   const slug = file.replace(/\.md$/, "");
+  const outputPath = `static/og-blog-${slug}.png`;
 
-  const postSvg = buildSvg({
-    title,
-    footer: "reneweiser.de/blog",
-  });
-  await generateImage(postSvg, `static/og-blog-${slug}.png`);
+  const imageSrc = imageMatch?.[1].trim().replace(/^["']|["']$/g, "");
+  const imageFile = imageSrc ? join("static", imageSrc) : null;
+
+  if (imageFile && existsSync(imageFile)) {
+    await generatePhotoOgImage(imageFile, title, outputPath);
+  } else {
+    const postSvg = buildSvg({
+      title,
+      footer: "reneweiser.de/blog",
+    });
+    await generateImage(postSvg, outputPath);
+  }
 }
 
 console.log("\nDone!");
