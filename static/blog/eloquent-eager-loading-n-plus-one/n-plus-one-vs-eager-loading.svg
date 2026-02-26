@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" role="img" aria-label="Timeline comparison showing 51 serial queries with lazy loading versus 2 batch queries with eager loading">
+  <rect width="780" height="400" fill="#faf8f5" rx="6"/>
+
+  <!-- Divider -->
+  <line x1="390" y1="15" x2="390" y2="385" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- ==================== LEFT: Lazy loading ==================== -->
+  <text x="195" y="30" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Lazy loading (N+1)</text>
+
+  <!-- Time axis -->
+  <line x1="30" y1="52" x2="30" y2="345" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="26" y1="52" x2="30" y2="52" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="26" y1="345" x2="30" y2="345" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="24" y="56" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">0 ms</text>
+  <text x="24" y="349" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">38 ms</text>
+
+  <!-- Thick bar: SELECT clients -->
+  <rect x="40" y="52" width="330" height="14" rx="3" fill="#c17f59"/>
+  <text x="50" y="62" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#faf8f5" font-weight="600">SELECT * FROM clients</text>
+
+  <!-- Wall of thin bars: 20 visible bars representing 50 serial queries -->
+  <rect x="40" y="78" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="90" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="102" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="114" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="126" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="138" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="150" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="162" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="174" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="186" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="198" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="210" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="222" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="234" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="246" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="258" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="270" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="282" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="294" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+  <rect x="40" y="306" width="200" height="4" rx="1" fill="#c17f59" opacity="0.55"/>
+
+  <!-- Label for thin bars -->
+  <text x="250" y="84" font-family="JetBrains Mono, Fira Code, monospace" font-size="8" fill="#6b6560">&#8592; SELECT * FROM invoices</text>
+  <text x="257" y="96" font-family="JetBrains Mono, Fira Code, monospace" font-size="8" fill="#6b6560">WHERE client_id = ?</text>
+
+  <!-- Continuation indicator -->
+  <text x="140" y="328" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">&#8942; &#215;50 queries</text>
+
+  <!-- Summary -->
+  <rect x="60" y="362" width="230" height="26" rx="6" fill="#c17f59" opacity="0.12"/>
+  <text x="175" y="375" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="600">~38 ms &#183; 51 queries</text>
+
+  <!-- ==================== RIGHT: Eager loading ==================== -->
+  <text x="585" y="30" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Eager loading (with)</text>
+
+  <!-- Time axis (same scale as left) -->
+  <line x1="420" y1="52" x2="420" y2="345" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="416" y1="52" x2="420" y2="52" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="416" y1="345" x2="420" y2="345" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="414" y="56" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">0 ms</text>
+  <text x="414" y="349" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">38 ms</text>
+
+  <!-- Thick bar 1: SELECT clients -->
+  <rect x="430" y="52" width="330" height="14" rx="3" fill="#7d8471"/>
+  <text x="440" y="62" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#faf8f5" font-weight="600">SELECT * FROM clients</text>
+
+  <!-- Thick bar 2: SELECT invoices WHERE IN -->
+  <rect x="430" y="74" width="330" height="20" rx="3" fill="#7d8471"/>
+  <text x="440" y="87" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#faf8f5" font-weight="600">SELECT * FROM invoices WHERE client_id IN (...)</text>
+
+  <!-- Empty space from y=94 to y=345 — the whole point -->
+
+  <!-- Summary -->
+  <rect x="460" y="362" width="230" height="26" rx="6" fill="#7d8471" opacity="0.12"/>
+  <text x="575" y="375" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#7d8471" font-weight="600">~4 ms &#183; 2 queries</text>
+</svg>

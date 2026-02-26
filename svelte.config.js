@@ -15,6 +15,7 @@ const shikiHighlighter = await createHighlighter({
     "bash",
     "json",
     "php",
+    "blade",
     "yaml",
     "markdown",
     "sql",
