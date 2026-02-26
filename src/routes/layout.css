@@ -80,6 +80,10 @@ body {
   z-index: 1000;
 }
 
+.grain {
+  overflow-x: clip;
+}
+
 /* Stagger animations */
 @keyframes fade-up {
   from {
@@ -211,6 +215,31 @@ body {
 .blog-prose img {
   border-radius: 0.5rem;
   border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+.blog-prose figure {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 64rem;
+}
+
+.blog-prose figure img {
+  border-radius: 0;
+}
+
+@media (min-width: 64rem) {
+  .blog-prose figure img {
+    border-radius: 0.5rem;
+  }
+}
+
+.blog-prose figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+  margin-top: 0.75rem;
 }
 
 /* Custom scrollbar */
