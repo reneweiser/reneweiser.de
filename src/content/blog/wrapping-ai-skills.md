@@ -10,6 +10,10 @@ tags:
 published: true
 ---
 
+<script>
+	import TwitterEmbed from '$lib/components/blog/TwitterEmbed.svelte';
+</script>
+
 Every AI skill, no matter how good, handles exactly one step in a workflow. The product value isn't in the generation. It's in everything that happens before and after: workflow orchestration, persistent state, and opinionated interfaces that make the AI's output consistently useful.
 
 By "skill" I mean any self-contained AI capability: a prompt template, a plugin, an agent tool. Anything that takes input, applies domain knowledge, and generates output.
@@ -17,6 +21,8 @@ By "skill" I mean any self-contained AI capability: a prompt template, a plugin,
 "SaaS is dead" keeps coming up. Satya Nadella [told The Register](https://www.theregister.com/2026/02/04/ai_replace_saas) that business apps are "essentially CRUD databases with a bunch of business logic" and that agents will absorb the logic layer entirely. Edmundo Ortega at Section AI [takes it further](https://www.sectionai.com/blog/is-ai-the-end-of-saas): traditional software interfaces (dashboards, dropdowns, GUIs) will become obsolete once users express intent through language instead of clicking through step-by-step workflows.
 
 These predictions confuse what the AI contributes (generation, analysis, decision logic) with what a product contributes. Not every AI capability needs a product around it. But when the workflow extends beyond generation, when the audience isn't technical, when consistency matters more than flexibility, and when domain best practices are non-obvious — the product layer isn't optional. Most professional use cases check at least two of those boxes.
+
+<TwitterEmbed url="https://twitter.com/PR0GRAMMERHUM0R/status/2028213723412775295" />
 
 ## The Skill Handles Generation — Not the Workflow
 
