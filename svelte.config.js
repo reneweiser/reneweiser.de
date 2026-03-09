@@ -20,6 +20,7 @@ const shikiHighlighter = await createHighlighter({
     "markdown",
     "sql",
     "docker",
+    "toml",
   ],
 });
 
