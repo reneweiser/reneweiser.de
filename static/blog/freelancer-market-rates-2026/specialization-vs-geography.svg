@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 220" role="img" aria-label="Horizontal spectrum showing pricing tiers from generalist social media manager at 25 to 50 euros per hour to technical SEO specialist at 150 to 220 plus euros per hour">
+  <rect width="780" height="220" fill="#faf8f5" rx="6"/>
+
+  <!-- Title -->
+  <text x="390" y="30" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Specialization Creates Larger Price Gaps Than Geography</text>
+
+  <!-- Spectrum bar -->
+  <defs>
+    <linearGradient id="spectrumGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b0aaa3"/>
+      <stop offset="100%" stop-color="#c17f59"/>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="90" width="620" height="16" rx="8" fill="url(#spectrumGrad)" opacity="0.3"/>
+  <rect x="80" y="90" width="620" height="16" rx="8" fill="none" stroke="#d5d0c8" stroke-width="0.5"/>
+
+  <!-- Left marker: Generalist -->
+  <circle cx="120" cy="98" r="8" fill="#b0aaa3"/>
+  <line x1="120" y1="110" x2="120" y2="130" stroke="#b0aaa3" stroke-width="1.5"/>
+  <text x="120" y="148" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" font-weight="500">Generalist</text>
+  <text x="120" y="164" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Social Media Manager</text>
+  <text x="120" y="184" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="14" fill="#b0aaa3" font-weight="600">€25–50/h</text>
+
+  <!-- Mid marker: Mid-level SEO -->
+  <circle cx="380" cy="98" r="6" fill="#7d8471"/>
+  <line x1="380" y1="110" x2="380" y2="130" stroke="#7d8471" stroke-width="1"/>
+  <text x="380" y="148" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" font-weight="500">Mid-Level SEO</text>
+  <text x="380" y="184" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="14" fill="#7d8471" font-weight="600">€75–150/h</text>
+
+  <!-- Right marker: Technical Specialist -->
+  <circle cx="660" cy="98" r="8" fill="#c17f59"/>
+  <line x1="660" y1="110" x2="660" y2="130" stroke="#c17f59" stroke-width="1.5"/>
+  <text x="660" y="148" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#c17f59" font-weight="500">Technical SEO Specialist</text>
+  <text x="660" y="184" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="14" fill="#c17f59" font-weight="600">€150–220+/h</text>
+
+  <!-- Bracket showing gap -->
+  <line x1="120" y1="72" x2="660" y2="72" stroke="#3d3a37" stroke-width="1"/>
+  <line x1="120" y1="68" x2="120" y2="76" stroke="#3d3a37" stroke-width="1"/>
+  <line x1="660" y1="68" x2="660" y2="76" stroke="#3d3a37" stroke-width="1"/>
+  <rect x="340" y="55" width="100" height="22" rx="4" fill="#faf8f5"/>
+  <text x="390" y="70" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">4–9× range</text>
+
+  <!-- Annotation -->
+  <text x="390" y="210" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#b0aaa3">Same region, same market — specialization is the dominant pricing factor</text>
+</svg>

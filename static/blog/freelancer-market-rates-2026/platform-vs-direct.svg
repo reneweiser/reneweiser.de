@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Side-by-side comparison of direct freelancer rates versus platform rates, showing a 30 to 50 percent gap with SEO as a concrete example">
+  <rect width="780" height="300" fill="#faf8f5" rx="6"/>
+
+  <!-- Title -->
+  <text x="390" y="32" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Direct Freelancer vs Platform Rates</text>
+
+  <!-- Left box: Direct -->
+  <rect x="60" y="60" width="280" height="190" rx="6" fill="none" stroke="#7d8471" stroke-width="1.5"/>
+  <rect x="60" y="60" width="280" height="36" rx="6" fill="#7d8471" opacity="0.1"/>
+  <rect x="60" y="90" width="280" height="6" fill="#faf8f5"/>
+  <text x="200" y="83" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#7d8471" font-weight="600">Direct Clients</text>
+
+  <!-- Direct rates -->
+  <text x="80" y="120" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Landing Pages</text>
+  <text x="320" y="120" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#3d3a37" font-weight="500">$40–150/h</text>
+
+  <line x1="80" y1="132" x2="320" y2="132" stroke="#f0ece5" stroke-width="1"/>
+
+  <text x="80" y="152" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">SEO</text>
+  <text x="320" y="152" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#3d3a37" font-weight="600">$75–250/h</text>
+
+  <line x1="80" y1="164" x2="320" y2="164" stroke="#f0ece5" stroke-width="1"/>
+
+  <text x="80" y="184" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Social Media</text>
+  <text x="320" y="184" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#3d3a37" font-weight="500">$35–150/h</text>
+
+  <!-- Avg indicator -->
+  <rect x="80" y="204" width="240" height="28" rx="4" fill="#7d8471" opacity="0.08"/>
+  <text x="200" y="222" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#7d8471" font-weight="500">Higher experience mix</text>
+
+  <!-- Right box: Platforms -->
+  <rect x="440" y="60" width="280" height="190" rx="6" fill="none" stroke="#b0aaa3" stroke-width="1.5"/>
+  <rect x="440" y="60" width="280" height="36" rx="6" fill="#b0aaa3" opacity="0.1"/>
+  <rect x="440" y="90" width="280" height="6" fill="#faf8f5"/>
+  <text x="580" y="83" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="13" fill="#6b6560" font-weight="600">Upwork / Fiverr</text>
+
+  <!-- Platform rates -->
+  <text x="460" y="120" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Landing Pages</text>
+  <text x="700" y="120" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#6b6560" font-weight="500">$15–60/h</text>
+
+  <line x1="460" y1="132" x2="700" y2="132" stroke="#f0ece5" stroke-width="1"/>
+
+  <text x="460" y="152" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">SEO</text>
+  <text x="700" y="152" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#6b6560" font-weight="600">~$21/h median</text>
+
+  <line x1="460" y1="164" x2="700" y2="164" stroke="#f0ece5" stroke-width="1"/>
+
+  <text x="460" y="184" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Social Media</text>
+  <text x="700" y="184" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="12" fill="#6b6560" font-weight="500">$10–40/h</text>
+
+  <!-- Avg indicator -->
+  <rect x="460" y="204" width="240" height="28" rx="4" fill="#b0aaa3" opacity="0.08"/>
+  <text x="580" y="222" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#b0aaa3" font-weight="500">+ up to 20% platform fees</text>
+
+  <!-- Center gap annotation -->
+  <rect x="345" y="126" width="90" height="52" rx="6" fill="#c17f59" opacity="0.12"/>
+  <text x="390" y="148" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="16" fill="#c17f59" font-weight="700">30–50%</text>
+  <text x="390" y="166" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#c17f59" font-weight="500">gap</text>
+
+  <!-- Arrows -->
+  <line x1="340" y1="152" x2="350" y2="152" stroke="#c17f59" stroke-width="1.5" marker-start="url(#arrowLeft)"/>
+  <line x1="430" y1="152" x2="440" y2="152" stroke="#c17f59" stroke-width="1.5" marker-end="url(#arrowRight)"/>
+
+  <defs>
+    <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6" fill="none" stroke="#c17f59" stroke-width="1"/>
+    </marker>
+    <marker id="arrowRight" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#c17f59" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom note -->
+  <text x="390" y="280" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#b0aaa3">SEO example: direct $75–250/h vs Upwork median ~$21/h</text>
+</svg>
