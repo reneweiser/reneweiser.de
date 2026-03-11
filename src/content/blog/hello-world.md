@@ -8,6 +8,10 @@ tags:
 published: true
 ---
 
+<script>
+  import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
+</script>
+
 This is the inaugural post of my blog. I built this portfolio site with SvelteKit and decided to add a blog section for longer-form technical writing.
 
 ## Why Write?
@@ -41,3 +45,8 @@ const modules = import.meta.glob("/src/content/blog/*.md", { eager: true });
 ```
 
 The entire blog is prerendered at build time. No server, no database, no JavaScript required for reading. Just HTML and CSS.
+
+<RelatedPost
+  slug="sveltekit-static-blog"
+  description="I walk through the full build process step by step — from mdsvex setup to static deployment."
+/>

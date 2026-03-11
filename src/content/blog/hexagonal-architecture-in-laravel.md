@@ -12,6 +12,11 @@ image: "/blog/hexagonal-architecture-in-laravel/hexagonal-architecture-title.web
 imageAlt: "Hexagonal Architecture in Laravel"
 ---
 
+<script>
+  import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
+  import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
+</script>
+
 Your Laravel app has 40+ models, features bleed across controllers, and every change touches six files you did not plan on opening. You have heard the hexagonal architecture pitch before: clean domain boundaries, swappable infrastructure, testable business logic. And you have heard [Taylor Otwell's counter](https://www.theregister.com/2025/09/01/laravel_inventor_clever_devs/): stop building "cathedrals of complexity." Both sides have a point.
 
 But there is a variable that did not exist two years ago: AI agents writing your code. That changes the cost-benefit math.
@@ -107,6 +112,11 @@ Since Laravel 11.39, the `#[UseFactory]` attribute points `HasFactory` to the ri
 Beyond factory resolution, you need to register policies manually instead of relying on auto-discovery, call `Relation::enforceMorphMap()` so polymorphic `morphable_type` values stay stable, and accept that `make:model` scaffolding and packages like Nova, Filament, and Spatie Permission default to the `App\Models` namespace. Laravel 12 improved nested policy discovery within `App\Models\*`, but models outside that namespace still need manual registration. None of these are blockers, but they add up.
 
 The pragmatic choice: keep models in `app/Models/` and wrap access behind repository interfaces defined in your domain layer. This is a trade-off, not a rule. Some teams have moved models successfully, and their reasons are valid. But for most projects, the convention friction is not worth the purity.
+
+<RelatedPost
+  slug="eloquent-eager-loading-n-plus-1"
+  description="If your models load dozens of relationships, eager loading prevents the N+1 trap before it starts."
+/>
 
 ## Hexagonal vs. Convention: The Practical Comparison
 
@@ -251,9 +261,16 @@ The threshold for "worth it" has lowered. It has not disappeared.
 
 <!-- internal link: service classes vs actions post (pipeline/2-outline/260331) — insert once published -->
 
+<FurtherReading
+  posts={[
+    { slug: "eloquent-eager-loading-n-plus-1", description: "Once your data access is behind repository interfaces, eager loading keeps those queries fast." },
+    { slug: "deploy-laravel-coolify", description: "Deploy the whole thing to a $5 VPS with Coolify and Nixpacks." }
+  ]}
+/>
+
 ---
 
-**Further reading:**
+**References:**
 
 - [Bardia Khosravi, "Backend Coding Rules for AI Coding Agents"](https://medium.com/@bardia.khosravi/backend-coding-rules-for-ai-coding-agents-ddd-and-hexagonal-architecture-ecafe91c753f)
 - [vFunction, "The Rise of Vibe Coding: Why Architecture Still Matters"](https://vfunction.com/blog/vibe-coding-architecture-ai-agents/)

@@ -12,6 +12,7 @@ published: true
 
 <script>
 	import TwitterEmbed from '$lib/components/blog/TwitterEmbed.svelte';
+	import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
 </script>
 
 Every AI skill, no matter how good, handles exactly one step in a workflow. The product value isn't in the generation. It's in everything that happens before and after: workflow orchestration, persistent state, and opinionated interfaces that make the AI's output consistently useful.
@@ -98,3 +99,9 @@ If you're building with AI, the tempting part is the model integration. The valu
 This pattern plays out at every scale. A solo developer building a content tool still needs to decide how to store user preferences, when to trigger notifications, and what metrics to surface. A team shipping an AI-powered analytics product faces the same questions with higher stakes: data retention policies, audit trails, graceful degradation when the model returns garbage. The architectural thinking is identical whether you're [choosing a static site generator](/blog/sveltekit-static-blog) or designing a multi-tenant AI platform. The AI model is a dependency, like a database or an API. The architecture around it is the product.
 
 The companies that win won't have better prompts. They'll have better scheduling, better memory, and better feedback loops. That's software engineering: the same work that made products valuable before AI was involved.
+
+<FurtherReading
+  posts={[
+    { slug: "hexagonal-architecture-in-laravel", description: "Architecture boundaries matter just as much when AI agents write the code — hexagonal structure keeps them scoped." }
+  ]}
+/>

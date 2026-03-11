@@ -11,6 +11,11 @@ imageAlt: "Isometric server rack with conveyor belt, Git logo, and Laravel conta
 published: true
 ---
 
+<script>
+  import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
+  import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
+</script>
+
 I spent two days trying to deploy a Laravel app on Coolify with a custom Dockerfile. Then with Docker Compose. Both approaches broke in different ways — build context issues, permission mismatches, services failing to connect. When I finally switched to [Nixpacks](https://nixpacks.com), which is what Coolify actually recommends in their docs, the deployment worked on the first try.
 
 This walkthrough covers the Nixpacks approach from server setup through database provisioning, queue workers, scheduled tasks, and SSL. By the end you will have a production Laravel deployment on a $5 VPS that you own completely — Forge or Render developer experience without the monthly tax or vendor dependency.
@@ -200,6 +205,11 @@ Everything is open source and portable. Your server runs standard Docker contain
 
 Cost comparison: this setup runs about $5/month for the VPS. Forge costs $20/month plus $5+ for the VPS. Railway or Render start at $20/month and scale up quickly with database and worker add-ons.
 
+<RelatedPost
+  slug="eloquent-eager-loading-n-plus-1"
+  description="Before deploying, make sure your queries are optimized — eager loading is the single highest-impact fix."
+/>
+
 ## Trade-offs and When This Does Not Fit
 
 You are the ops team. Server updates, security patches, and firewall rules are your responsibility. Coolify handles the application layer well, but the underlying OS is on you.
@@ -214,6 +224,12 @@ All services share resources on a single VPS. A 2 GB server handles moderate tra
 
 <!-- internal link: Laravel Docker local dev post -->
 <!-- internal link: Coolify advanced configuration post -->
+
+<FurtherReading
+  posts={[
+    { slug: "hexagonal-architecture-in-laravel", description: "Structure the app you're deploying — hexagonal architecture keeps domains clean as the codebase grows." }
+  ]}
+/>
 
 ---
 

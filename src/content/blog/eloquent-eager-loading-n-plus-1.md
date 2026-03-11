@@ -13,6 +13,10 @@ image: "/blog/eloquent-eager-loading-n-plus-one/title.webp"
 imageAlt: "Split cartoon scene contrasting N+1 query chaos with eager loading calm"
 ---
 
+<script>
+  import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
+</script>
+
 Your project dashboard loads in 800 ms. You open Laravel Debugbar and the Queries tab shows 51 queries for a list of 50 clients — one query to fetch the clients, then one per client to load their invoices. That is the N+1 query problem. It is the most common performance bottleneck in Eloquent applications, and eager loading fixes it with a single method call that cuts query count by 95% or more.
 
 This post uses a realistic client-and-invoices dashboard to walk through identifying N+1 queries, fixing them with four eager loading strategies plus Laravel 12.8's automatic eager loading, and measuring the results with Debugbar.
@@ -242,3 +246,10 @@ Eager loading is the single highest-impact query optimization in Eloquent. Enabl
 The strategy is straightforward: use `with()` when you know which relations the view needs, `withCount()` when you only need numbers, and let automatic eager loading cover the gaps.
 
 <!-- internal link: laravel query optimization patterns post -->
+
+<FurtherReading
+  posts={[
+    { slug: "hexagonal-architecture-in-laravel", description: "How to structure a Laravel app so eager loading decisions stay in the infrastructure layer." },
+    { slug: "deploy-laravel-coolify", description: "Once your queries are fast, deploy the whole thing to a $5 VPS." }
+  ]}
+/>
