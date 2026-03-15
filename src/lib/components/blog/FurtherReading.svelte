@@ -29,7 +29,7 @@
 
 <hr />
 
-<h2>Further reading</h2>
+<h2>Weiterlesen</h2>
 
 {#each posts as post (post.slug)}
 

@@ -1,13 +1,13 @@
 ---
-title: "Freelancer Rates in 2026: What the Market Actually Pays"
-description: "Aggregated freelancer rates for landing pages, SEO, and social media across DACH, US, and UK markets. Based on 20+ industry sources."
+title: "Freelancer-Stundensätze 2026: Was der Markt wirklich zahlt"
+description: "Aggregierte Stundensätze für Landing Pages, SEO und Social Media im DACH-Raum, USA und UK – ausgewertet aus 20+ Branchenquellen."
 date: "2026-03-11"
 tags:
   - Freelance
   - Career
 published: true
 image: /blog/freelancer-market-rates-2026/title.webp
-imageAlt: "Cartoon illustration of freelancers working in Berlin, New York, and London with floating price tags in euros, dollars, and pounds, connected by dotted lines around a central rate comparison chart."
+imageAlt: "Cartoon-Illustration von Freelancern, die in Berlin, New York und London arbeiten, mit schwebenden Preisschildern in Euro, Dollar und Pfund, verbunden durch gestrichelte Linien um ein zentrales Stundensatz-Vergleichsdiagramm."
 slug: freelancer-rates-2026
 ---
 
@@ -15,121 +15,121 @@ slug: freelancer-rates-2026
   import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
 </script>
 
-There is no single reliable source for what freelancers charge across services and regions. Industry surveys cover one niche. Platform data skews toward the low end. Agency pricing pages tell you what agencies charge, not what freelancers earn. I aggregated data from [20+ sources](#sources) across landing pages, SEO, and social media to get a clearer picture.
+Es gibt keine einzige verlässliche Quelle dafür, was Freelancer branchenübergreifend und regionenübergreifend verlangen. Branchenumfragen decken immer nur eine Nische ab. Plattformdaten verzerren nach unten. Agenturen publizieren Listenpreise – nicht das, was Freelancer tatsächlich verdienen. Ich habe Daten aus [20+ Quellen](#quellen) zu Landing Pages, SEO und Social Media zusammengetragen, um ein klareres Bild zu gewinnen.
 
-## What Was Compared
+## Was verglichen wurde
 
-Three service categories: landing page design and development, SEO consulting and implementation, and social media management. Three regions: DACH (Germany, Austria, Switzerland), US, and UK. Sources include industry surveys, freelancer platform data, agency pricing pages, and independent rate reports. This is not a controlled study. These are aggregated ranges that show where the market clusters.
+Drei Leistungsbereiche: Landing Page Design und Entwicklung, SEO-Beratung und -Umsetzung sowie Social-Media-Management. Drei Regionen: DACH (Deutschland, Österreich, Schweiz), USA und UK. Die Quellen umfassen Branchenumfragen, Freelancer-Plattformdaten, Agenturpreisseiten und unabhängige Honorarberichte. Das ist keine kontrollierte Studie. Es handelt sich um aggregierte Spannen, die zeigen, wo der Markt sich konzentriert.
 
-## Landing Page Rates
+## Stundensätze für Landing Pages
 
-Project pricing depends heavily on complexity. A simple landing page with a hero section, form, and stock images runs [$100–500 in the US](https://landerlab.io/blog/how-much-does-a-landing-page-cost) and 200–500 EUR in DACH. A complex build with animations, custom illustrations, and A/B testing reaches [$2,000–10,000+](https://www.apexure.com/blog/landing-page-design-cost-break-down) or 1,500–4,300+ EUR. Time investment scales accordingly: 8–10 hours for simple pages, 30–50 hours for complex ones.
+Die Projektpreise hängen stark vom Umfang ab. Eine einfache Landing Page mit Hero-Bereich, Formular und Stockfotos kostet [100–500 USD in den USA](https://landerlab.io/blog/how-much-does-a-landing-page-cost) und 200–500 EUR im DACH-Raum. Ein komplexes Projekt mit Animationen, individuellen Illustrationen und A/B-Testing erreicht [2.000–10.000+ USD](https://www.apexure.com/blog/landing-page-design-cost-break-down) bzw. 1.500–4.300+ EUR. Der Zeitaufwand skaliert entsprechend: 8–10 Stunden für einfache Seiten, 30–50 Stunden für komplexe Projekte.
 
-Hourly rates by region and experience level:
+Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | US (USD/h) | UK (GBP/h) | DACH (EUR/h) | Platforms (USD/h) |
+| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) | Plattformen (USD/h) |
 |---|---|---|---|---|
-| Entry-level | 20–40 | 30–40 | 50–65 | 15–30 |
-| Mid-level | 40–75 | 40–70 | 65–90 | 30–60 |
+| Einsteiger | 20–40 | 30–40 | 50–65 | 15–30 |
+| Mid-Level | 40–75 | 40–70 | 65–90 | 30–60 |
 | Senior | 75–150+ | 70–90+ | 90–120+ | 60–150+ |
 
-Sources: [Apexure](https://www.apexure.com/blog/landing-page-design-cost-break-down), [LanderLab](https://landerlab.io/blog/how-much-does-a-landing-page-cost), [Kopf und Stift](https://kopfundstift.de/webdesign-kosten/), [HeadOn](https://headon.pro/webdesigner-preise)
+Quellen: [Apexure](https://www.apexure.com/blog/landing-page-design-cost-break-down), [LanderLab](https://landerlab.io/blog/how-much-does-a-landing-page-cost), [Kopf und Stift](https://kopfundstift.de/webdesign-kosten/), [HeadOn](https://headon.pro/webdesigner-preise)
 
 <figure>
   <img src="/blog/freelancer-market-rates-2026/rate-comparison-by-region.svg" alt="Grouped horizontal bar chart comparing mid-level hourly rates for landing pages, SEO, and social media across US, UK, and DACH regions, showing near-parity between DACH and US rates." />
-  <figcaption>Mid-level hourly rates across regions. DACH and US rates cluster at nearly identical levels.</figcaption>
+  <figcaption>Mid-Level-Stundensätze im Regionenvergleich. DACH- und US-Sätze liegen auf nahezu identischem Niveau.</figcaption>
 </figure>
 
-There is a strong trend toward fixed pricing for landing pages rather than hourly billing. [Agencies charge 2.5–4x](https://www.apexure.com/blog/landing-page-design-cost-break-down) what a freelancer charges for comparable work.
+Im Bereich Landing Pages zeichnet sich ein klarer Trend zu Festpreisen statt Stundenhonoraren ab. [Agenturen verlangen das 2,5- bis 4-Fache](https://www.apexure.com/blog/landing-page-design-cost-break-down) gegenüber einem Freelancer bei vergleichbarer Leistung.
 
-## SEO Rates
+## Stundensätze für SEO
 
-SEO audit pricing scales with site size. A small site (1–50 pages) costs $500–2,000. Mid-size sites (50–500 pages) run $2,000–5,000. Enterprise audits start at $5,000 and can exceed $30,000. Typical time investment: 10–30 hours per audit.
+SEO-Audit-Preise skalieren mit der Seitengröße. Eine kleine Website (1–50 Seiten) kostet 500–2.000 USD. Mittelgroße Seiten (50–500 Seiten) liegen bei 2.000–5.000 USD. Enterprise-Audits beginnen bei 5.000 USD und können 30.000 USD übersteigen. Typischer Zeitaufwand: 10–30 Stunden pro Audit.
 
-Monthly retainers range from $750–1,500 for budget engagements to $3,500–7,500+ for senior specialists. The [average freelancer retainer sits at roughly $2,349/month](https://ahrefs.com/blog/seo-pricing/) based on a survey of 439 SEO professionals.
+Monatliche Retainer reichen von 750–1.500 USD für Einstiegspakete bis 3.500–7.500+ USD für Senior-Spezialisten. Der [durchschnittliche Freelancer-Retainer liegt bei rund 2.349 USD pro Monat](https://ahrefs.com/blog/seo-pricing/) – basierend auf einer Umfrage unter 439 SEO-Fachleuten.
 
-Hourly rates by region and experience level:
+Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | US (USD/h) | UK (GBP/h) | DACH (EUR/h) |
+| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
 |---|---|---|---|
-| Entry-level | 50–75 | 40–60 | 40–70 |
-| Mid-level | 75–150 | 60–100 | 75–150 |
+| Einsteiger | 50–75 | 40–60 | 40–70 |
+| Mid-Level | 75–150 | 60–100 | 75–150 |
 | Senior | 150–250 | 100–150+ | 120–220 |
-| Technical specialist | 200–300+ | 150+ | 150–220+ |
+| Technical Specialist | 200–300+ | 150+ | 150–220+ |
 
-Sources: [Backlinko](https://backlinko.com/seo-pricing), [Ahrefs](https://ahrefs.com/blog/seo-pricing/), [SICHTBAR SEO](https://sichtbar-online.com/blog/was-kostet-ein-seo-freelancer-2026/), [Evergreen Media](https://www.evergreen.media/ratgeber/seo-kosten/)
+Quellen: [Backlinko](https://backlinko.com/seo-pricing), [Ahrefs](https://ahrefs.com/blog/seo-pricing/), [SICHTBAR SEO](https://sichtbar-online.com/blog/was-kostet-ein-seo-freelancer-2026/), [Evergreen Media](https://www.evergreen.media/ratgeber/seo-kosten/)
 
-Technical SEO commands the highest rates across all regions. Site migrations alone start at $15,000.
+Technisches SEO erzielt in allen Regionen die höchsten Stundensätze. Allein Site-Migrationen beginnen bei 15.000 USD.
 
-## Social Media Rates
+## Stundensätze für Social Media
 
-Monthly retainers depend on scope. Managing 1–2 platforms costs $500–1,500/month. A full-service package covering 3–5 platforms with content creation, community management, and reporting runs $3,000–7,000+ in the US and 3,000–5,000+ EUR in DACH.
+Monatliche Retainer hängen vom Leistungsumfang ab. Die Betreuung von 1–2 Plattformen kostet 500–1.500 USD/Monat. Ein Full-Service-Paket mit 3–5 Plattformen inklusive Content-Erstellung, Community-Management und Reporting liegt bei 3.000–7.000+ USD in den USA und 3.000–5.000+ EUR im DACH-Raum.
 
-Per-piece content pricing varies widely: $25–150 for a text post, $100–500 for a short-form video (Reel/TikTok), and $500–2,500 for long-form video (YouTube).
+Die Einzelpreise für Content variieren stark: 25–150 USD pro Text-Post, 100–500 USD für Kurzvideos (Reels/TikTok) und 500–2.500 USD für Langform-Video (YouTube).
 
-Hourly rates by region and experience level:
+Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | US (USD/h) | UK (GBP/h) | DACH (EUR/h) |
+| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
 |---|---|---|---|
-| Entry-level | 15–35 | 25–40 | 25–50 |
-| Mid-level | 35–75 | 40–60 | 50–90 |
-| Expert | 75–150+ | 60–100 | 90–150 |
+| Einsteiger | 15–35 | 25–40 | 25–50 |
+| Mid-Level | 35–75 | 40–60 | 50–90 |
+| Experte | 75–150+ | 60–100 | 90–150 |
 
-Sources: [Sprout Social](https://sproutsocial.com/), [Buffer](https://buffer.com/), [HubSpot](https://www.hubspot.com/)
+Quellen: [Sprout Social](https://sproutsocial.com/), [Buffer](https://buffer.com/), [HubSpot](https://www.hubspot.com/)
 
-The [average hourly rate across all German freelancers](https://janina-ruth-seo-sem.de/preise/stundensatz-freelancer/) is 103 EUR.
+Der [durchschnittliche Stundensatz über alle deutschen Freelancer hinweg](https://janina-ruth-seo-sem.de/preise/stundensatz-freelancer/) liegt bei 103 EUR.
 
-## What Stands Out
+## Was auffällt
 
-The most consistent finding across all the data: DACH rates sit at US parity. The assumption that American freelancers earn more does not hold up. When you convert currencies, hourly rates in both markets are nearly identical across all three service categories.
+Der konsistenteste Befund über alle Daten hinweg: DACH-Stundensätze liegen auf US-Niveau. Die Annahme, amerikanische Freelancer würden mehr verdienen, hält dem Vergleich nicht stand. Rechnet man die Währungen um, sind die Stundensätze beider Märkte in allen drei Leistungsbereichen nahezu identisch.
 
-Platform rates tell a different story. Freelancers on [Upwork and Fiverr charge 30–50% less](https://www.jobbers.io/hidden-costs-of-hiring-on-upwork-fiverr-vs-direct-platforms-in-2026-the-complete-financial-analysis-for-employers/) than those working with clients directly. The Upwork median for SEO sits at roughly $21/hour. Experienced SEO freelancers working directly charge $75–250/hour.
+Plattformdaten zeichnen ein anderes Bild. Freelancer auf [Upwork und Fiverr verlangen 30–50 % weniger](https://www.jobbers.io/hidden-costs-of-hiring-on-upwork-fiverr-vs-direct-platforms-in-2026-the-complete-financial-analysis-for-employers/) als solche, die direkt mit Kunden arbeiten. Der Upwork-Median für SEO liegt bei rund 21 USD/Stunde. Erfahrene SEO-Freelancer im Direktgeschäft berechnen 75–250 USD/Stunde.
 
 <figure>
   <img src="/blog/freelancer-market-rates-2026/platform-vs-direct.svg" alt="Side-by-side comparison of direct freelancer rates versus platform rates, showing a 30 to 50 percent gap. SEO example: direct $75–250 per hour vs Upwork median ~$21 per hour." />
-  <figcaption>Direct freelancer rates vs platform rates. The gap is widest for SEO services.</figcaption>
+  <figcaption>Direktstundensätze vs. Plattformsätze. Die Lücke ist bei SEO-Leistungen am größten.</figcaption>
 </figure>
 
 <RelatedPost
   slug="deploy-laravel-coolify"
-  description="Infrastructure costs affect your margins directly — a $5 VPS replaces $20+/month managed platforms."
+  description="Infrastrukturkosten wirken sich direkt auf die Marge aus — ein 5-Dollar-VPS ersetzt Managed-Plattformen ab 20 USD/Monat."
 />
 
-The agency markup of 2.5–4x held across all three categories. Landing pages, SEO, social media — agencies charge roughly three times what a solo freelancer charges for comparable deliverables.
+Der Agentur-Aufschlag von 2,5–4x blieb über alle drei Leistungsbereiche konstant. Landing Pages, SEO, Social Media — Agenturen verlangen im Schnitt das Dreifache dessen, was ein Solo-Freelancer für vergleichbare Leistungen berechnet.
 
 <figure>
   <img src="/blog/freelancer-market-rates-2026/agency-markup.svg" alt="Freelancer rate of $75 per hour multiplied by 2.5 to 4 times, resulting in agency rate of $190 to $300 per hour for comparable deliverables." />
-  <figcaption>The 2.5–4× agency markup is consistent across all three service categories.</figcaption>
+  <figcaption>Der 2,5- bis 4-fache Agentur-Aufschlag zieht sich konsistent durch alle drei Leistungsbereiche.</figcaption>
 </figure>
 
-But the largest price differences come from specialization, not geography or channel. A generalist social media manager at 25–50 EUR/h and a technical SEO specialist at 150–220+ EUR/h work in entirely different pricing tiers, regardless of where they are based.
+Die größten Preisunterschiede entstehen jedoch durch Spezialisierung — nicht durch Geografie oder Kanal. Ein generalistischer Social-Media-Manager bei 25–50 EUR/h und ein technischer SEO-Spezialist bei 150–220+ EUR/h bewegen sich in vollständig unterschiedlichen Preissegmenten, unabhängig vom Standort.
 
 <figure>
   <img src="/blog/freelancer-market-rates-2026/specialization-vs-geography.svg" alt="Horizontal spectrum from generalist social media manager at 25–50 euros per hour to technical SEO specialist at 150–220+ euros per hour, showing a 4 to 9 times range within the same market." />
-  <figcaption>Specialization drives a 4–9× price range within the same region.</figcaption>
+  <figcaption>Spezialisierung treibt eine 4- bis 9-fache Preisspanne innerhalb derselben Region.</figcaption>
 </figure>
 
-Pricing models also split along service lines. Landing pages trend toward fixed project pricing. SEO and social media lean toward monthly retainers.
+Auch die Preismodelle unterscheiden sich nach Leistungsbereich. Landing Pages tendieren zu Festpreisen. SEO und Social Media laufen mehrheitlich über monatliche Retainer.
 
-## What These Numbers Don't Tell You
+## Was diese Zahlen nicht zeigen
 
-Aggregated rate data is useful as a market orientation. But there are real limits to what these numbers can tell you.
+Aggregierte Honorardaten sind nützlich zur Marktorientierung. Aber es gibt klare Grenzen dafür, was sich daraus ablesen lässt.
 
-**Purchasing power and tax burden.** DACH-US nominal parity is misleading without context. A German freelancer at 100 EUR/h pays an effective income tax rate of roughly 35%. The often-cited 42% is the marginal rate, not what you actually pay on total income. Health insurance adds roughly 5–7% at that income level but is capped, not proportional. Pension contributions are optional for most freelancers. Total effective burden: around 40–44%. A US freelancer at $100/h in Texas pays roughly 30% in federal and self-employment tax but also covers health insurance out of pocket, typically $500–800+/month with no employer contribution. Once you factor in health costs on both sides, the net take-home gap between DACH and the US is smaller than tax rates alone suggest.
+**Kaufkraft und Steuerlast.** Die nominale Parität DACH–USA ist ohne Kontext irreführend. Ein deutscher Freelancer bei 100 EUR/h zahlt einen effektiven Einkommensteuersatz von rund 35 %. Der oft zitierte Spitzensteuersatz von 42 % ist der Grenzsteuersatz, nicht der Durchschnittssatz auf das Gesamteinkommen. Die Krankenversicherung kommt bei diesem Einkommensniveau mit rund 5–7 % hinzu, ist jedoch gedeckelt. Rentenversicherungsbeiträge sind für die meisten Freiberufler optional. Gesamte effektive Belastung: rund 40–44 %. Ein US-Freelancer bei 100 USD/h in Texas zahlt rund 30 % Bundes- und Self-Employment-Steuer, muss aber auch die Krankenversicherung selbst tragen — typischerweise 500–800+ USD/Monat ohne Arbeitgeberbeitrag. Rechnet man die Gesundheitskosten auf beiden Seiten ein, ist die Nettodifferenz zwischen DACH und den USA deutlich kleiner, als reine Steuersätze vermuten lassen.
 
-**Platform self-selection bias.** The 30–50% platform discount is not purely a platform effect. Less experienced freelancers disproportionately start on platforms like Upwork and Fiverr. The rate gap partly reflects experience level, not just the sales channel. Platform fees (up to 20% on Upwork) further reduce the freelancer's effective rate, making the gap between what the client pays and what the freelancer keeps even wider.
+**Selbstselektionsbias auf Plattformen.** Der Plattform-Abschlag von 30–50 % ist kein reiner Plattformeffekt. Weniger erfahrene Freelancer starten überproportional häufig auf Upwork und Fiverr. Die Honorarlücke spiegelt teilweise das Erfahrungsniveau wider — nicht nur den Vertriebskanal. Plattformgebühren (bis zu 20 % bei Upwork) reduzieren den effektiven Stundensatz des Freelancers zusätzlich und vergrößern die Lücke zwischen dem, was der Kunde zahlt, und dem, was der Freelancer behält.
 
-**Source methodology varies.** These 20+ sources include self-reported surveys ([Ahrefs](https://ahrefs.com/blog/seo-pricing/), n=439), agency pricing pages ([Apexure](https://www.apexure.com/blog/landing-page-design-cost-break-down), [Kopf und Stift](https://kopfundstift.de/webdesign-kosten/)), platform data (Upwork medians), and industry reports. They use different sample sizes, time periods, and definitions of "freelancer." The aggregated ranges are directional, not precise benchmarks.
+**Unterschiedliche Quellmethodik.** Diese 20+ Quellen umfassen selbstberichtete Umfragen ([Ahrefs](https://ahrefs.com/blog/seo-pricing/), n=439), Agenturpreisseiten ([Apexure](https://www.apexure.com/blog/landing-page-design-cost-break-down), [Kopf und Stift](https://kopfundstift.de/webdesign-kosten/)), Plattformdaten (Upwork-Mediane) und Branchenberichte. Sie verwenden unterschiedliche Stichprobengrößen, Zeiträume und Definitionen von „Freelancer". Die aggregierten Spannen sind Richtungswerte — keine präzisen Benchmarks.
 
-**Survivorship bias.** Published rate data skews toward freelancers who are visible, active, and willing to share what they charge. Freelancers who charge very low rates, work exclusively through referrals, or have left the market entirely are underrepresented in every source I reviewed.
+**Survivorship Bias.** Veröffentlichte Honorardaten verzerren zugunsten von Freelancern, die sichtbar, aktiv und bereit sind, über ihre Preise zu sprechen. Freelancer, die sehr niedrige Stundensätze verlangen, ausschließlich über Empfehlungen arbeiten oder den Markt verlassen haben, sind in jeder der ausgewerteten Quellen unterrepräsentiert.
 
-## Closing
+## Fazit
 
-These ranges are a starting point for understanding where the market sits, not a pricing guide. What any individual freelancer charges depends on specialization, positioning, client acquisition channel, and local economics. The data shows broad patterns. Where you land within them depends on those specifics.
+Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt — kein Preisleitfaden. Was ein einzelner Freelancer berechnet, hängt von Spezialisierung, Positionierung, Akquisitionskanal und den lokalen wirtschaftlichen Rahmenbedingungen ab. Die Daten zeigen breite Muster. Wo man sich darin einordnet, ergibt sich aus diesen Spezifika.
 
 ---
 
-## Sources
+## Quellen
 
 ### Landing Pages
 - [Apexure — Landing Page Design Cost 2026](https://www.apexure.com/blog/landing-page-design-cost-break-down)

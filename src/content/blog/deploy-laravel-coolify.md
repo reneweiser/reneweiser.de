@@ -1,13 +1,13 @@
 ---
-title: "Deploy Laravel to a VPS with Coolify"
-description: "Deploy Laravel on a $5 VPS with Coolify and Nixpacks — the approach that actually works. Database, queues, SSL, and zero vendor lock-in."
+title: "Laravel auf einem VPS deployen — ohne teure Managed-Plattformen"
+description: "Laravel auf einem 5-€-VPS mit Coolify und Nixpacks deployen: Datenbank, Queues, SSL und kein Vendor Lock-in. Forge-Erfahrung zum Bruchteil des Preises."
 date: "2026-03-10"
 tags:
   - Laravel
   - Deployment
   - DevOps
 image: "/blog/deploy-laravel-coolify/title.webp"
-imageAlt: "Isometric server rack with conveyor belt, Git logo, and Laravel containers illustrating a deploy pipeline"
+imageAlt: "Isometrisches Server-Rack mit Förderband, Git-Logo und Laravel-Containern als Illustration einer Deploy-Pipeline"
 published: true
 ---
 
@@ -16,31 +16,35 @@ published: true
   import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
 </script>
 
-I spent two days trying to deploy a Laravel app on Coolify with a custom Dockerfile. Then with Docker Compose. Both approaches broke in different ways — build context issues, permission mismatches, services failing to connect. When I finally switched to [Nixpacks](https://nixpacks.com), which is what Coolify actually recommends in their docs, the deployment worked on the first try.
+Forge kostet 20 €/Monat — zuzüglich VPS. Railway und Render starten ebenfalls bei 20 €/Monat und skalieren schnell nach oben, sobald Datenbank und Queue-Worker dazukommen. Für ein einzelnes Projekt oder ein kleines Portfolio summiert sich das auf 300–500 € pro Jahr, ohne dass sich der Mehrwert gegenüber einer selbst verwalteten Lösung klar rechnet.
 
-This walkthrough covers the Nixpacks approach from server setup through database provisioning, queue workers, scheduled tasks, and SSL. By the end you will have a production Laravel deployment on a $5 VPS that you own completely — Forge or Render developer experience without the monthly tax or vendor dependency.
+Ein 5-€-VPS mit Coolify ersetzt diese Plattformen vollständig — mit Push-to-Deploy, verwalteten Datenbanken, Queue-Workern und automatischem SSL. Wer mehrere Projekte betreibt, spart noch mehr: Ein einziger VPS hostet beliebig viele Laravel-Apps.
 
-## The Coolify and Laravel Stack
+Ich habe zwei Tage damit verbracht, eine Laravel-App auf Coolify mit einem eigenen Dockerfile zum Laufen zu bringen — dann mit Docker Compose. Beide Ansätze haben auf unterschiedliche Arten versagt: Build-Context-Probleme, falsche Berechtigungen, Services die sich nicht verbinden ließen. Als ich schließlich auf [Nixpacks](https://nixpacks.com) umgestiegen bin — den Ansatz, den Coolify in der eigenen Dokumentation empfiehlt — funktionierte das Deployment beim ersten Versuch.
 
-- **[Laravel 12](https://laravel.com/docs/12.x)** on PHP 8.5
-- **Coolify v4** (self-hosted PaaS, open source)
-- **Nixpacks** build pack (Coolify's recommended approach for Laravel)
-- **VPS**: $5-6/month from Hetzner, DigitalOcean, or Contabo (2 vCPU, 2-4 GB RAM)
-- **Ubuntu 22.04 or 24.04 LTS**
+Diese Anleitung deckt den Nixpacks-Ansatz von der Server-Einrichtung bis zu Datenbankprovisionierung, Queue-Workern, geplanten Tasks und SSL ab. Am Ende läuft Laravel produktiv auf einem VPS, den du vollständig kontrollierst — ohne monatliche Lizenzgebühren oder Abhängigkeit von einem Drittanbieter.
+
+## Der Stack
+
+- **[Laravel 12](https://laravel.com/docs/12.x)** auf PHP 8.5
+- **Coolify v4** (selbst gehostetes PaaS, Open Source)
+- **Nixpacks** Build Pack (Coolify's empfohlener Ansatz für Laravel)
+- **VPS**: 5–6 €/Monat bei Hetzner, DigitalOcean oder Contabo (2 vCPU, 2–4 GB RAM)
+- **Ubuntu 22.04 oder 24.04 LTS**
 - **MySQL 8.0** via Coolify
 - **Redis** via Coolify
 
-Coolify supports PostgreSQL, MariaDB, and others. Swapping databases is a dropdown change in the dashboard.
+Coolify unterstützt auch PostgreSQL, MariaDB und weitere Datenbanken. Der Wechsel ist eine Dropdown-Auswahl im Dashboard.
 
-### Why Not Dockerfile or Docker Compose?
+### Warum nicht Dockerfile oder Docker Compose?
 
-Coolify technically supports all three build methods: Nixpacks, Dockerfile, and Docker Compose. In practice, Nixpacks is the path of least resistance. The Dockerfile approach requires you to handle PHP extensions, Nginx configuration, process management, and file permissions yourself — all problems Nixpacks solves automatically. Docker Compose adds another layer of complexity with networking between services and build context configuration that fights Coolify's own container management. Save yourself the debugging and use what Coolify is built around.
+Coolify unterstützt technisch alle drei Build-Methoden: Nixpacks, Dockerfile und Docker Compose. In der Praxis ist Nixpacks der Weg des geringsten Widerstands. Der Dockerfile-Ansatz erfordert, dass du PHP-Extensions, Nginx-Konfiguration, Prozessverwaltung und Dateirechte selbst handhabst — alles Probleme, die Nixpacks automatisch löst. Docker Compose fügt eine weitere Komplexitätsebene hinzu, mit Networking zwischen Services und Build-Context-Konfiguration, die Coolify's eigenes Container-Management stört. Das Debugging spart man sich, wenn man das nimmt, wofür Coolify gebaut wurde.
 
-## Setting Up Coolify on a VPS
+## Coolify auf einem VPS einrichten
 
-You need three things before starting: a fresh VPS with a public IP, SSH root access, and a domain with an A record pointing to that IP.
+Drei Dinge werden vorab benötigt: ein frischer VPS mit öffentlicher IP, SSH-Root-Zugang und eine Domain mit einem A-Record, der auf diese IP zeigt.
 
-The install is a single command. SSH in and run:
+Die Installation ist ein einzelner Befehl. SSH einloggen und ausführen:
 
 ```bash
 ssh root@your-server-ip
@@ -48,22 +52,22 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 ufw allow 80/tcp && ufw allow 443/tcp && ufw allow 8000/tcp
 ```
 
-The script installs Docker, Docker Compose, and the Coolify containers. It takes two to three minutes on a fresh server. Once it finishes, open `http://<server-ip>:8000` in your browser and create an admin account. Then add your server as a "localhost" destination in the Coolify UI.
+Das Skript installiert Docker, Docker Compose und die Coolify-Container. Es dauert zwei bis drei Minuten auf einem frischen Server. Danach öffnet man `http://<server-ip>:8000` im Browser und legt ein Admin-Konto an. Dann den Server als "localhost"-Ziel in der Coolify-UI hinzufügen.
 
-Coolify is essentially a UI and automation layer on top of Docker Compose. Every resource you create becomes a container managed through compose files under the hood.
+Coolify ist im Wesentlichen eine UI- und Automatisierungsschicht auf Docker Compose. Jede Ressource, die man erstellt, wird intern als Container über Compose-Dateien verwaltet.
 
-A few things to keep in mind: Coolify itself uses around 500 MB of RAM, so 2 GB is the practical minimum. You need ports 80, 443, and 8000 open during setup. After the initial configuration, restrict port 8000 to your IP or close it entirely and access Coolify through a domain with SSL.
+Einige wichtige Hinweise: Coolify selbst belegt rund 500 MB RAM, daher sind 2 GB das praktische Minimum. Die Ports 80, 443 und 8000 müssen während der Einrichtung geöffnet sein. Nach der initialen Konfiguration sollte Port 8000 auf die eigene IP beschränkt oder vollständig geschlossen werden — Coolify dann über eine Domain mit SSL erreichbar machen.
 
 <figure>
   <img src="/blog/deploy-laravel-coolify/coolify-stack-architecture.svg" alt="Architecture diagram showing a VPS running Coolify with Traefik reverse proxy, a Laravel container managed by Supervisor, and MySQL and Redis database containers" />
-  <figcaption>The full stack: Traefik handles SSL, Supervisor manages Nginx, PHP-FPM, and queue workers inside a single Laravel container, with MySQL and Redis as separate services.</figcaption>
+  <figcaption>Der vollständige Stack: Traefik übernimmt SSL, Supervisor verwaltet Nginx, PHP-FPM und Queue-Worker innerhalb eines einzelnen Laravel-Containers, MySQL und Redis laufen als separate Services.</figcaption>
 </figure>
 
-## Provisioning the Database and Redis
+## Datenbank und Redis provisionieren
 
-In the Coolify dashboard, create a new MySQL 8.0 resource. Coolify generates a root password and connection URL automatically. Creating a Redis instance works the same way and takes about 30 seconds.
+Im Coolify-Dashboard eine neue MySQL-8.0-Ressource anlegen. Coolify generiert automatisch ein Root-Passwort und eine Verbindungs-URL. Eine Redis-Instanz zu erstellen funktioniert genauso und dauert etwa 30 Sekunden.
 
-Both services run as Docker containers with persistent volumes. Your Laravel app connects to them via internal Docker container names, not `127.0.0.1` or external IPs. Coolify provides the connection details:
+Beide Services laufen als Docker-Container mit persistenten Volumes. Die Laravel-App verbindet sich über interne Docker-Container-Namen, nicht über `127.0.0.1` oder externe IPs. Coolify stellt die Verbindungsdetails bereit:
 
 ```bash
 DB_CONNECTION=mysql
@@ -77,16 +81,15 @@ REDIS_HOST=your-redis-container-name
 REDIS_PORT=6379
 ```
 
-Coolify handles volume persistence across container restarts and rebuilds. Only expose port 3306 externally if you need to connect from a local database client during development. Coolify also supports scheduled backups to any S3-compatible storage, which you should configure before going live.
+Coolify verwaltet die Volume-Persistenz über Container-Neustarts und Rebuilds hinweg. Port 3306 sollte nur dann extern geöffnet werden, wenn man sich während der Entwicklung von einem lokalen Datenbank-Client verbinden muss. Coolify unterstützt auch geplante Backups auf jeden S3-kompatiblen Speicher — das sollte vor dem Go-Live konfiguriert werden.
 
+## Das Laravel-Repository verbinden
 
-## Connecting Your Laravel Repository
+Im Coolify-Dashboard eine "Application"-Ressource erstellen und die Git-Quelle auswählen. Coolify unterstützt GitHub, GitLab, Bitbucket und beliebige Git-URLs über SSH oder HTTPS. Die GitHub-App-Integration ist die sauberste Option, da sie automatische Deployments bei Push ohne das Verwalten von Deploy-Keys ermöglicht.
 
-Create an "Application" resource in Coolify and select your Git source. Coolify supports GitHub, GitLab, Bitbucket, and any Git URL over SSH or HTTPS. The GitHub App integration is the cleanest option because it enables automatic deployments on push without managing deploy keys.
+Repository und Branch auswählen (typischerweise `main`). Coolify erkennt PHP/Laravel-Projekte automatisch und weist das **[Nixpacks](https://nixpacks.com)**-Build-Pack zu, eine Open-Source-Alternative zu Heroku Buildpacks. Es übernimmt die Installation von PHP, Composer-Abhängigkeiten und Node, wenn nötig.
 
-Select your repository and branch (typically `main`). Coolify auto-detects PHP/Laravel projects and assigns the **[Nixpacks](https://nixpacks.com)** build pack, which is an open-source alternative to Heroku buildpacks. It handles installing PHP, Composer dependencies, and Node if needed.
-
-For more control over the PHP version, extensions, and process management, add a `nixpacks.toml` to your project root. The [Coolify Laravel docs](https://coolify.io/docs/applications/laravel) recommend using Supervisor to manage Nginx, PHP-FPM, and queue workers inside a single container:
+Für mehr Kontrolle über PHP-Version, Extensions und Prozessverwaltung eine `nixpacks.toml` zum Projekt-Root hinzufügen. Die [Coolify-Laravel-Dokumentation](https://coolify.io/docs/applications/laravel) empfiehlt Supervisor, um Nginx, PHP-FPM und Queue-Worker innerhalb eines einzelnen Containers zu verwalten:
 
 ```toml
 [phases.setup]
@@ -108,24 +111,24 @@ cmds = [
 cmd = "supervisord -c /etc/supervisor/conf.d/supervisord.conf"
 ```
 
-The Supervisor config (`.deploy/supervisord.conf`) runs three processes: Nginx on port 80, PHP-FPM for the application, and a queue worker. Each process gets `autorestart=true` so Supervisor recovers from crashes automatically.
+Die Supervisor-Konfiguration (`.deploy/supervisord.conf`) startet drei Prozesse: Nginx auf Port 80, PHP-FPM für die Anwendung und einen Queue-Worker. Jeder Prozess hat `autorestart=true`, sodass Supervisor nach Abstürzen automatisch neu startet.
 
-This pins PHP 8.5 and declares extensions explicitly so builds are reproducible. Without it, Nixpacks picks sensible defaults but might miss extensions your app depends on (like `gd` or `intl`). The Supervisor approach keeps everything in one container managed by Coolify, which is simpler to deploy and monitor than running separate containers for each process.
+Damit wird PHP 8.5 fest eingestellt und Extensions explizit deklariert, sodass Builds reproduzierbar sind. Ohne diese Datei wählt Nixpacks sinnvolle Standardwerte, übersieht aber möglicherweise Extensions, von denen die App abhängt (wie `gd` oder `intl`). Der Supervisor-Ansatz hält alles in einem Container, der von Coolify verwaltet wird — einfacher zu deployen und zu überwachen als separate Container für jeden Prozess.
 
-Set your domain in Coolify's application settings. Coolify configures the reverse proxy automatically, routing traffic from that domain to your Laravel container.
+Die Domain in den Coolify-Anwendungseinstellungen setzen. Coolify konfiguriert den Reverse Proxy automatisch und leitet Traffic von dieser Domain an den Laravel-Container weiter.
 
 <figure>
   <img src="/blog/deploy-laravel-coolify/deploy-flow.svg" alt="Deploy flow diagram showing the steps from git push to production: push to main, Coolify webhook, Nixpacks build, post-deploy commands, and traffic swap" />
-  <figcaption>Push-to-deploy: a git push triggers the full pipeline from build through migration to traffic swap, with automatic rollback if anything fails.</figcaption>
+  <figcaption>Push-to-Deploy: Ein Git-Push löst die gesamte Pipeline aus — vom Build über die Migration bis zum Traffic-Swap, mit automatischem Rollback bei Fehlern.</figcaption>
 </figure>
 
 <!-- internal link: Laravel CI/CD with GitHub Actions post -->
 
-## Environment Variables and Laravel Configuration
+## Umgebungsvariablen und Laravel-Konfiguration
 
-In the Coolify application settings, add your Laravel environment variables. Coolify injects these into the container at runtime, so nothing gets baked into the image.
+In den Coolify-Anwendungseinstellungen die Laravel-Umgebungsvariablen eintragen. Coolify injiziert diese zur Laufzeit in den Container — nichts wird ins Image gebacken.
 
-Here are the production values you need to set (only the ones that differ from a standard `.env.example`):
+Die Produktionswerte, die gesetzt werden müssen (nur die, die vom Standard-`.env.example` abweichen):
 
 ```bash
 APP_NAME="Your App Name"
@@ -151,13 +154,13 @@ SESSION_DRIVER=redis
 LOG_CHANNEL=stderr
 ```
 
-Generate `APP_KEY` locally with `php artisan key:generate --show` and paste the output into Coolify.
+`APP_KEY` lokal generieren mit `php artisan key:generate --show` und die Ausgabe in Coolify einfügen.
 
-Two things that trip people up: `APP_URL` must include `https://` and match your actual domain exactly, and `DB_HOST` / `REDIS_HOST` are Docker container names, not `127.0.0.1`. Coolify encrypts sensitive values at rest, so credentials are not stored in plaintext on the server.
+Zwei häufige Fehlerquellen: `APP_URL` muss `https://` enthalten und exakt mit der tatsächlichen Domain übereinstimmen. `DB_HOST` und `REDIS_HOST` sind Docker-Container-Namen, nicht `127.0.0.1`. Coolify verschlüsselt sensible Werte im Ruhezustand, sodass Zugangsdaten nicht im Klartext auf dem Server gespeichert werden.
 
-## Running Migrations and Build Commands
+## Migrationen und Build-Commands ausführen
 
-Coolify supports pre-deploy and post-deploy commands that run inside the container after each build. Set these as your post-deploy commands:
+Coolify unterstützt Pre-Deploy- und Post-Deploy-Befehle, die nach jedem Build innerhalb des Containers ausgeführt werden. Diese als Post-Deploy-Commands setzen:
 
 ```bash
 php artisan optimize:clear
@@ -169,70 +172,70 @@ php artisan migrate --force
 php artisan storage:link
 ```
 
-The `optimize:clear` and individual `clear` commands wipe stale caches from the previous deployment before `optimize` rebuilds them fresh. Production requires the `--force` flag on `migrate` because Artisan refuses to run migrations without it when `APP_ENV=production`.
+Die `optimize:clear`- und einzelnen `clear`-Befehle löschen veraltete Caches des vorherigen Deployments, bevor `optimize` sie neu aufbaut. In der Produktion ist das `--force`-Flag bei `migrate` erforderlich, da Artisan Migrationen ohne es verweigert, wenn `APP_ENV=production` gesetzt ist.
 
-For the first deployment, trigger it manually from the Coolify dashboard and watch the build log. If a migration fails, the deployment fails and the previous container keeps serving traffic. This gives you a basic zero-downtime safety net out of the box.
+Beim ersten Deployment das Deployment manuell aus dem Coolify-Dashboard auslösen und das Build-Log beobachten. Schlägt eine Migration fehl, schlägt das Deployment fehl und der vorherige Container bedient weiterhin den Traffic. Das ergibt out of the box ein grundlegendes Zero-Downtime-Sicherheitsnetz.
 
-If your app uses Vite, the `npm ci && npm run build` step in `nixpacks.toml` handles frontend asset compilation during the build phase, before the container starts.
+Wenn die App Vite verwendet, übernimmt der Schritt `npm ci && npm run build` in `nixpacks.toml` die Frontend-Asset-Kompilierung während der Build-Phase, bevor der Container startet.
 
-## Queue Workers and Task Scheduling
+## Queue-Worker und Task-Scheduling
 
-The Supervisor configuration in `nixpacks.toml` already handles this. The `[start]` section launches Supervisor, which manages three processes: Nginx serving HTTP requests, PHP-FPM handling application code, and a queue worker processing jobs from Redis. All three run inside the same container.
+Die Supervisor-Konfiguration in `nixpacks.toml` übernimmt das bereits. Der `[start]`-Abschnitt startet Supervisor, das drei Prozesse verwaltet: Nginx für HTTP-Anfragen, PHP-FPM für den Anwendungscode und einen Queue-Worker, der Jobs aus Redis verarbeitet. Alle drei laufen im selben Container.
 
-The queue worker command in the Supervisor config uses `--max-time=3600` to restart every hour, preventing memory leaks from long-running processes. `--max-jobs=1000` adds a second safety valve. If a worker crashes, Supervisor restarts it automatically — that is what `autorestart=true` does.
+Der Queue-Worker-Befehl in der Supervisor-Konfiguration verwendet `--max-time=3600`, um stündlich neu zu starten und so Memory Leaks durch lang laufende Prozesse zu verhindern. `--max-jobs=1000` fügt ein zweites Sicherheitsventil hinzu. Stürzt ein Worker ab, startet Supervisor ihn automatisch neu — dafür ist `autorestart=true` zuständig.
 
-For task scheduling, add a cron entry to the Supervisor config or use Coolify's built-in cron job feature from the dashboard. Either way, the command is `php artisan schedule:run`, executed every minute.
+Für Task-Scheduling einen Cron-Eintrag zur Supervisor-Konfiguration hinzufügen oder das integrierte Cron-Job-Feature von Coolify im Dashboard verwenden. In beiden Fällen lautet der Befehl `php artisan schedule:run`, ausgeführt jede Minute.
 
-Monitor the `failed_jobs` table. A queue setup without monitoring is a queue setup that silently drops work.
+Die `failed_jobs`-Tabelle überwachen. Ein Queue-Setup ohne Monitoring ist eines, das Aufgaben stillschweigend fallen lässt.
 
-## SSL and Domain Configuration
+## SSL und Domain-Konfiguration
 
-Coolify ships with **Traefik** as the default reverse proxy, though you can switch to Caddy. Both auto-provision [Let's Encrypt](https://letsencrypt.org) certificates when you assign a domain to a resource.
+Coolify wird mit **Traefik** als Standard-Reverse-Proxy ausgeliefert, alternativ ist Caddy möglich. Beide provisionieren automatisch [Let's-Encrypt](https://letsencrypt.org)-Zertifikate, sobald einer Ressource eine Domain zugewiesen wird.
 
-The setup is three steps: point your A record to the server, set the domain in Coolify's application settings, and toggle HTTPS on. Coolify handles the certificate request, renewal, and HTTPS redirect automatically.
+Die Einrichtung besteht aus drei Schritten: A-Record auf den Server zeigen lassen, Domain in den Coolify-Anwendungseinstellungen setzen und HTTPS aktivieren. Coolify übernimmt Zertifikatsanforderung, Erneuerung und HTTPS-Weiterleitung automatisch.
 
-Each domain or subdomain you assign gets its own certificate. If you need wildcard certificates, switch to Caddy and configure DNS challenge validation with your DNS provider's API.
+Jede zugewiesene Domain oder Subdomain erhält ein eigenes Zertifikat. Für Wildcard-Zertifikate auf Caddy wechseln und DNS-Challenge-Validierung mit der API des DNS-Anbieters konfigurieren.
 
-DNS propagation usually takes minutes, not hours.
+DNS-Propagation dauert in der Regel Minuten, nicht Stunden.
 
-## What This Coolify Deployment Gets You
+## Was dieses Setup bringt
 
-Production Laravel running on a $5-6/month VPS with push-to-deploy from Git. Database, Redis, queue workers, scheduler, and SSL all managed from a single dashboard.
+Laravel läuft produktiv auf einem 5–6-€-VPS mit Push-to-Deploy aus Git. Datenbank, Redis, Queue-Worker, Scheduler und SSL werden über ein einziges Dashboard verwaltet.
 
-The deploy flow works like this: push to `main`, Coolify builds a new container, runs post-deploy commands including migrations, and swaps traffic to the new container. The old container stays around briefly as a rollback target.
+Der Deploy-Flow: Push auf `main`, Coolify baut einen neuen Container, führt Post-Deploy-Commands inklusive Migrationen aus und tauscht den Traffic auf den neuen Container. Der alte Container bleibt kurz als Rollback-Ziel erhalten.
 
-Everything is open source and portable. Your server runs standard Docker containers. If Coolify disappears tomorrow, you still have a VPS with Docker Compose files you can manage directly.
+Alles ist Open Source und portabel. Der Server läuft mit Standard-Docker-Containern. Verschwindet Coolify morgen, bleibt ein VPS mit Docker-Compose-Dateien, der direkt weiterverwaltet werden kann.
 
-Cost comparison: this setup runs about $5/month for the VPS. Forge costs $20/month plus $5+ for the VPS. Railway or Render start at $20/month and scale up quickly with database and worker add-ons.
+**Kostenvergleich:** Dieses Setup kostet ca. 5 €/Monat für den VPS. Forge kostet 20 €/Monat zuzüglich 5+ € für den VPS. Railway oder Render starten bei 20 €/Monat und skalieren mit Datenbank- und Worker-Add-ons schnell nach oben. Bei mehreren Projekten auf einem VPS vervielfacht sich die Ersparnis entsprechend.
 
 <RelatedPost
   slug="eloquent-eager-loading-n-plus-1"
-  description="Before deploying, make sure your queries are optimized — eager loading is the single highest-impact fix."
+  description="Vor dem Deployment sicherstellen, dass Queries optimiert sind — Eager Loading ist die wirkungsvollste einzelne Verbesserung."
 />
 
-## Trade-offs and When This Does Not Fit
+## Abwägungen und wann dieser Ansatz nicht passt
 
-You are the ops team. Server updates, security patches, and firewall rules are your responsibility. Coolify handles the application layer well, but the underlying OS is on you.
+Du bist das Ops-Team. Server-Updates, Sicherheits-Patches und Firewall-Regeln liegen in deiner Verantwortung. Coolify verwaltet die Anwendungsebene gut, aber das darunterliegende Betriebssystem liegt bei dir.
 
-This is a single-server setup. If your app needs horizontal scaling across multiple servers, Coolify supports it but the complexity goes up significantly. At that point, managed Kubernetes or a platform like Fly.io might be a better fit.
+Das ist ein Single-Server-Setup. Wenn die App horizontales Skalieren über mehrere Server hinweg benötigt, unterstützt Coolify das — die Komplexität steigt aber erheblich. Ab diesem Punkt ist managed Kubernetes oder eine Plattform wie Fly.io möglicherweise besser geeignet.
 
-Coolify v4 is stable and actively maintained, but it has fewer years of production mileage than Forge or Ploi. Expect the occasional rough edge.
+Coolify v4 ist stabil und wird aktiv weiterentwickelt, hat aber weniger Produktionsjahre hinter sich als Forge oder Ploi. Gelegentliche Unebenheiten sind einzukalkulieren.
 
-There is no built-in application monitoring. Add **Uptime Kuma** (also deployable through Coolify) for uptime checks, or **Oh Dear** for a managed solution.
+Integriertes Application-Monitoring ist nicht enthalten. **Uptime Kuma** (ebenfalls über Coolify deploybar) für Uptime-Checks hinzufügen oder **Oh Dear** als verwaltete Lösung nutzen.
 
-All services share resources on a single VPS. A 2 GB server handles moderate traffic, and upgrading to 4 or 8 GB is a slider change at your hosting provider.
+Alle Services teilen sich Ressourcen auf einem einzelnen VPS. Ein 2-GB-Server verarbeitet moderaten Traffic; ein Upgrade auf 4 oder 8 GB ist eine Slider-Änderung beim Hosting-Anbieter.
 
 <!-- internal link: Laravel Docker local dev post -->
 <!-- internal link: Coolify advanced configuration post -->
 
 <FurtherReading
   posts={[
-    { slug: "hexagonal-architecture-in-laravel", description: "Structure the app you're deploying — hexagonal architecture keeps domains clean as the codebase grows." }
+    { slug: "hexagonal-architecture-in-laravel", description: "Die App strukturieren, die du deployst — Hexagonale Architektur hält Domains sauber, während die Codebasis wächst." }
   ]}
 />
 
 ---
 
-A production Laravel deployment on a server you own: push-to-deploy, managed databases, queue workers, SSL, all for the cost of a coffee per month. Setup takes about an hour from a fresh VPS to a working deployment, and the savings pay for themselves immediately.
+Laravel produktiv auf einem eigenen Server: Push-to-Deploy, verwaltete Datenbanken, Queue-Worker, SSL — für den Preis eines Kaffees pro Monat. Die Einrichtung dauert etwa eine Stunde von einem frischen VPS bis zum laufenden Deployment, und die Ersparnis amortisiert sich sofort.
 
-Next time, I will cover adding a CI pipeline with GitHub Actions so tests run before Coolify deploys.
+Im nächsten Artikel: CI-Pipeline mit GitHub Actions, sodass Tests laufen, bevor Coolify deployed.

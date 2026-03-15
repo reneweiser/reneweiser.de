@@ -1,6 +1,6 @@
 ---
-title: Building a Static Blog with SvelteKit and mdsvex
-description: "Step-by-step guide to adding a static, prerendered blog to a SvelteKit site with mdsvex. Covers Markdown processing, routing, Shiki syntax highlighting, and type-safe post loading."
+title: Statischen Blog mit SvelteKit bauen — schnell, günstig, wartungsarm
+description: "Statische SvelteKit-Blogs mit mdsvex, adapter-static und Shiki: kein Server, minimale Hostingkosten, maximale Performance — so funktioniert der Aufbau."
 date: "2026-02-17"
 tags:
   - SvelteKit
@@ -8,20 +8,22 @@ tags:
 published: true
 ---
 
-I recently added a blog to my portfolio site. The site uses SvelteKit with `adapter-static`, and I wanted the blog to be fully prerendered — no server, no runtime JavaScript for content.
+Ein Blog braucht keinen Server. Wer auf WordPress, ein Headless-CMS oder gemanagte Hosting-Pläne setzt, zahlt monatlich für Infrastruktur, die ein statisch generierter Blog schlicht nicht benötigt. Der Blog, den Sie gerade lesen, ist vollständig prerendered — kein Node-Prozess, kein Datenbank-Query, keine laufenden Serverkosten.
 
-Here's how it works.
+Hier ist der Aufbau dahinter.
 
-## The Stack
+## Der Tech-Stack
 
-- **SvelteKit** with `adapter-static` for static site generation
-- **mdsvex** to process Markdown as Svelte components
-- **Shiki** for syntax highlighting
-- **Tailwind CSS Typography** for prose styling
+- **SvelteKit** mit `adapter-static` für statische Site-Generierung
+- **mdsvex** zur Verarbeitung von Markdown als Svelte-Komponenten
+- **Shiki** für Syntax-Highlighting
+- **Tailwind CSS Typography** für Prose-Styling
 
-## Content Lives in the Repo
+Hosting läuft auf einem CDN wie Cloudflare Pages oder Netlify — beide haben großzügige Free-Tiers für statische Seiten. Die laufenden Kosten für diesen Blog betragen null Euro.
 
-Each post is a Markdown file with YAML frontmatter:
+## Inhalte liegen im Repository
+
+Jeder Beitrag ist eine Markdown-Datei mit YAML-Frontmatter:
 
 ```markdown
 ---
@@ -35,11 +37,11 @@ published: true
 Your content here...
 ```
 
-No CMS, no database. Content is version-controlled alongside the code.
+Kein CMS, keine Datenbank. Inhalte sind versioniert, liegen im Git-Repository und werden zusammen mit dem Code deployt. Ein neuer Beitrag ist ein neuer Commit — kein Admin-Interface, kein separates System, das gewartet werden muss.
 
-## Posts Are Loaded at Build Time
+## Posts werden zur Build-Zeit geladen
 
-Using Vite's `import.meta.glob` with `eager: true`:
+Über Vites `import.meta.glob` mit `eager: true`:
 
 ```typescript
 const modules = import.meta.glob<PostModule>("/src/content/blog/*.md", {
@@ -47,22 +49,22 @@ const modules = import.meta.glob<PostModule>("/src/content/blog/*.md", {
 });
 ```
 
-This loads all posts during the build, making them available for static generation. Each module exposes the frontmatter as `metadata` and the rendered content as a Svelte component.
+SvelteKit liest alle Posts während des Builds ein. Jedes Modul liefert die Frontmatter-Daten als `metadata` und den gerenderten Inhalt als Svelte-Komponente. Zur Laufzeit gibt es nichts mehr zu berechnen — der Browser bekommt fertiges HTML.
 
-## Routes Follow REST Conventions
+## Routen folgen REST-Konventionen
 
 ```
-/blog             → Index of all posts
-/blog/[slug]      → Individual post
-/blog/tag/[tag]   → Posts filtered by tag
-/feed.xml         → RSS feed
+/blog             → Index aller Beiträge
+/blog/[slug]      → Einzelner Beitrag
+/blog/tag/[tag]   → Beiträge gefiltert nach Tag
+/feed.xml         → RSS-Feed
 ```
 
-Each route exports `prerender = true` for static generation. Dynamic routes use an `entries()` function to tell SvelteKit which paths to generate.
+Jede Route exportiert `prerender = true`. Dynamische Routen nutzen eine `entries()`-Funktion, damit SvelteKit weiß, welche Pfade es zur Build-Zeit generieren soll. Das Ergebnis sind statische HTML-Dateien, die direkt vom CDN ausgeliefert werden — ohne Roundtrip zu einem Origin-Server.
 
-## Syntax Highlighting with Shiki
+## Syntax-Highlighting mit Shiki
 
-mdsvex supports custom highlighters. I'm using Shiki, which uses the same grammar engine as VS Code:
+mdsvex unterstützt benutzerdefinierte Highlighter. Shiki verwendet dieselbe Grammar-Engine wie VS Code:
 
 ```javascript
 const mdsvexOptions = {
@@ -76,8 +78,10 @@ const mdsvexOptions = {
 };
 ```
 
-The highlighting happens at build time, so there's zero runtime cost.
+Das Highlighting läuft vollständig zur Build-Zeit. Im Browser landet fertiges, tokenisiertes HTML — kein JavaScript, das zur Laufzeit Code parst.
 
-## The Result
+## Was dabei herauskommt
 
-A fully static blog with fast load times, no server requests, and full control over styling. Adding a new post is as simple as creating a Markdown file and pushing to git.
+Ein vollständig statischer Blog mit schnellen Ladezeiten, null Serveranfragen und voller Kontrolle über Styling und Struktur. Core Web Vitals im grünen Bereich, weil es schlicht nichts zu optimieren gibt — statisches HTML ist von Haus aus schnell.
+
+Die Wartung beschränkt sich auf das Schreiben von Markdown-Dateien. Kein CMS-Update, kein Plugin-Konflikt, keine Datenbank-Migration. Wer einen neuen Beitrag veröffentlichen will, erstellt eine `.md`-Datei und pusht in den Hauptbranch.

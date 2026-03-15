@@ -12,9 +12,9 @@
 	let filteredPosts = $derived(
 		activeTag ? data.posts.filter((p) => p.tags.includes(activeTag!)) : data.posts
 	);
-	const title = 'Web Development Blog — René Weiser';
+	const title = 'Blog — René Weiser';
 	const description =
-		'Articles on web development, Laravel, SvelteKit, and DevOps. Practical insights from a full-stack developer with nearly ten years of experience.';
+		'Praxisnahe Artikel über Webentwicklung, Laravel, SvelteKit und DevOps. Technik mit Geschäftswert — von einem Full-Stack-Entwickler mit fast zehn Jahren Erfahrung.';
 
 	const breadcrumbLd = {
 		'@context': 'https://schema.org',
@@ -50,7 +50,7 @@
 	<meta property="og:image" content="{siteUrl}/og-default.webp" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale" content="de_DE" />
 	<meta property="og:site_name" content="René Weiser" />
 
 	<meta name="twitter:card" content="summary_large_image" />
@@ -76,7 +76,7 @@
 		<header class="mb-16 border-b border-ink/10 pb-8">
 			<h1 class="mb-4 font-display text-5xl tracking-tight text-ink md:text-6xl">Blog</h1>
 			<p class="max-w-2xl text-xl text-ink-muted">
-				Technical writing on web development, architecture, and deployment.
+				Technik mit Geschäftswert — Webentwicklung, Architektur und Deployment.
 			</p>
 		</header>
 
@@ -84,7 +84,7 @@
 		{#if data.tags.length > 0}
 			<div class="mb-12">
 				<h2 class="mb-4 font-mono text-sm uppercase tracking-wider text-ink-soft">
-					Filter by tag
+					Nach Thema filtern
 				</h2>
 				<div class="flex flex-wrap gap-2">
 					<button
@@ -93,7 +93,7 @@
 							? 'border-copper bg-copper/10 text-copper'
 							: 'border-ink/10 bg-paper-muted/50 text-ink-muted hover:border-copper/30 hover:bg-copper/5 hover:text-copper'}"
 					>
-						All
+						Alle
 					</button>
 					{#each data.tags as tag (tag)}
 						<button

@@ -1,6 +1,6 @@
 ---
-title: Hello, World
-description: "First post on the new blog. Why I'm writing, what topics to expect, and the tech stack behind this site — SvelteKit, Tailwind CSS, and static deployment."
+title: Über diesen Blog
+description: "Dieser Blog behandelt Webentwicklung aus unternehmerischer Perspektive — für Freelancer und Kleinstunternehmen im DACH-Raum, die mit weniger Budget mehr erreichen wollen."
 date: "2026-02-16"
 tags:
   - Meta
@@ -12,41 +12,44 @@ published: true
   import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
 </script>
 
-This is the inaugural post of my blog. I built this portfolio site with SvelteKit and decided to add a blog section for longer-form technical writing.
+Dieser Blog richtet sich an Freelancer und Kleinstunternehmen im DACH-Raum, die Webentwicklung nicht als Selbstzweck betreiben, sondern als Mittel zum Zweck: mehr Sichtbarkeit, bessere Conversion, weniger manuelle Arbeit.
 
-## Why Write?
+## Worum es hier geht
 
-Writing forces clarity. It's one thing to understand a concept well enough to use it; it's another to explain it clearly enough for someone else to follow along. Writing is a forcing function for deeper understanding.
+Die meisten Entwicklerblogs schreiben für Entwickler. Das ist legitim — aber es ist nicht mein Fokus.
 
-Beyond that, I've lost count of the times a well-written blog post saved me hours of debugging. Time to give back.
+Mein Fokus ist der Schnittpunkt zwischen technischer Umsetzung und geschäftlichem Nutzen. Was bringt eine schnellere Website konkret? Wann lohnt sich ein CMS, wann nicht? Welche technischen Entscheidungen zahlen sich langfristig aus — und welche erzeugen nur unnötige Komplexität?
 
-## What to Expect
+Das sind die Fragen, die ich hier beantworte.
 
-Technical posts on topics I work with daily:
+## Themen
 
-- **Web development** — Laravel, SvelteKit, Vue.js
-- **DevOps** — Docker, CI/CD, deployment patterns
-- **Architecture** — Design decisions, trade-offs, lessons learned
+Konkret schreibe ich über:
 
-No hot takes, no fluff, no "5 ways to..." listicles. Just technical writing that I wish I'd found when solving the problem myself.
+- **Performance & Core Web Vitals** — Ladezeiten, die Conversions kosten, und wie man sie behebt
+- **Moderne Frontend-Entwicklung** — SvelteKit, Vue.js, und wann welcher Ansatz passt
+- **Backend & Deployment** — Laravel, Docker, CI/CD ohne Overengineering
+- **Freelance-Praxis im DACH-Raum** — Marktpreise, Projektstruktur, Kundenkommunikation
 
-## How This Site Is Built
+Kein Hype, keine generischen Tutorials, keine Listicles. Nur Inhalte, die ich selbst gesucht hätte, bevor ich das Problem gelöst habe.
 
-This site is a static SvelteKit app with:
+## Wie diese Seite gebaut ist
 
-- **Markdown processing** via mdsvex
-- **Syntax highlighting** via Shiki
-- **Static generation** via adapter-static
-- **Typography** via Tailwind CSS
+Diese Website ist eine statisch generierte SvelteKit-App:
+
+- **Markdown-Verarbeitung** via mdsvex
+- **Syntax-Highlighting** via Shiki
+- **Statisches Rendering** via adapter-static
+- **Typografie** via Tailwind CSS
 
 ```typescript
-// All blog posts are loaded at build time
+// Alle Blog-Posts werden zur Build-Zeit geladen
 const modules = import.meta.glob("/src/content/blog/*.md", { eager: true });
 ```
 
-The entire blog is prerendered at build time. No server, no database, no JavaScript required for reading. Just HTML and CSS.
+Kein Server, keine Datenbank, kein JavaScript fürs Lesen. Nur HTML und CSS — schnell, zuverlässig, und günstig zu hosten.
 
 <RelatedPost
   slug="sveltekit-static-blog"
-  description="I walk through the full build process step by step — from mdsvex setup to static deployment."
+  description="Ich zeige den vollständigen Aufbau Schritt für Schritt — von der mdsvex-Konfiguration bis zum statischen Deployment."
 />

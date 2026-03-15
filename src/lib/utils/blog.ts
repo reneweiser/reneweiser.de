@@ -18,11 +18,11 @@ function estimateReadingTime(text: string): string {
 
   const words = stripped.trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(words / 200));
-  return `${minutes} min read`;
+  return `${minutes} Min. Lesezeit`;
 }
 
 export function formatDate(dateString: string): string {
-  return new Date(dateString + "T00:00:00").toLocaleDateString("en-US", {
+  return new Date(dateString + "T00:00:00").toLocaleDateString("de-DE", {
     year: "numeric",
     month: "long",
     day: "numeric",

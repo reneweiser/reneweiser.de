@@ -31,8 +31,8 @@ export const GET: RequestHandler = () => {
   <channel>
     <title>René Weiser — Blog</title>
     <link>${siteUrl}/blog</link>
-    <description>Technical writing on web development, Laravel, SvelteKit, and DevOps</description>
-    <language>en</language>
+    <description>Praxisnahe Artikel über Webentwicklung, Laravel, SvelteKit und DevOps</description>
+    <language>de</language>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>
     ${posts
       .map(

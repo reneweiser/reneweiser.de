@@ -1,9 +1,9 @@
 ---
-title: "AI Skills Are Not SaaS Products"
-description: "AI generation is one step in a larger workflow. Learn why persistent state, scheduling, and opinionated interfaces turn AI capabilities into real products."
+title: "KI-Skills sind keine SaaS-Produkte — warum der Unterschied zählt"
+description: "KI-Generierung ist ein Schritt in einem größeren Workflow. Warum persistenter Zustand, Scheduling und strukturierte Interfaces aus KI-Fähigkeiten echte Produkte machen."
 date: "2026-02-19"
 image: "/blog/wrapping-ai-skills/title.webp"
-imageAlt: "Diagram showing the gap between a raw AI skill and a complete product workflow"
+imageAlt: "Diagramm zeigt die Lücke zwischen einem rohen KI-Skill und einem vollständigen Produkt-Workflow"
 tags:
   - Architecture
   - Workflow
@@ -15,93 +15,93 @@ published: true
 	import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
 </script>
 
-Every AI skill, no matter how good, handles exactly one step in a workflow. The product value isn't in the generation. It's in everything that happens before and after: workflow orchestration, persistent state, and opinionated interfaces that make the AI's output consistently useful.
+Jeder KI-Skill — egal wie gut — erledigt genau einen Schritt in einem Workflow. Der Produktwert liegt nicht in der Generierung. Er liegt in allem, was davor und danach passiert: Workflow-Orchestrierung, persistenter Zustand und strukturierte Interfaces, die die Ausgabe des KI-Skills konsistent nützlich machen.
 
-By "skill" I mean any self-contained AI capability: a prompt template, a plugin, an agent tool. Anything that takes input, applies domain knowledge, and generates output.
+Mit "Skill" meine ich jede eigenständige KI-Fähigkeit: ein Prompt-Template, ein Plugin, ein Agent-Tool. Alles, was eine Eingabe entgegennimmt, Domänenwissen anwendet und eine Ausgabe erzeugt.
 
-"SaaS is dead" keeps coming up. Satya Nadella [told The Register](https://www.theregister.com/2026/02/04/ai_replace_saas) that business apps are "essentially CRUD databases with a bunch of business logic" and that agents will absorb the logic layer entirely. Edmundo Ortega at Section AI [takes it further](https://www.sectionai.com/blog/is-ai-the-end-of-saas): traditional software interfaces (dashboards, dropdowns, GUIs) will become obsolete once users express intent through language instead of clicking through step-by-step workflows.
+"SaaS is dead" kursiert derzeit überall. Satya Nadella [sagte gegenüber The Register](https://www.theregister.com/2026/02/04/ai_replace_saas), dass Business-Applikationen "im Wesentlichen CRUD-Datenbanken mit einer Menge Business-Logik" seien und dass Agenten die Logikschicht vollständig übernehmen werden. Edmundo Ortega bei Section AI [geht noch weiter](https://www.sectionai.com/blog/is-ai-the-end-of-saas): Traditionelle Software-Interfaces — Dashboards, Dropdowns, GUIs — werden obsolet, sobald Nutzer ihre Absicht durch Sprache ausdrücken statt sich durch schrittweise Workflows zu klicken.
 
-These predictions confuse what the AI contributes (generation, analysis, decision logic) with what a product contributes. Not every AI capability needs a product around it. But when the workflow extends beyond generation, when the audience isn't technical, when consistency matters more than flexibility, and when domain best practices are non-obvious — the product layer isn't optional. Most professional use cases check at least two of those boxes.
+Diese Vorhersagen verwechseln, was die KI beiträgt (Generierung, Analyse, Entscheidungslogik), mit dem, was ein Produkt beiträgt. Nicht jede KI-Fähigkeit braucht eine Produktschicht. Aber wenn der Workflow über die Generierung hinausgeht, wenn die Zielgruppe nicht technisch ist, wenn Konsistenz wichtiger ist als Flexibilität, und wenn Best Practices in einer Domäne nicht selbstverständlich sind — dann ist die Produktschicht keine Option. Die meisten professionellen Anwendungsfälle erfüllen mindestens zwei dieser Kriterien.
 
 <TwitterEmbed url="https://twitter.com/PR0GRAMMERHUM0R/status/2028213723412775295" />
 
-## The Skill Handles Generation — Not the Workflow
+## Der Skill übernimmt die Generierung — nicht den Workflow
 
-Take a social media content skill as an example. It knows platform best practices, understands engagement patterns, and can generate posts tailored to LinkedIn, X, or Instagram. Paired with the right model, it even asks structured questions about goals, audience, and brand voice so that someone who wouldn't know how to write a good prompt can still provide the context the skill needs. The underlying expertise is real, and the interaction design is getting better.
+Nehmen wir einen Social-Media-Content-Skill als Beispiel. Er kennt die Best Practices der Plattformen, versteht Engagement-Muster und kann Posts für LinkedIn, X oder Instagram erstellen. Mit dem richtigen Modell stellt er sogar strukturierte Fragen zu Zielen, Zielgruppe und Markenstimme, sodass auch jemand ohne Prompt-Erfahrung den nötigen Kontext liefern kann. Das zugrundeliegende Fachwissen ist real, und das Interaction Design wird besser.
 
-But "generate a good LinkedIn post" is one step in a workflow that has at least a dozen. Before generation, someone needs to decide which platform deserves attention this week. After generation, someone needs to post at the right time, monitor engagement, respond to comments, and follow up. Next week, someone needs to decide whether to double down on what worked or try a different approach.
+Aber "generiere einen guten LinkedIn-Post" ist ein Schritt in einem Workflow, der mindestens ein Dutzend Schritte umfasst. Vor der Generierung muss jemand entscheiden, welcher Plattform diese Woche Aufmerksamkeit gebührt. Nach der Generierung muss jemand zum richtigen Zeitpunkt posten, das Engagement beobachten, auf Kommentare antworten und nachfassen. Nächste Woche muss jemand entscheiden, ob man das Erfolgreiche verdoppelt oder einen anderen Ansatz versucht.
 
-Structured questions solve the input problem. They don't solve the decision problem. A non-technical user will get a decent post, but still needs to figure out: should I even be posting on LinkedIn today? How do I know if this is working over time? These are workflow, scheduling, and decision-support problems. The skill handles generation. Everything else is on the user.
+Strukturierte Fragen lösen das Eingabeproblem. Das Entscheidungsproblem lösen sie nicht. Ein nicht-technischer Nutzer bekommt einen ordentlichen Post, muss aber immer noch herausfinden: Soll ich heute überhaupt auf LinkedIn posten? Wie erkenne ich, ob das langfristig funktioniert? Das sind Workflow-, Scheduling- und Entscheidungssupport-Probleme. Der Skill übernimmt die Generierung. Alles andere liegt beim Nutzer.
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-1-workflow-gap.svg" alt="Diagram showing AI skill handling only the generation step, while workflow steps like scheduling, posting, and analysis remain manual" />
-  <figcaption>Figure 1: An AI skill covers generation — one step in a multi-step workflow. Everything before and after remains on the user.</figcaption>
+  <figcaption>Abbildung 1: Ein KI-Skill deckt die Generierung ab — einen Schritt in einem mehrstufigen Workflow. Alles davor und danach bleibt beim Nutzer.</figcaption>
 </figure>
 
-## Opinionated Interfaces Encode Best Practices
+## Strukturierte Interfaces kodieren Best Practices
 
-A SaaS product built around an AI skill makes the skill's output consistently good by constraining how it's used.
+Ein SaaS-Produkt, das um einen KI-Skill herum gebaut ist, macht die Ausgabe des Skills konsistent gut — indem es einschränkt, wie er genutzt wird.
 
-Consider the difference:
+Betrachten wir den Unterschied:
 
-**Raw skill:** The user types "write me a LinkedIn post about our new product launch" and gets a reasonable result. Maybe great, maybe mediocre, depending on how much context they provided.
+**Roher Skill:** Der Nutzer tippt "Schreib mir einen LinkedIn-Post über unseren neuen Produktlaunch" und bekommt ein brauchbares Ergebnis. Vielleicht gut, vielleicht mittelmäßig — je nachdem, wie viel Kontext er geliefert hat.
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-2-raw-vs-wrapped.svg" alt="Side-by-side comparison showing a raw AI skill receiving minimal context versus a wrapped product providing stored brand voice, history, and scheduling" />
-  <figcaption>Figure 2: A raw skill relies on what the user remembers to provide. A wrapped product supplies the context automatically.</figcaption>
+  <figcaption>Abbildung 2: Ein roher Skill ist auf das angewiesen, woran der Nutzer zu denken erinnert. Ein eingebettetes Produkt liefert den Kontext automatisch.</figcaption>
 </figure>
 
-**Wrapped product:** The user's product details are already stored. The product knows their brand voice, their posting history, their audience demographics. It suggests posting about the launch on Tuesday morning because that's when their audience is most active. It generates the post using all available context, rather than only what the user remembered to include in their prompt. After posting, it schedules a follow-up reminder for Thursday.
+**Eingebettetes Produkt:** Die Produktdetails des Nutzers sind bereits gespeichert. Das Produkt kennt die Markenstimme, die Posting-Historie, die demografischen Daten der Zielgruppe. Es schlägt vor, den Launch am Dienstagmorgen zu veröffentlichen, weil das der aktivste Zeitpunkt der Zielgruppe ist. Es generiert den Post mit dem gesamten verfügbaren Kontext — nicht nur mit dem, was der Nutzer in seinem Prompt erwähnt hat. Nach dem Posting plant es eine Follow-up-Erinnerung für Donnerstag.
 
-The second scenario produces better results not because the AI is smarter, but because the product's interface ensures the AI has what it needs. The opinionated interface does the work that the user would otherwise have to do manually. And it does so more consistently.
+Das zweite Szenario liefert bessere Ergebnisse — nicht weil die KI intelligenter ist, sondern weil das Interface sicherstellt, dass die KI bekommt, was sie braucht. Das strukturierte Interface erledigt die Arbeit, die der Nutzer sonst manuell leisten müsste. Und es tut das konsistenter.
 
-## The Infrastructure AI Skills Cannot Provide
+## Die Infrastruktur, die KI-Skills nicht liefern können
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-3-layer-stack.svg" alt="Layer stack diagram with the AI skill at the center, surrounded by scheduling, persistence, notifications, and domain logic layers" />
-  <figcaption>Figure 3: The infrastructure stack that turns an AI skill into a product — scheduling, persistence, notifications, and domain-specific logic.</figcaption>
+  <figcaption>Abbildung 3: Der Infrastruktur-Stack, der aus einem KI-Skill ein Produkt macht — Scheduling, Persistenz, Benachrichtigungen und domänenspezifische Logik.</figcaption>
 </figure>
 
-Skills don't run themselves. They need scheduling, persistence, and notifications — infrastructure that sits outside the generation step. Open-source agent frameworks prove the point. [OpenClaw](https://github.com/openclaw/openclaw), with over 145k GitHub stars, exists precisely because developers recognized that skills alone weren't enough. It provides a persistent daemon with cron scheduling, file-based memory via `MEMORY.md`, and multi-channel notifications across Telegram, Slack, Discord, and a dozen other platforms. The "boring infrastructure" had to be built.
+Skills laufen nicht von selbst. Sie brauchen Scheduling, Persistenz und Benachrichtigungen — Infrastruktur, die außerhalb des Generierungsschritts liegt. Open-Source-Agent-Frameworks belegen das. [OpenClaw](https://github.com/openclaw/openclaw), mit über 145k GitHub-Stars, existiert genau deshalb, weil Entwickler erkannt haben, dass Skills allein nicht ausreichen. Es bietet einen persistenten Daemon mit Cron-Scheduling, dateibasiertem Speicher über `MEMORY.md` und Multi-Channel-Benachrichtigungen über Telegram, Slack, Discord und ein Dutzend weiterer Plattformen. Die "langweilige Infrastruktur" musste erst gebaut werden.
 
-But having the infrastructure and having a product are different things. A developer can wire up cron jobs in OpenClaw to post at optimal times and configure memory files to track engagement. A marketing manager running three client accounts cannot — and shouldn't have to. The question isn't whether scheduling, memory, and notifications exist as building blocks. It's who makes the domain-specific design decisions that turn those building blocks into a workflow.
+Aber Infrastruktur zu haben und ein Produkt zu haben sind zwei verschiedene Dinge. Ein Entwickler kann in OpenClaw Cron-Jobs verdrahten, um zu optimalen Zeiten zu posten, und Memory-Dateien konfigurieren, um Engagement zu tracken. Ein Marketing-Manager, der drei Kundenaccounts betreut, kann das nicht — und sollte es nicht müssen. Die Frage ist nicht, ob Scheduling, Memory und Benachrichtigungen als Bausteine existieren. Sondern wer die domänenspezifischen Designentscheidungen trifft, die diese Bausteine in einen Workflow verwandeln.
 
-The deeper you look, the more those decisions matter.
+Je tiefer man schaut, desto mehr zählen diese Entscheidungen.
 
-### Memory Across Sessions
+### Memory über Sessions hinweg
 
-OpenClaw gives you a `MEMORY.md` file, a place to persist facts between conversations. A social media product decides *what* to remember (engagement rates by platform, audience demographics, posting cadence that actually worked) and *how* to use it (auto-adjusting scheduling, refining content strategy, surfacing patterns the user wouldn't notice). The design decisions are the value, not the storage mechanism.
+OpenClaw liefert eine `MEMORY.md`-Datei — einen Ort, um Fakten zwischen Konversationen zu persistieren. Ein Social-Media-Produkt entscheidet, *was* gespeichert wird (Engagement-Raten nach Plattform, Zielgruppendemografie, tatsächlich funktionierende Posting-Kadenz) und *wie* es genutzt wird (automatische Anpassung des Schedulings, Verfeinerung der Content-Strategie, Aufdecken von Mustern, die der Nutzer nicht bemerken würde). Die Designentscheidungen sind der Wert, nicht der Speichermechanismus.
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-4-memory-comparison.svg" alt="Comparison of flat file-based memory in an agent framework versus structured, compounding memory in a domain-specific product" />
-  <figcaption>Figure 4: Agent frameworks persist raw facts. Products structure memory around domain-specific patterns and compound it over time.</figcaption>
+  <figcaption>Abbildung 4: Agent-Frameworks persistieren rohe Fakten. Produkte strukturieren Memory um domänenspezifische Muster und akkumulieren es über die Zeit.</figcaption>
 </figure>
 
-Each conversation with a general-purpose agent starts from that agent's memory file. A product maintains structured history and compounds it over time. Month three is smarter than month one because the product has domain-specific data and logic, not just a persistence layer. Even analyses sympathetic to the "unbundling" thesis [acknowledge this gap](https://www.uncoveralpha.com/p/the-great-saas-unbundling-why-ai): LLMs lack the deterministic consistency that persistent, stateful systems provide.
+Jede Konversation mit einem General-Purpose-Agenten startet aus dessen Memory-Datei heraus. Ein Produkt pflegt strukturierte Historie und akkumuliert sie über Zeit. Monat drei ist intelligenter als Monat eins, weil das Produkt domänenspezifische Daten und Logik hat — nicht nur eine Persistenzschicht. Selbst Analysen, die der "Unbundling"-These nahestehen, [erkennen diese Lücke an](https://www.uncoveralpha.com/p/the-great-saas-unbundling-why-ai): LLMs fehlt die deterministische Konsistenz, die persistente, zustandsbehaftete Systeme bieten.
 
-### Feedback Loops
+### Feedback-Schleifen
 
-A general-purpose framework can store outcomes. A product interprets them. The post that got twice the engagement on Tuesday? A framework logs it. A product remembers, adjusts its scheduling suggestions, and refines the content strategy — without the user having to notice the pattern themselves. These feedback loops require domain-specific logic: what counts as success, what to adjust, how aggressively to change course. A framework gives you the plumbing. A product makes the calls.
+Ein General-Purpose-Framework kann Ergebnisse speichern. Ein Produkt interpretiert sie. Der Post, der am Dienstag doppelt so viel Engagement hatte? Ein Framework loggt ihn. Ein Produkt erinnert sich, passt seine Scheduling-Empfehlungen an und verfeinert die Content-Strategie — ohne dass der Nutzer das Muster selbst erkennen muss. Diese Feedback-Schleifen erfordern domänenspezifische Logik: Was gilt als Erfolg, was wird angepasst, wie aggressiv wird der Kurs geändert. Ein Framework liefert die Leitungen. Ein Produkt trifft die Entscheidungen.
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-5-feedback-loop.svg" alt="Circular feedback loop diagram showing action, outcome measurement, interpretation through domain logic, and adjusted strategy" />
-  <figcaption>Figure 5: Products close the feedback loop — measuring outcomes, interpreting them through domain logic, and adjusting strategy automatically.</figcaption>
+  <figcaption>Abbildung 5: Produkte schließen die Feedback-Schleife — messen Ergebnisse, interpretieren sie durch Domänenlogik und passen die Strategie automatisch an.</figcaption>
 </figure>
 
-Bain & Company's [analysis of agentic AI and SaaS](https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/) reaches the same conclusion from the enterprise side. Systems of record — the data layer, access controls, compliance rules — remain foundational because agents need persistent state to function. Their advice to incumbents: double down on capturing proprietary data and encoding domain logic that outsiders cannot replicate.
+Die [Analyse von Bain & Company zu agentischer KI und SaaS](https://www.bain.com/insights/will-agentic-ai-disrupt-saas-technology-report-2025/) kommt von der Enterprise-Seite zum gleichen Schluss. Systems of Record — die Datenschicht, Zugriffskontrollen, Compliance-Regeln — bleiben fundamental, weil Agenten persistenten Zustand brauchen, um zu funktionieren. Ihre Empfehlung an Unternehmen: die Erfassung proprietärer Daten und die Kodierung von Domänenlogik, die Außenstehende nicht replizieren können, konsequent ausbauen.
 
-## What This Means for Developers
+## Was das für Investitionsentscheidungen bedeutet
 
-The AI is a component, not the product. The generation capability is accessible to anyone with an API key or a skill plugin. The differentiator is everything around it: the interface design that guides users toward better inputs, the workflow orchestration that handles timing and follow-ups, the data layer that enables learning over time.
+Bevor man ein KI-Produkt baut, lohnt es sich zu verstehen, was man da eigentlich baut. Die KI ist eine Komponente — nicht das Produkt. Die Generierungsfähigkeit steht jedem mit einem API-Key oder einem Skill-Plugin offen. Das Differenzierungsmerkmal ist alles drumherum: das Interface-Design, das Nutzer zu besseren Eingaben führt, die Workflow-Orchestrierung, die Timing und Follow-ups übernimmt, und die Datenschicht, die Lernen über Zeit ermöglicht.
 
-If you're building with AI, the tempting part is the model integration. The valuable part is the boring infrastructure around it — database design for persistent context, scheduling systems for time-based actions, notification infrastructure for engagement, analytics pipelines for feedback loops. Open-source frameworks are commoditizing the plumbing. What they can't commoditize are the domain-specific decisions: what to store, when to act, and how to interpret what happened. Those design choices are the same skills that made SaaS products valuable before AI, and they're what makes AI-powered products valuable now.
+Bei KI-Projekten ist die verlockende Aufgabe die Modellintegration. Die wertvolle Aufgabe ist die langweilige Infrastruktur darum herum — Datenbankdesign für persistenten Kontext, Scheduling-Systeme für zeitbasierte Aktionen, Benachrichtigungsinfrastruktur für Engagement, Analytics-Pipelines für Feedback-Schleifen. Open-Source-Frameworks machen die Leitungen zur Commodity. Was sie nicht zur Commodity machen können, sind die domänenspezifischen Entscheidungen: was gespeichert wird, wann gehandelt wird und wie interpretiert wird, was passiert ist. Diese Designentscheidungen sind dieselben Fähigkeiten, die SaaS-Produkte vor der KI wertvoll gemacht haben — und sie sind es, die KI-gestützte Produkte heute wertvoll machen.
 
-This pattern plays out at every scale. A solo developer building a content tool still needs to decide how to store user preferences, when to trigger notifications, and what metrics to surface. A team shipping an AI-powered analytics product faces the same questions with higher stakes: data retention policies, audit trails, graceful degradation when the model returns garbage. The architectural thinking is identical whether you're [choosing a static site generator](/blog/sveltekit-static-blog) or designing a multi-tenant AI platform. The AI model is a dependency, like a database or an API. The architecture around it is the product.
+Dieses Muster zeigt sich auf jeder Ebene. Ein Solo-Entwickler, der ein Content-Tool baut, muss immer noch entscheiden, wie Nutzerpräferenzen gespeichert werden, wann Benachrichtigungen ausgelöst werden und welche Metriken angezeigt werden. Ein Team, das ein KI-gestütztes Analytics-Produkt ausliefert, stellt dieselben Fragen mit höheren Einsätzen: Datenaufbewahrungsrichtlinien, Audit-Trails, graceful Degradation wenn das Modell Unsinn zurückgibt. Das architektonische Denken ist identisch, egal ob man [einen Static Site Generator wählt](/blog/sveltekit-static-blog) oder eine mandantenfähige KI-Plattform entwirft. Das KI-Modell ist eine Abhängigkeit — wie eine Datenbank oder eine API. Die Architektur darum herum ist das Produkt.
 
-The companies that win won't have better prompts. They'll have better scheduling, better memory, and better feedback loops. That's software engineering: the same work that made products valuable before AI was involved.
+Die Unternehmen, die gewinnen werden, haben keine besseren Prompts. Sie haben besseres Scheduling, besseres Memory und bessere Feedback-Schleifen. Das ist Software-Engineering — dieselbe Arbeit, die Produkte wertvoll gemacht hat, bevor KI beteiligt war.
 
 <FurtherReading
   posts={[
-    { slug: "hexagonal-architecture-in-laravel", description: "Architecture boundaries matter just as much when AI agents write the code — hexagonal structure keeps them scoped." }
+    { slug: "hexagonal-architecture-in-laravel", description: "Architekturgrenzen sind genauso wichtig, wenn KI-Agenten den Code schreiben — hexagonale Struktur hält sie im Rahmen." }
   ]}
 />

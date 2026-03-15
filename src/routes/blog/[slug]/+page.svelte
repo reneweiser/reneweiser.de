@@ -16,6 +16,7 @@
 		'@graph': [
 			{
 				'@type': 'BlogPosting',
+				inLanguage: 'de',
 				headline: data.post.title,
 				description: data.post.description,
 				...(data.post.image && { image: `${siteUrl}${data.post.image}` }),
@@ -78,7 +79,7 @@
 	<meta property="og:image" content={ogImage} />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale" content="de_DE" />
 	<meta property="og:site_name" content="René Weiser" />
 	<meta property="article:published_time" content={data.post.date} />
 	{#if data.post.updated}
@@ -118,7 +119,7 @@
 				<span>{data.post.readingTime}</span>
 				{#if data.post.updated}
 					<span>·</span>
-					<span>Updated {formatDate(data.post.updated)}</span>
+					<span>Aktualisiert {formatDate(data.post.updated)}</span>
 				{/if}
 			</div>
 
@@ -172,7 +173,7 @@
 				class="inline-flex items-center gap-2 font-mono text-sm text-ink-muted transition-colors hover:text-copper"
 			>
 				<span>←</span>
-				Back to blog
+				Zurück zum Blog
 			</a>
 		</footer>
 	</article>

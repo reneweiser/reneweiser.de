@@ -6,9 +6,9 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	let title = $derived(`Posts tagged "${data.tag}" — René Weiser`);
+	let title = $derived(`Beiträge zum Thema „${data.tag}" — René Weiser`);
 	let description = $derived(
-		`${data.posts.length} blog ${data.posts.length === 1 ? 'post' : 'posts'} tagged with ${data.tag}. Technical writing on web development.`
+		`${data.posts.length} ${data.posts.length === 1 ? 'Beitrag' : 'Beiträge'} zum Thema ${data.tag}. Praxisnahe Artikel über Webentwicklung.`
 	);
 	let tagUrl = $derived(`${siteUrl}/blog/tag/${encodeURIComponent(data.tag.toLowerCase())}`);
 
@@ -52,7 +52,7 @@
 	<meta property="og:image" content="{siteUrl}/og-default.webp" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale" content="de_DE" />
 	<meta property="og:site_name" content="René Weiser" />
 
 	<meta name="twitter:card" content="summary_large_image" />
@@ -80,15 +80,15 @@
 				class="mb-6 inline-flex items-center gap-2 font-mono text-sm text-ink-muted transition-colors hover:text-copper"
 			>
 				<span>←</span>
-				All posts
+				Alle Beiträge
 			</a>
 
 			<h1 class="font-display text-4xl tracking-tight text-ink md:text-5xl">
-				Posts tagged <span class="text-copper">"{data.tag}"</span>
+				Beiträge zum Thema <span class="text-copper">„{data.tag}"</span>
 			</h1>
 			<p class="mt-4 text-ink-soft">
 				{data.posts.length}
-				{data.posts.length === 1 ? 'post' : 'posts'}
+				{data.posts.length === 1 ? 'Beitrag' : 'Beiträge'}
 			</p>
 		</header>
 
