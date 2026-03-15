@@ -86,7 +86,7 @@
 						name: 'Was kostet eine professionelle Website?',
 						acceptedAnswer: {
 							'@type': 'Answer',
-							text: 'Eine typische Website für Freelancer oder kleine Unternehmen liegt zwischen 3.000 und 8.000 EUR — je nach Umfang, Funktionalität und Individualisierung. Im kostenlosen Erstgespräch gebe ich dir eine konkrete Einschätzung für dein Projekt.'
+							text: 'Eine einfache Website startet ab 500 EUR. Mit zusätzlichen Leistungen wie Hosting, SEO-Optimierung, individuellem Design oder laufender Betreuung kann der Umfang auf mehrere tausend Euro wachsen. Im kostenlosen Erstgespräch klären wir, was du wirklich brauchst.'
 						}
 					},
 					{

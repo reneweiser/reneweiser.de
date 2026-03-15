@@ -26,7 +26,7 @@
 					und bei Google gefunden wird.
 				</p>
 				<p class="font-mono text-xs text-ink-soft">
-					Typischer Umfang: 4–8 Wochen, ab 3.000 EUR
+					Ab 500 EUR für eine einfache Seite — je nach Umfang, Zusatzleistungen und Komplexität auch deutlich mehr.
 				</p>
 
 				<!-- Hover accent line -->
