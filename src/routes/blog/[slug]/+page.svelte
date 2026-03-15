@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import AuthorByline from '$lib/components/blog/AuthorByline.svelte';
 	import { siteUrl } from '$lib/config';
 	import { formatDate } from '$lib/utils/blog';
 	import type { PageProps } from './$types';
@@ -23,7 +24,8 @@
 				author: {
 					'@type': 'Person',
 					name: 'René Weiser',
-					url: siteUrl
+					url: siteUrl,
+					image: `${siteUrl}/profile-avatar@2x.webp`
 				},
 				publisher: {
 					'@type': 'Person',
@@ -161,6 +163,10 @@
 
 		<!-- Post Footer -->
 		<footer class="mt-16 border-t border-ink/10 pt-8">
+			<div class="mb-8">
+				<AuthorByline />
+			</div>
+
 			<a
 				href="/blog"
 				class="inline-flex items-center gap-2 font-mono text-sm text-ink-muted transition-colors hover:text-copper"

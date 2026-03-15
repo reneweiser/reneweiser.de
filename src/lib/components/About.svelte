@@ -36,8 +36,20 @@
 				</p>
 			</div>
 
-			<!-- Sidebar: Trust signals -->
+			<!-- Sidebar: Photo + Trust signals -->
 			<aside class="lg:col-span-5">
+				<!-- Profile photo -->
+				<div class="mb-6">
+					<img
+						src="/profile.webp"
+						alt="René Weiser — Webentwickler und Unternehmer"
+						width="600"
+						height="400"
+						loading="lazy"
+						class="w-full max-w-md mx-auto lg:max-w-none rounded-lg border border-ink/10 object-cover"
+					/>
+				</div>
+
 				<div class="rounded-lg border border-ink/10 bg-paper-muted/30 p-6">
 					<h3 class="mb-4 font-mono text-xs uppercase tracking-wider text-ink-soft">
 						Auf einen Blick

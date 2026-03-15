@@ -31,3 +31,6 @@ npm-debug.log*
 .claude/
 audits/
 audits
+
+# Raw profile photo (keep optimized WebPs only)
+static/profile.JPG

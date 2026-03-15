@@ -150,15 +150,74 @@ async function generatePhotoOgImage(
   console.log(`  ✓ ${outputPath} (photo-based, ${sizeKB} KB)`);
 }
 
-// --- Generate default OG image ---
+// --- Generate default OG image (with profile photo) ---
 console.log("Generating OG images...\n");
 
-const defaultSvg = buildSvg({
-  title: "René Weiser",
-  subtitle: "Full-Stack Web Developer",
-  footer: "reneweiser.de",
-});
-await generateImage(defaultSvg, "static/og-default.webp");
+async function generateDefaultOgWithPhoto(): Promise<void> {
+  const profilePath = "static/profile.webp";
+  if (!existsSync(profilePath)) {
+    // Fallback to text-only if no photo
+    const defaultSvg = buildSvg({
+      title: "René Weiser",
+      subtitle: "Full-Stack Web Developer",
+      footer: "reneweiser.de",
+    });
+    await generateImage(defaultSvg, "static/og-default.webp");
+    return;
+  }
+
+  // Crop and resize profile photo to fit left side
+  const photoWidth = 340;
+  const photoHeight = 440;
+  const photoRadius = 12;
+  const photoX = 60;
+  const photoY = Math.round((HEIGHT - photoHeight) / 2);
+
+  const profileCropped = await sharp(profilePath)
+    .resize(photoWidth, photoHeight, { fit: "cover", position: "attention" })
+    .webp({ quality: 85 })
+    .toBuffer();
+
+  // Round the corners of the profile photo using a mask
+  const roundedMask = Buffer.from(
+    `<svg width="${photoWidth}" height="${photoHeight}">
+      <rect x="0" y="0" width="${photoWidth}" height="${photoHeight}" rx="${photoRadius}" ry="${photoRadius}" fill="white"/>
+    </svg>`,
+  );
+
+  const roundedProfile = await sharp(profileCropped)
+    .composite([{ input: roundedMask, blend: "dest-in" }])
+    .png()
+    .toBuffer();
+
+  // Build the text overlay SVG (right side)
+  const dividerX = photoX + photoWidth + 40;
+  const textX = dividerX + 40;
+  const nameY = Math.round(HEIGHT / 2) - 20;
+  const subtitleY = nameY + 40;
+  const footerY = HEIGHT - 56;
+
+  const overlaySvg = `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="${INK}"/>
+  <rect x="40" y="40" width="${WIDTH - 80}" height="${HEIGHT - 80}" rx="4" fill="none" stroke="${COPPER}" stroke-width="1.5" opacity="0.4"/>
+  <line x1="40" y1="100" x2="${WIDTH - 40}" y2="100" stroke="${COPPER}" stroke-width="1" opacity="0.2"/>
+  <line x1="40" y1="${HEIGHT - 100}" x2="${WIDTH - 40}" y2="${HEIGHT - 100}" stroke="${COPPER}" stroke-width="1" opacity="0.2"/>
+  <line x1="${dividerX}" y1="${photoY}" x2="${dividerX}" y2="${photoY + photoHeight}" stroke="${COPPER}" stroke-width="2" opacity="0.5"/>
+  <text x="${textX}" y="${nameY}" fill="${PAPER}" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="600">${escapeXml("René Weiser")}</text>
+  <text x="${textX}" y="${subtitleY}" fill="${COPPER}" font-family="'Segoe UI', system-ui, sans-serif" font-size="22">${escapeXml("Full-Stack Web Developer")}</text>
+  <text x="${Math.round(WIDTH / 2)}" y="${footerY}" text-anchor="middle" fill="${INK_SOFT}" font-family="'Courier New', monospace" font-size="16">${escapeXml("reneweiser.de")}</text>
+</svg>`;
+
+  await sharp(Buffer.from(overlaySvg))
+    .composite([{ input: roundedProfile, top: photoY, left: photoX }])
+    .webp({ quality: 80 })
+    .toFile("static/og-default.webp");
+
+  const sizeKB = (statSync("static/og-default.webp").size / 1024).toFixed(1);
+  console.log(`  ✓ static/og-default.webp (photo composite, ${sizeKB} KB)`);
+}
+
+await generateDefaultOgWithPhoto();
 
 // --- Generate per-post OG images ---
 const blogDir = join(import.meta.dir, "..", "src", "content", "blog");
