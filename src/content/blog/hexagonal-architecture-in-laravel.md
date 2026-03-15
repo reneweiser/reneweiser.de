@@ -1,7 +1,8 @@
 ---
-title: "Saubere Architektur in Laravel: Warum sich das jetzt lohnt"
-description: "Wann sich hexagonale Architektur in Laravel rechnet, was sie für Wartbarkeit und langfristige Entwicklungskosten bedeutet — und wie KI die Kalkulation verändert."
+title: "Hexagonale Architektur in Laravel: Wann sie sich lohnt"
+description: "Wann sich hexagonale Architektur in Laravel rechnet, was sie für Wartbarkeit bedeutet und wie KI-Agenten die Kalkulation verändern."
 date: "2026-02-23"
+lang: de
 tags:
   - Laravel
   - Architecture
@@ -17,17 +18,17 @@ imageAlt: "Hexagonale Architektur in Laravel: Domänenstruktur mit Ports und Ada
   import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
 </script>
 
-Ihre Laravel-Applikation hat über 40 Models, Features überschneiden sich in Controllern, und jede Änderung zieht sechs Dateien nach sich, die Sie eigentlich nicht anfassen wollten. Sie kennen das Argument für hexagonale Architektur: saubere Domänengrenzen, austauschbare Infrastruktur, testbare Geschäftslogik. Und Sie kennen [Taylor Otwells Gegenargument](https://www.theregister.com/2025/09/01/laravel_inventor_clever_devs/): Hören Sie auf, „Kathedralen der Komplexität" zu bauen. Beide Seiten haben einen Punkt.
+Deine Laravel-Applikation hat über 40 Models, Features überschneiden sich in Controllern, und jede Änderung zieht sechs Dateien nach sich, die du eigentlich nicht anfassen wolltest. Du kennst das Argument für hexagonale Architektur: saubere Domänengrenzen, austauschbare Infrastruktur, testbare Geschäftslogik. Und du kennst [Taylor Otwells Gegenargument](https://www.theregister.com/2025/09/01/laravel_inventor_clever_devs/): Hör auf, „Kathedralen der Komplexität" zu bauen. Beide Seiten haben einen Punkt.
 
-Aber es gibt eine Variable, die es vor zwei Jahren noch nicht gab: KI-Agenten, die Ihren Code schreiben. Das verändert die Kosten-Nutzen-Rechnung grundlegend.
+Aber es gibt eine Variable, die es vor zwei Jahren noch nicht gab: KI-Agenten, die deinen Code schreiben. Das verschiebt die Kosten-Nutzen-Rechnung.
 
-Dieser Artikel ist kein Tutorial, sondern eine Entscheidungshilfe. Am Ende wissen Sie, ob hexagonale Architektur zu Ihrer Laravel-Applikation passt, wie eine Migration konkret aussieht — und wo KI-Tooling die Waagschale kippt.
+Keine Einführung in hexagonale Architektur, sondern eine Entscheidungshilfe: Passt das Muster zu deiner Laravel-Applikation? Wie sieht eine Migration konkret aus? Und wo kippt KI-Tooling die Waagschale?
 
-## Zwei Wege, eine Laravel-Applikation zu strukturieren
+## Wie sich die zwei Ansätze im Alltag unterscheiden
 
 ### Convention-First (der Standard)
 
-Alles liegt dort, wo das Framework es erwartet: `app/Models`, `app/Http/Controllers`, `app/Services`. Generatoren funktionieren sofort. Neue Entwickler finden sich in Minuten zurecht. Pakete lassen sich reibungslos einbinden.
+Alles liegt dort, wo das Framework es erwartet: `app/Models`, `app/Http/Controllers`, `app/Services`. Generatoren funktionieren sofort. Neue Entwickler finden sich in Minuten zurecht. Pakete lassen sich ohne Konfiguration einbinden.
 
 ```text
 app/
@@ -45,14 +46,14 @@ app/
     └── InvoiceObserver.php
 ```
 
-Der Kompromiss zeigt sich, wenn die Codebasis wächst. Die Verzeichnisstruktur spiegelt technische Schichten wider (Controller, Models, Jobs), sagt aber nichts über fachliche Domänen aus (Abrechnung, Terminplanung, Reporting). Eine neue Steuerregel erfordert Änderungen in Controllern, Form Requests, Observers und Service-Klassen — verteilt über die gesamte Applikation. Technische und fachliche Topologie driften auseinander.
+Der Kompromiss zeigt sich, wenn die Codebasis wächst. Die Verzeichnisstruktur spiegelt technische Schichten wider (Controller, Models, Jobs), sagt aber nichts über fachliche Domänen aus (Abrechnung, Terminplanung, Reporting). Eine neue Steuerregel erfordert Änderungen in Controllern, Form Requests, Observers und Service-Klassen, verteilt über die gesamte Applikation. Technische und fachliche Topologie driften auseinander.
 
 ### Hexagonale Architektur (Ports und Adapter)
 
 Die Kerndomänenlogik lebt außerhalb des Frameworks. **Ports** definieren die Interfaces, die die Domäne benötigt (Repositories, Benachrichtigungen, Zahlungs-Gateways). **Adapter** implementieren diese Interfaces mit Laravel-Mitteln (Eloquent, Mail, Stripe SDK). Eine Applikationsschicht orchestriert die Use Cases.
 
 <figure>
-  <img src="/blog/hexagonal-architecture-in-laravel/hexagonal-concept.svg" alt="Hexagonal architecture diagram showing domain core surrounded by port interfaces and infrastructure adapters" />
+  <img src="/blog/hexagonal-architecture-in-laravel/hexagonal-concept.svg" alt="Hexagonale Architektur: Domänenkern umgeben von Port-Interfaces und Infrastruktur-Adaptern" />
   <figcaption>Hexagonale Architektur: Adapter hängen von Ports ab, Ports von der Domäne — nie umgekehrt.</figcaption>
 </figure>
 
@@ -93,7 +94,7 @@ Controller, API-Resources, Middleware und Form Requests können alle in domänen
 
 ### Models: Der eine Punkt, der Widerstand leistet
 
-Models sind die Komponente mit dem größten Convention-Reibungspotenzial, wenn sie verschoben werden. Eloquent löst per FQCN auf, nicht per Dateipfad — mechanisch funktioniert das. Aber es gibt echte Reibung:
+Models sind die Komponente mit dem größten Convention-Reibungspotenzial, wenn sie verschoben werden. Eloquent löst per FQCN auf, nicht per Dateipfad. Mechanisch funktioniert das. Aber es gibt echte Reibung:
 
 ```php
 // app/Models/Invoice.php — bleibt bewusst hier
@@ -109,13 +110,13 @@ class Invoice extends Model
 
 Seit Laravel 11.39 verweist das `#[UseFactory]`-Attribut `HasFactory` auf die richtige Factory-Klasse, unabhängig vom Namespace. Vor 11.39 würde man stattdessen `newFactory()` überschreiben. Beide Varianten funktionieren.
 
-Über die Factory-Auflösung hinaus müssen Policies manuell registriert werden statt auf Auto-Discovery zu setzen, `Relation::enforceMorphMap()` muss aufgerufen werden, damit polymorphe `morphable_type`-Werte stabil bleiben, und `make:model`-Scaffolding sowie Pakete wie Nova, Filament oder Spatie Permission setzen standardmäßig den `App\Models`-Namespace voraus. Laravel 12 verbesserte die verschachtelte Policy-Erkennung innerhalb von `App\Models\*`, aber Models außerhalb dieses Namespaces benötigen nach wie vor manuelle Registrierung. Keines dieser Probleme ist ein K.O.-Kriterium, aber sie addieren sich.
+Über die Factory-Auflösung hinaus gibt es weitere Reibungspunkte: Policies müssen manuell registriert werden statt auf Auto-Discovery zu setzen. `Relation::enforceMorphMap()` muss aufgerufen werden, damit polymorphe `morphable_type`-Werte stabil bleiben. Pakete wie Nova, Filament oder Spatie Permission setzen standardmäßig den `App\Models`-Namespace voraus. Laravel 12 verbesserte die verschachtelte Policy-Erkennung innerhalb von `App\Models\*`, aber Models außerhalb dieses Namespaces benötigen nach wie vor manuelle Registrierung. Keines dieser Probleme ist ein K.O.-Kriterium, aber sie addieren sich.
 
 Die pragmatische Entscheidung: Models in `app/Models/` belassen und den Zugriff hinter Repository-Interfaces kapseln, die in der Domänenschicht definiert sind. Das ist ein Kompromiss, keine Regel. Manche Teams haben Models erfolgreich verschoben, und ihre Gründe sind nachvollziehbar. Für die meisten Projekte lohnt sich der Aufwand durch den Gewinn an Reinheit aber nicht.
 
 <RelatedPost
   slug="eloquent-eager-loading-n-plus-1"
-  description="Wenn Ihre Models Dutzende Beziehungen laden, verhindert Eager Loading die N+1-Falle, bevor sie entsteht."
+  description="Wenn deine Models Dutzende Beziehungen laden, verhindert Eager Loading die N+1-Falle, bevor sie entsteht."
 />
 
 ## Hexagonal vs. Convention: Der praktische Vergleich
@@ -128,7 +129,7 @@ Die pragmatische Entscheidung: Models in `app/Models/` belassen und den Zugriff 
 | **KI-Agenten-Effizienz** | Höhere Token-Kosten — verstreute Änderungen | Niedrigere Token-Kosten — eingegrenzter Kontext |
 | **Paket-Kompatibilität** | Vollständig | Gelegentliche Reibung (Model-Position) |
 
-Zur **Testbarkeit**: Wenn Ihr Use Case von Interfaces statt von konkreten Eloquent-Abfragen abhängt, können Sie Domänenlogik testen, ohne das Framework zu starten.
+Zur **Testbarkeit**: Wenn dein Use Case von Interfaces statt von konkreten Eloquent-Abfragen abhängt, kannst du Domänenlogik testen, ohne das Framework zu starten.
 
 ```php
 // tests/Unit/Billing/GenerateInvoicePdfTest.php
@@ -148,24 +149,24 @@ it('generates a PDF for a finalized invoice', function () {
 });
 ```
 
-Dieser Test läuft in Millisekunden. Keine Datenbank, kein HTTP-Kernel, kein Service-Container. Die Domänenlogik wird isoliert getestet.
+Dieser Test läuft in Millisekunden. Keine Datenbank, kein HTTP-Kernel, kein Service-Container.
 
-Zur **Feature-Geschwindigkeit**: Eine neue Steuerregel in einem 40-Model-Monolithen erfordert das Durchsuchen von Controllern, Form Requests und Observers, die über `app/` verteilt sind. In einer hexagonalen Billing-Domäne liegt die Steuerregel in `app/Domain/Billing/` — ein Use Case, ein Port. Sie ändern zwei Dateien, nicht sechs.
+Zur **Feature-Geschwindigkeit**: Eine neue Steuerregel in einem 40-Model-Monolithen erfordert das Durchsuchen von Controllern, Form Requests und Observers, die über `app/` verteilt sind. In einer hexagonalen Billing-Domäne liegt die Steuerregel in `app/Domain/Billing/`: ein Use Case, ein Port. Du änderst zwei Dateien, nicht sechs.
 
-Das hat direkte wirtschaftliche Konsequenzen: Wenn Ihr Entwickler den Zahlungsanbieter wechseln muss, ändert er den `StripeAdapter` — und nichts sonst. Die Geschäftslogik, die Rechnungserstellung, die Validierung: alles bleibt unangetastet. Dieser Aufwand beläuft sich auf Stunden, nicht auf Wochen.
+Konkret: Wenn dein Entwickler den Zahlungsanbieter wechseln muss, ändert er den `StripeAdapter`. Nichts sonst. Die Geschäftslogik, die Rechnungserstellung, die Validierung: alles bleibt unangetastet. Bei einer sauberen Adapter-Trennung ist das ein Aufwand von Stunden, nicht Wochen.
 
 ## Warum KI die Gleichung verändert hat
 
-Hier ist das Argument, das die meisten Artikel über hexagonale Architektur noch nicht machen: KI-Agenten arbeiten besser, wenn die Architektur sie einschränkt. Weniger berührte Dateien, kleinere Kontextfenster, vorhersehbarere Ergebnisse.
+KI-Agenten arbeiten besser, wenn die Architektur sie einschränkt: weniger berührte Dateien pro Änderung und ein kleineres Kontextfenster.
 
-Nehmen wir die Rechnungs-PDF-Generierung. In der konventionellen Struktur benötigt ein KI-Agent, der dieses Feature bearbeitet, den Kontext aus `InvoiceController`, `InvoiceService`, `InvoiceObserver`, `InvoiceMailable`, dem Blade-Template und der Routen-Datei. Sechs Dateien in vier Verzeichnissen. In der hexagonalen Struktur braucht der Agent nur `GenerateInvoicePdf` (den Use Case) und `DompdfGenerator` (den Adapter). Zwei Dateien in derselben Domäne. Das Kontextfenster bleibt klein. Token-Kosten sinken. Genauigkeit steigt.
+Nehmen wir die Rechnungs-PDF-Generierung. In der konventionellen Struktur benötigt ein KI-Agent, der dieses Feature bearbeitet, den Kontext aus `InvoiceController`, `InvoiceService`, `InvoiceObserver`, `InvoiceMailable`, dem Blade-Template und der Routen-Datei. Sechs Dateien in vier Verzeichnissen. In der hexagonalen Struktur braucht der Agent nur `GenerateInvoicePdf` (den Use Case) und `DompdfGenerator` (den Adapter). Zwei Dateien in derselben Domäne. Das Kontextfenster bleibt klein, und der Agent hat weniger Gelegenheit, Code an der falschen Stelle zu ändern.
 
 <figure>
-  <img src="/blog/hexagonal-architecture-in-laravel/blast-radius-comparison.svg" alt="Blast radius comparison — conventional structure touches 6 scattered files, hexagonal touches 2 files in one domain" />
+  <img src="/blog/hexagonal-architecture-in-laravel/blast-radius-comparison.svg" alt="Änderungsradius im Vergleich: konventionelle Struktur berührt 6 verteilte Dateien, hexagonal berührt 2 Dateien in einer Domäne" />
   <figcaption>Änderungsumfang pro Feature: Convention-First berührt 6 Dateien in 4 Verzeichnissen; hexagonal berührt 2 Dateien in 1 Domäne.</figcaption>
 </figure>
 
-Es geht um weniger *berührte Dateien pro Änderung*, nicht um weniger Dateien insgesamt. Eine hexagonale Codebasis hat durch Interfaces, Adapter und DTOs mehr Dateien. Aber der Änderungsumfang pro Feature schrumpft. Wenn Sie einem KI-Agenten sagen „Implementiere Use Case X in der Billing-Domäne, respektiere die Port-Interfaces", ist die Anweisung eingegrenzt und überprüfbar:
+Es geht um weniger *berührte Dateien pro Änderung*, nicht um weniger Dateien insgesamt. Eine hexagonale Codebasis hat durch Interfaces, Adapter und DTOs mehr Dateien. Aber der Änderungsumfang pro Feature schrumpft. Wenn du einem KI-Agenten sagst „Implementiere Use Case X in der Billing-Domäne, respektiere die Port-Interfaces", ist die Anweisung eingegrenzt und überprüfbar:
 
 ```text
 Implement the ApplyLateFee use case in app/Domain/Billing/UseCases/.
@@ -175,29 +176,29 @@ Follow the existing GenerateInvoicePdf use case as a structural reference.
 
 Der Agent wandert nicht durch die gesamte Codebasis. Die Interfaces wirken als Leitplanken.
 
-Wie [Muthu in „The Architecture is the Prompt" argumentiert](https://notes.muthu.co/2025/11/the-architecture-is-the-prompt-guiding-ai-with-hexagonal-design/), schlägt strukturelle Durchsetzung Prompt-Engineering beim Leiten von KI. PHPs Typsystem wird zur Einschränkungsschicht. Die KI kann Architektur-Grenzen physisch nicht verletzen, wenn Ports und Adapter der einzige Weg in und aus der Domäne sind.
+Wie [Muthu in „The Architecture is the Prompt" argumentiert](https://notes.muthu.co/2025/11/the-architecture-is-the-prompt-guiding-ai-with-hexagonal-design/), ist strukturelle Durchsetzung zuverlässiger als Prompt-Engineering beim Leiten von KI. PHPs Typsystem wird zur Einschränkungsschicht. Die KI kann Architektur-Grenzen schwerer verletzen, wenn Ports und Adapter der einzige Weg in und aus der Domäne sind. PHPStan mit strikten Regeln fängt den Rest ab.
 
 <figure>
-  <img src="/blog/hexagonal-architecture-in-laravel/parallel-agents-worktrees.svg" alt="Three AI agents working in parallel git worktrees, each scoped to a separate domain directory, merging into main" />
+  <img src="/blog/hexagonal-architecture-in-laravel/parallel-agents-worktrees.svg" alt="Drei KI-Agenten arbeiten parallel in Git-Worktrees, jeder auf ein eigenes Domänenverzeichnis beschränkt, Merge in main" />
   <figcaption>Domänengrenzen begrenzen jeden Agenten auf seinen Git-Worktree, was Merge-Konflikte reduziert.</figcaption>
 </figure>
 
 Teams lassen bereits mehrere KI-Agenten parallel über Git-Worktrees laufen. [incident.io führt täglich 4–5 gleichzeitige Claude-Code-Sessions](https://incident.io/blog/shipping-faster-with-claude-code-and-git-worktrees) als Teil des Standardworkflows durch. Der Engpass sind Merge-Konflikte: Agenten in separaten Worktrees sehen die Änderungen des anderen nicht, bis Branches gemergt werden. Domänengrenzen verringern die Häufigkeit dieser Konflikte, indem sie die Änderungen jedes Agenten auf bestimmte Dateien eingrenzen.
 
-Ein Agent, der an Billing arbeitet, berührt `app/Domain/Billing/` und `app/Infrastructure/Billing/`. Ein Agent, der an Scheduling arbeitet, berührt seine eigenen Verzeichnisse. Die Überschneidung schrumpft. Wie [Addy Osmani beobachtet](https://addyosmani.com/blog/coding-agents-manager/), verschlechtern sich die Ergebnisse von LLMs, wenn der Kontext wächst — hexagonale Domänen halten den Kontext jedes Agenten klein und seine Ausgabe vorhersehbar. Das eliminiert Konflikte nicht vollständig (Tools wie [Clash](https://clash.sh/) existieren genau deshalb), aber die Architektur verbessert die Ausgangslage.
+Ein Agent, der an Billing arbeitet, berührt `app/Domain/Billing/` und `app/Infrastructure/Billing/`. Ein Agent, der an Scheduling arbeitet, berührt seine eigenen Verzeichnisse. Die Überschneidung schrumpft. Wie [Addy Osmani beobachtet](https://addyosmani.com/blog/coding-agents-manager/), verschlechtern sich die Ergebnisse von LLMs, wenn der Kontext wächst — hexagonale Domänen halten den Kontext jedes Agenten klein und die Ausgabe vorhersehbar. Das eliminiert Konflikte nicht vollständig (Tools wie [Clash](https://clash.sh/) existieren genau deshalb), aber es verbessert die Ausgangslage.
 
 ### Der Bootstrap-Einwand
 
-Ein berechtigter Einwand: KI kann eine bestehende hexagonale Struktur *pflegen*, sicher — aber kann sie eine solche *aufbauen*? Kann sie die schwierigen Entscheidungen über Domänengrenzen treffen?
+Ein berechtigter Einwand: KI kann eine bestehende hexagonale Struktur *pflegen*, sicher. Aber kann sie eine solche *aufbauen*? Kann sie die schwierigen Entscheidungen über Domänengrenzen treffen?
 
-Teilweise. KI-Skills und System-Prompts können das vollständige hexagonale Regelwerk kodieren: Namenskonventionen, Verzeichnisstruktur, Port/Adapter-Muster, wo Domänengrenzen zu ziehen sind. Ein [praktisches Experiment von Notch](https://wearenotch.com/blog/claude-code-meets-hexagonal-architecture/) zeigte, dass Claude Code korrekten hexagonalen Code generiert, wenn explizite Anweisungen in CLAUDE.md vorhanden sind — aber Belange vermengt, wenn diese fehlen. Mit der richtigen Konfiguration etabliert die KI die Muster selbst.
+Teilweise. KI-Skills und System-Prompts können das vollständige hexagonale Regelwerk kodieren: Namenskonventionen, Verzeichnisstruktur, Port/Adapter-Muster, wo Domänengrenzen zu ziehen sind. Ein [praktisches Experiment von Notch](https://wearenotch.com/blog/claude-code-meets-hexagonal-architecture/) zeigte, dass Claude Code korrekten hexagonalen Code generiert, wenn explizite Anweisungen in CLAUDE.md vorhanden sind, aber Belange vermengt, wenn diese fehlen. Mit der richtigen Konfiguration hält sich die KI an die Muster.
 
-Der ehrliche Vorbehalt: Das Schreiben dieser Konfiguration erfordert Architekturwissen. Sie müssen hexagonale Architektur gut genug verstehen, um ihre Regeln zu kodieren. Die Einstiegshürde sank von „monatelang Erfahrung aufbauen" auf „den richtigen KI-Skill konfigurieren und die Ausgabe prüfen". Auf null sank sie nicht.
+Der ehrliche Vorbehalt: Das Schreiben dieser Konfiguration erfordert Architekturwissen. Du musst hexagonale Architektur gut genug verstehen, um ihre Regeln zu kodieren. Die Einstiegshürde sank von „monatelang Erfahrung aufbauen" auf „den richtigen KI-Skill konfigurieren und die Ausgabe prüfen". Auf null sank sie nicht.
 
 ## Wann welche Variante wählen
 
 <figure>
-  <img src="/blog/hexagonal-architecture-in-laravel/decision-flowchart.svg" alt="Decision flowchart for choosing between convention-first, middle ground, and hexagonal architecture in Laravel" />
+  <img src="/blog/hexagonal-architecture-in-laravel/decision-flowchart.svg" alt="Entscheidungsbaum: Convention-First, Mittelweg oder hexagonale Architektur in Laravel" />
   <figcaption>Wann Convention-First, Mittelweg oder hexagonale Architektur die richtige Wahl ist.</figcaption>
 </figure>
 
@@ -205,9 +206,9 @@ Der ehrliche Vorbehalt: Das Schreiben dieser Konfiguration erfordert Architektur
 
 Dasselbe gilt, wenn die Infrastruktur einfach und stabil ist: Wenn die App mit einer Datenbank und einem Mailer kommuniziert und nichts weiter, erzeugt das Einwickeln hinter Ports Dateien ohne Mehrwert.
 
-**Hexagonal** ab vier oder mehr eigenständigen Geschäftsdomänen, die sich unabhängig voneinander weiterentwickeln. Das Muster zahlt sich in dieser Größenordnung aus — besonders bei mehreren Entwicklern oder KI-Agenten, die parallel über Git-Worktrees arbeiten. Es passt auch, wenn Geschäftslogik komplex genug ist, um Unit-Tests ohne Framework zu rechtfertigen, oder wenn Sie die KI-Agenten-Effizienz maximieren wollen.
+**Hexagonal** ab vier oder mehr eigenständigen Geschäftsdomänen, die sich unabhängig voneinander weiterentwickeln. Das Muster zahlt sich in dieser Größenordnung aus, besonders bei mehreren Entwicklern oder KI-Agenten, die parallel über Git-Worktrees arbeiten. Es passt auch, wenn Geschäftslogik komplex genug ist, um Unit-Tests ohne Framework zu rechtfertigen, oder wenn du die KI-Agenten-Effizienz maximieren willst.
 
-**Der Mittelweg** ist real und wird unterschätzt. Sie müssen nicht von Beginn an alles umstrukturieren. Extrahieren Sie eine Domäne — die komplexeste oder am schnellsten wachsende — in eine hexagonale Struktur, während der Rest konventionell bleibt. [Victor Rentea nennt das „Relaxed Hexagonal"](https://victorrentea.ro/blog/overengineering-in-onion-hexagonal-architectures/): das Muster dort anwenden, wo es sich rentiert, und Zeremonie überall sonst weglassen. Laravels [Service Container](https://laravel.com/docs/12.x/container) macht diesen inkrementellen Ansatz natürlich. Interfaces in einem domänenspezifischen Service Provider binden, Implementierungen austauschen, ohne Consumer anzufassen.
+**Der Mittelweg** ist real und wird unterschätzt. Du musst nicht von Beginn an alles umstrukturieren. Extrahiere eine Domäne — die komplexeste oder am schnellsten wachsende — in eine hexagonale Struktur, während der Rest konventionell bleibt. [Victor Rentea nennt das „Relaxed Hexagonal"](https://victorrentea.ro/blog/overengineering-in-onion-hexagonal-architectures/): das Muster dort anwenden, wo es sich rentiert, und Zeremonie überall sonst weglassen. Laravels [Service Container](https://laravel.com/docs/12.x/container) macht diesen inkrementellen Ansatz natürlich. Interfaces in einem domänenspezifischen Service Provider binden, Implementierungen austauschen, ohne Consumer anzufassen.
 
 <!-- internal link: service classes vs actions post (pipeline/2-outline/260331) — insert once published -->
 <!-- internal link: laravel service container post (pipeline/2-outline/260512) — insert once published -->
@@ -251,15 +252,17 @@ Route::middleware(['auth', 'verified'])
     });
 ```
 
-Der KI-Faktor hat meine persönliche Kalkulation verändert. Früher war der Aufwand für hexagonale Architektur bei einem Solo-Projekt schwer zu rechtfertigen. Heute, mit KI-Agenten bei der Implementierung, zahlen sich die sauberen Interfaces und eingegrenzten Domänen unmittelbar aus: schnellere Code-Generierung, kleine Diffs, schnelle Reviews.
+Der KI-Faktor hat meine persönliche Kalkulation verändert. Früher war der Aufwand für hexagonale Architektur bei einem Solo-Projekt schwer zu rechtfertigen. Heute, mit KI-Agenten bei der Implementierung, zahlen sich die sauberen Interfaces und eingegrenzten Domänen aus. Die Diffs bleiben klein genug für ein schnelles Review, weil der Agent nur die Dateien einer Domäne anfasst.
 
-Ehrlicher Vorbehalt: Die erste Domänen-Extraktion dauert einen vollen Tag. Jede weitere Domäne danach etwa eine Stunde. Der ROI hängt davon ab, ob das Projekt lange genug läuft, um diesen ersten Tag zu amortisieren.
+Ehrlicher Vorbehalt: Die erste Domänen-Extraktion hat mich bei einem 30-Model-Projekt einen vollen Arbeitstag gekostet. Jede weitere Domäne danach etwa eine Stunde. Der ROI hängt davon ab, ob das Projekt lange genug läuft, um diesen ersten Tag zu amortisieren.
 
 ## Der Kompromiss, klar benannt
 
-Hexagonale Architektur geht nicht um Reinheit. Es geht darum, eine Codebasis für Menschen und KI-Agenten gleichermaßen navigierbar zu machen. Für Projekte mit echter Domänenkomplexität amortisiert sich die Investition schneller als früher. Für Projekte ohne diese Komplexität ist es Overhead, den Sie nicht brauchen.
+Hexagonale Architektur geht nicht um Reinheit. Es geht darum, eine Codebasis für Menschen und KI-Agenten gleichermaßen navigierbar zu machen. Für Projekte mit echter Domänenkomplexität amortisiert sich die Investition schneller als früher. Für Projekte ohne diese Komplexität ist es Overhead, den du nicht brauchst.
 
 Die Schwelle für „lohnt sich" ist gesunken. Verschwunden ist sie nicht.
+
+Wenn du vor einer konkreten Architektur-Entscheidung stehst: [Schreib mir](/#kontakt).
 
 <!-- internal link: service classes vs actions post (pipeline/2-outline/260331) — insert once published -->
 

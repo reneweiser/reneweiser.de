@@ -1,27 +1,28 @@
 ---
-title: Statischen Blog mit SvelteKit bauen — schnell, günstig, wartungsarm
-description: "Statische SvelteKit-Blogs mit mdsvex, adapter-static und Shiki: kein Server, minimale Hostingkosten, maximale Performance — so funktioniert der Aufbau."
+title: Statischen Blog mit SvelteKit bauen – ohne Server
+description: "Ein statischer SvelteKit-Blog mit mdsvex kostet 0 Euro Hosting im Monat. Aufbau, Code-Beispiele und ehrliche Einschätzung, wann sich das lohnt."
 date: "2026-02-17"
+lang: de
 tags:
-  - SvelteKit
-  - TypeScript
+  - Hintergrundwissen
+  - Digitale Werkzeuge
 published: true
 ---
 
-Ein Blog braucht keinen Server. Wer auf WordPress, ein Headless-CMS oder gemanagte Hosting-Pläne setzt, zahlt monatlich für Infrastruktur, die ein statisch generierter Blog schlicht nicht benötigt. Der Blog, den Sie gerade lesen, ist vollständig prerendered — kein Node-Prozess, kein Datenbank-Query, keine laufenden Serverkosten.
+Nicht jeder Blog braucht einen Server. Wer auf WordPress, ein Headless-CMS oder gemanagte Hosting-Pläne setzt, zahlt monatlich für Infrastruktur, die ein statisch generierter Blog nicht benötigt. Der Blog, den du gerade liest, ist prerendered: kein Node-Prozess, kein Datenbank-Query, keine laufenden Serverkosten.
 
-Hier ist der Aufbau dahinter.
+Der Aufwand für diesen Aufbau lag bei etwa zwei Arbeitstagen (mit SvelteKit-Erfahrung). Ohne Vorkenntnisse wäre es deutlich mehr.
 
-## Der Tech-Stack
+## Kein Server, keine Hostingkosten
 
-- **SvelteKit** mit `adapter-static` für statische Site-Generierung
-- **mdsvex** zur Verarbeitung von Markdown als Svelte-Komponenten
-- **Shiki** für Syntax-Highlighting
+- [**SvelteKit**](https://svelte.dev/docs/kit/introduction) mit `adapter-static` für statische Site-Generierung
+- [**mdsvex**](https://mdsvex.pngwn.io/docs) zur Verarbeitung von Markdown als Svelte-Komponenten
+- [**Shiki**](https://shiki.style/) für Syntax-Highlighting
 - **Tailwind CSS Typography** für Prose-Styling
 
-Hosting läuft auf einem CDN wie Cloudflare Pages oder Netlify — beide haben großzügige Free-Tiers für statische Seiten. Die laufenden Kosten für diesen Blog betragen null Euro.
+Hosting läuft auf einem CDN wie Cloudflare Pages oder Netlify. Cloudflare Pages erlaubt 500 Builds pro Monat kostenlos, Netlify 300 Build-Minuten. Für einen Blog mit ein bis zwei neuen Beiträgen pro Woche reicht das. Die laufenden Hostingkosten: 0 Euro pro Monat. Domain-Kosten fallen trotzdem an (ca. 10-15 Euro pro Jahr).
 
-## Inhalte liegen im Repository
+## Inhalte versioniert im Git-Repository
 
 Jeder Beitrag ist eine Markdown-Datei mit YAML-Frontmatter:
 
@@ -37,9 +38,9 @@ published: true
 Your content here...
 ```
 
-Kein CMS, keine Datenbank. Inhalte sind versioniert, liegen im Git-Repository und werden zusammen mit dem Code deployt. Ein neuer Beitrag ist ein neuer Commit — kein Admin-Interface, kein separates System, das gewartet werden muss.
+Kein CMS, keine Datenbank. Inhalte liegen im Git-Repository und werden zusammen mit dem Code deployt. Ein neuer Beitrag ist ein neuer Commit, kein Admin-Interface, kein separates System, das gewartet werden muss.
 
-## Posts werden zur Build-Zeit geladen
+## Posts laden zur Build-Zeit
 
 Über Vites `import.meta.glob` mit `eager: true`:
 
@@ -49,9 +50,9 @@ const modules = import.meta.glob<PostModule>("/src/content/blog/*.md", {
 });
 ```
 
-SvelteKit liest alle Posts während des Builds ein. Jedes Modul liefert die Frontmatter-Daten als `metadata` und den gerenderten Inhalt als Svelte-Komponente. Zur Laufzeit gibt es nichts mehr zu berechnen — der Browser bekommt fertiges HTML.
+SvelteKit liest alle Posts während des Builds ein. Jedes Modul liefert die Frontmatter-Daten als `metadata` und den gerenderten Inhalt als Svelte-Komponente. Zur Laufzeit gibt es nichts mehr zu berechnen, der Browser bekommt fertiges HTML.
 
-## Routen folgen REST-Konventionen
+## Vier Routen für den gesamten Blog
 
 ```
 /blog             → Index aller Beiträge
@@ -60,11 +61,11 @@ SvelteKit liest alle Posts während des Builds ein. Jedes Modul liefert die Fron
 /feed.xml         → RSS-Feed
 ```
 
-Jede Route exportiert `prerender = true`. Dynamische Routen nutzen eine `entries()`-Funktion, damit SvelteKit weiß, welche Pfade es zur Build-Zeit generieren soll. Das Ergebnis sind statische HTML-Dateien, die direkt vom CDN ausgeliefert werden — ohne Roundtrip zu einem Origin-Server.
+Jede Route exportiert `prerender = true`. Dynamische Routen nutzen eine `entries()`-Funktion, damit SvelteKit weiß, welche Pfade es zur Build-Zeit generieren soll. Das Ergebnis sind statische HTML-Dateien, die direkt vom CDN ausgeliefert werden, ohne Roundtrip zu einem Origin-Server.
 
-## Syntax-Highlighting mit Shiki
+## Syntax-Highlighting zur Build-Zeit
 
-mdsvex unterstützt benutzerdefinierte Highlighter. Shiki verwendet dieselbe Grammar-Engine wie VS Code:
+[mdsvex](https://mdsvex.pngwn.io/docs) unterstützt benutzerdefinierte Highlighter. Shiki verwendet dieselbe Grammar-Engine wie VS Code:
 
 ```javascript
 const mdsvexOptions = {
@@ -78,10 +79,14 @@ const mdsvexOptions = {
 };
 ```
 
-Das Highlighting läuft vollständig zur Build-Zeit. Im Browser landet fertiges, tokenisiertes HTML — kein JavaScript, das zur Laufzeit Code parst.
+Das Highlighting läuft zur Build-Zeit. Im Browser landet fertiges, tokenisiertes HTML, kein JavaScript, das zur Laufzeit Code parst.
 
-## Was dabei herauskommt
+## Was du damit bekommst (und was nicht)
 
-Ein vollständig statischer Blog mit schnellen Ladezeiten, null Serveranfragen und voller Kontrolle über Styling und Struktur. Core Web Vitals im grünen Bereich, weil es schlicht nichts zu optimieren gibt — statisches HTML ist von Haus aus schnell.
+Ein statischer Blog mit schnellen Ladezeiten und voller Kontrolle über Styling und Struktur. Dieser Blog erreicht im Lighthouse-Test (Stand Februar 2026, getestet mit realen Beiträgen) einen Performance-Score von 100, weil der Browser nur statisches HTML und CSS laden muss.
 
-Die Wartung beschränkt sich auf das Schreiben von Markdown-Dateien. Kein CMS-Update, kein Plugin-Konflikt, keine Datenbank-Migration. Wer einen neuen Beitrag veröffentlichen will, erstellt eine `.md`-Datei und pusht in den Hauptbranch.
+Die Wartung beschränkt sich auf das Schreiben von Markdown-Dateien. Kein CMS-Update, kein Plugin-Konflikt, keine Datenbank-Migration.
+
+Aber: Framework-Updates (SvelteKit, mdsvex, Shiki) fallen trotzdem an. Du brauchst ein funktionierendes Dev-Setup mit Node oder Bun, und du musst mit Git umgehen können. Für jemanden ohne Entwickler-Hintergrund ist das keine praktikable Lösung. In dem Fall ist ein gemanagtes CMS wie WordPress oder ein Baukasten die bessere Wahl.
+
+Wenn du eine Website oder einen Blog brauchst und nicht sicher bist, welcher Ansatz für dich passt, [melde dich](/kontakt).
