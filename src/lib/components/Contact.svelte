@@ -5,33 +5,85 @@
 	<div class="relative mx-auto max-w-6xl">
 		<!-- Section header -->
 		<div class="mb-12 flex items-baseline gap-4">
-			<span class="font-mono text-sm text-copper">05.</span>
+			<span class="font-mono text-sm text-copper">06.</span>
 			<h2 class="font-display text-4xl tracking-tight text-ink md:text-5xl">Kontakt</h2>
 			<div class="hidden h-px flex-1 bg-ink/10 sm:block"></div>
 		</div>
 
 		<div class="grid gap-12 lg:grid-cols-2">
-			<!-- Left column: CTA text -->
+			<!-- Left column: CTA text + form -->
 			<div>
-				<p class="mb-6 font-display text-2xl text-ink md:text-3xl">
-					Interesse geweckt?
+				<p class="mb-2 font-display text-2xl text-ink md:text-3xl">
+					Projekt besprechen
 				</p>
-				<p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted">
-					Ich freue mich über eine Nachricht — ob konkrete Stelle, Initiativgespräch oder
-					einfach ein fachlicher Austausch.
+				<p class="mb-2 max-w-md text-lg leading-relaxed text-ink-muted">
+					Schreib mir, was du vorhast — auch wenn du noch nicht genau weißt, was du brauchst.
+					Ich antworte innerhalb von 24 Stunden mit einer ehrlichen Einschätzung.
+				</p>
+				<p class="mb-8 max-w-md text-sm text-ink-soft">
+					20 Minuten. Dein Projekt, meine Einschätzung. Kostenlos und unverbindlich.
 				</p>
 
-				<!-- Primary CTA -->
-				<a
-					href="mailto:hello@reneweiser.de"
-					class="group inline-flex items-center gap-3 rounded-lg bg-ink px-6 py-4 font-mono text-sm font-medium text-paper transition-all hover:bg-copper hover:shadow-lg hover:shadow-copper/20"
+				<!-- Inline contact form -->
+				<form
+					action="https://formsubmit.co/hello@reneweiser.de"
+					method="POST"
+					class="space-y-4"
 				>
-					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-					</svg>
-					hello@reneweiser.de
-					<span class="transition-transform group-hover:translate-x-1">→</span>
-				</a>
+					<input type="text" name="_honey" class="hidden" />
+					<input type="hidden" name="_subject" value="Neue Projektanfrage über reneweiser.de" />
+					<input type="hidden" name="_next" value="https://reneweiser.de/?contacted=true" />
+
+					<div>
+						<label for="contact-name" class="mb-1 block font-mono text-xs uppercase tracking-wider text-ink-soft">Name</label>
+						<input
+							type="text"
+							id="contact-name"
+							name="name"
+							required
+							class="w-full rounded-lg border border-ink/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30"
+							placeholder="Dein Name"
+						/>
+					</div>
+
+					<div>
+						<label for="contact-email" class="mb-1 block font-mono text-xs uppercase tracking-wider text-ink-soft">E-Mail</label>
+						<input
+							type="email"
+							id="contact-email"
+							name="email"
+							required
+							class="w-full rounded-lg border border-ink/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30"
+							placeholder="deine@email.de"
+						/>
+					</div>
+
+					<div>
+						<label for="contact-message" class="mb-1 block font-mono text-xs uppercase tracking-wider text-ink-soft">Anliegen in 2–3 Sätzen</label>
+						<textarea
+							id="contact-message"
+							name="message"
+							required
+							rows="3"
+							class="w-full rounded-lg border border-ink/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-soft/50 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30 resize-none"
+							placeholder="Worum geht es?"
+						></textarea>
+					</div>
+
+					<button
+						type="submit"
+						class="group inline-flex items-center gap-3 rounded-lg bg-ink px-6 py-3 font-mono text-sm font-medium text-paper transition-all hover:bg-copper hover:shadow-lg hover:shadow-copper/20"
+					>
+						Nachricht senden
+						<span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+					</button>
+				</form>
+
+				<!-- Alternative: direct email -->
+				<p class="mt-6 text-sm text-ink-soft">
+					Oder direkt per E-Mail:
+					<a href="mailto:hello@reneweiser.de" class="text-ink-muted transition-colors hover:text-copper">hello@reneweiser.de</a>
+				</p>
 			</div>
 
 			<!-- Right column: Social links -->
@@ -58,7 +110,7 @@
 							<p class="font-mono text-xs text-ink-soft">@reneweiser</p>
 						</div>
 						<span class="text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-copper">
-							→
+							&rarr;
 						</span>
 					</a>
 
@@ -79,7 +131,7 @@
 							<p class="font-mono text-xs text-ink-soft">René Weiser</p>
 						</div>
 						<span class="text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-copper">
-							→
+							&rarr;
 						</span>
 					</a>
 				</div>

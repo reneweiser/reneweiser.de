@@ -16,7 +16,7 @@
 			<!-- Section header -->
 			<div class="mb-16 flex items-baseline gap-4">
 				<span class="font-mono text-sm text-copper">04.</span>
-				<h2 class="font-display text-4xl tracking-tight text-ink md:text-5xl">Latest Writing</h2>
+				<h2 class="font-display text-4xl tracking-tight text-ink md:text-5xl">Aus dem Blog</h2>
 				<div class="hidden h-px flex-1 bg-ink/10 sm:block"></div>
 			</div>
 
@@ -75,7 +75,7 @@
 					href="/blog"
 					class="inline-flex items-center gap-2 font-mono text-sm text-ink-muted transition-colors hover:text-copper"
 				>
-					View all posts
+					Alle Beiträge ansehen
 					<span class="transition-transform group-hover:translate-x-1">→</span>
 				</a>
 			</div>

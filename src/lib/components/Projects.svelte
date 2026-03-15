@@ -12,30 +12,33 @@
 		{
 			title: 'CRM-Plattform',
 			description:
-				'Persönliche CRM-Plattform für freiberufliche Webentwickler und IT-Berater. Gebaut mit Laravel 12 und Filament 4.',
+				'Freelancer brauchen Überblick über Kunden und Projekte — ohne Excel. Das CRM, das ich dafür gebaut habe.',
 			contribution:
-				'Vollständige Entwicklung von Architektur und Implementierung. Kontakt- und Projektverwaltung, Aufgabenplanung und Reporting über ein Filament-basiertes Admin-Dashboard.',
+				'Kontakt- und Projektverwaltung, Aufgabenplanung und Reporting über ein Filament-basiertes Admin-Dashboard. Laravel 12, Livewire, Docker.',
 			stack: ['Laravel', 'Filament 4', 'Livewire', 'Eloquent ORM', 'Docker'],
 			liveUrl: 'https://reneweiser.github.io/freelancer-crm/',
 			githubUrl: 'https://github.com/reneweiser/freelancer-crm'
 		},
 		{
 			title: 'SaaS-Buchungsplattform',
-			description: 'Multi-Tenant Buchungssystem für Dienstleister mit Online-Terminvergabe.',
+			description:
+				'Online-Terminvergabe für Dienstleister: Kalender, automatische Benachrichtigungen, Zahlungsabwicklung über Stripe.',
 			contribution:
-				'Architektur und Implementierung des Multi-Tenant-Systems. Kalender-Integration, automatisierte E-Mail-Benachrichtigungen, Stripe-Payment-Integration.',
+				'Multi-Tenant-Architektur, Kalender-Integration, automatisierte E-Mail-Benachrichtigungen und Stripe-Payment-Integration.',
 			stack: ['Laravel', 'Livewire', 'PostgreSQL', 'Stripe', 'GitHub Actions']
 		},
 		{
 			title: 'Unternehmens-Dashboard',
-			description: 'Internes Reporting-Tool mit Echtzeit-Datenvisualisierung.',
+			description:
+				'Daten aus verschiedenen Quellen an einem Ort: Echtzeit-Visualisierung, interaktive Filter, responsive Charts.',
 			contribution:
 				'Frontend-Architektur mit Svelte, Anbindung an verschiedene Datenquellen via REST APIs, responsive Charts und interaktive Filter.',
 			stack: ['Svelte', 'TypeScript', 'D3.js', 'REST API']
 		},
 		{
-			title: 'DevOps & Infrastruktur',
-			description: 'Container-basierte Deployment-Pipelines für Web-Applikationen.',
+			title: 'Zuverlässiger Betrieb',
+			description:
+				'Die Infrastruktur, die Projekte am Laufen hält: CI/CD-Pipelines, Container-Setups, Monitoring.',
 			contribution:
 				'Aufbau von CI/CD-Pipelines mit GitHub Actions, Docker-Compose-Setups für Entwicklung und Produktion, Monitoring mit Prometheus/Grafana.',
 			stack: ['Docker', 'GitHub Actions', 'Linux', 'Nginx', 'Prometheus']
@@ -52,7 +55,7 @@
 	<div class="relative mx-auto max-w-6xl">
 		<!-- Section header -->
 		<div class="mb-16 flex items-baseline gap-4">
-			<span class="font-mono text-sm text-copper">03.</span>
+			<span class="font-mono text-sm text-copper">02.</span>
 			<h2 class="font-display text-4xl tracking-tight text-ink md:text-5xl">Projekte</h2>
 			<div class="hidden h-px flex-1 bg-ink/10 sm:block"></div>
 		</div>

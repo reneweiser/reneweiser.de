@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Hero from '$lib/components/Hero.svelte';
-	import About from '$lib/components/About.svelte';
-	import TechStack from '$lib/components/TechStack.svelte';
+	import Services from '$lib/components/Services.svelte';
 	import Projects from '$lib/components/Projects.svelte';
+	import About from '$lib/components/About.svelte';
 	import BlogPreview from '$lib/components/blog/BlogPreview.svelte';
+	import FAQ from '$lib/components/FAQ.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Impressum from '$lib/components/Impressum.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -12,9 +13,9 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	const title = 'René Weiser — Full-Stack Webentwickler';
+	const title = 'René Weiser — Webentwickler für Freelancer & kleine Unternehmen';
 	const description =
-		'Full-Stack Webentwickler mit knapp zehn Jahren Berufserfahrung — Laravel, Vue.js, Svelte, Docker. Vom sauberen Frontend bis zur skalierbaren Serverarchitektur.';
+		'Websites und Webanwendungen für Freelancer und kleine Unternehmen. Individuelle Lösungen von einem Entwickler, der selbst Unternehmer ist.';
 
 	// JSON-LD structured data for Person + WebSite
 	const jsonLd = {
@@ -33,9 +34,9 @@
 				'@id': `${siteUrl}/#person`,
 				name: 'René Weiser',
 				url: siteUrl,
-				jobTitle: 'Full-Stack Webentwickler',
+				jobTitle: 'Webentwickler & Berater',
 				description:
-					'Full-Stack-Webentwickler mit knapp zehn Jahren Berufserfahrung und einem Hintergrund als selbstständiger Unternehmer.',
+					'Webentwickler für Freelancer und kleine Unternehmen — individuelle Lösungen von einem Entwickler, der selbst Unternehmer ist.',
 				knowsAbout: [
 					'Laravel',
 					'Vue.js',
@@ -48,9 +49,70 @@
 					'REST APIs',
 					'CI/CD'
 				],
+				makesOffer: [
+					{
+						'@type': 'Offer',
+						itemOffered: {
+							'@type': 'Service',
+							name: 'Webentwicklung',
+							description: 'Individuelle Websites für Freelancer und kleine Unternehmen'
+						}
+					},
+					{
+						'@type': 'Offer',
+						itemOffered: {
+							'@type': 'Service',
+							name: 'Webanwendungen',
+							description: 'Digitale Werkzeuge zur Prozessautomatisierung'
+						}
+					}
+				],
+				areaServed: [
+					{ '@type': 'Country', name: 'Deutschland' },
+					{ '@type': 'Country', name: 'Österreich' },
+					{ '@type': 'Country', name: 'Schweiz' }
+				],
 				sameAs: [
 					'https://github.com/reneweiser',
 					'https://www.linkedin.com/in/reneweiser'
+				]
+			},
+			{
+				'@type': 'FAQPage',
+				'@id': `${siteUrl}/#faq`,
+				mainEntity: [
+					{
+						'@type': 'Question',
+						name: 'Was kostet eine professionelle Website?',
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: 'Eine typische Website für Freelancer oder kleine Unternehmen liegt zwischen 3.000 und 8.000 EUR — je nach Umfang, Funktionalität und Individualisierung. Im kostenlosen Erstgespräch gebe ich dir eine konkrete Einschätzung für dein Projekt.'
+						}
+					},
+					{
+						'@type': 'Question',
+						name: 'Wie läuft eine Zusammenarbeit ab?',
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: 'Erstgespräch (kostenlos, ~20 Min.) → Konzept und Angebot → Umsetzung in Sprints mit regelmäßigem Feedback → Launch und Übergabe. Du bist bei jedem Schritt eingebunden und siehst den Fortschritt live.'
+						}
+					},
+					{
+						'@type': 'Question',
+						name: 'Was, wenn mir das Ergebnis nicht gefällt?',
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: 'Jeder Meilenstein hat eine Feedback-Runde, in der wir Anpassungen besprechen. Dadurch entstehen keine Überraschungen am Ende. Du siehst frühzeitig, wohin sich das Projekt entwickelt, und kannst jederzeit Korrekturen einbringen.'
+						}
+					},
+					{
+						'@type': 'Question',
+						name: 'WordPress oder individuell — was ist der Unterschied?',
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: 'WordPress ist gut für Standardseiten mit Blog. Eine individuelle Lösung lohnt sich, wenn du besondere Funktionen brauchst, maximale Performance willst oder dich nicht mit Plugin-Updates und Sicherheitslücken herumschlagen möchtest.'
+						}
+					}
 				]
 			}
 		]
@@ -103,10 +165,11 @@
 	<Header />
 	<main>
 		<Hero />
-		<About />
-		<TechStack />
+		<Services />
 		<Projects />
+		<About />
 		<BlogPreview posts={data.posts} />
+		<FAQ />
 		<Contact />
 		<Impressum />
 	</main>

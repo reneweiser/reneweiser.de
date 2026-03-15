@@ -13,9 +13,9 @@
 	});
 
 	const navItems = [
-		{ href: '#ueber-mich', label: 'Über mich' },
-		{ href: '#stack', label: 'Stack' },
+		{ href: '#leistungen', label: 'Leistungen' },
 		{ href: '#projekte', label: 'Projekte' },
+		{ href: '#ueber-mich', label: 'Über mich' },
 		{ href: '/blog', label: 'Blog' },
 		{ href: '#kontakt', label: 'Kontakt' }
 	];

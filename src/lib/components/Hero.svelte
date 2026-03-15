@@ -36,35 +36,34 @@
 		<!-- Main headline -->
 		<h1 class="mb-6 max-w-4xl">
 			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl animate-fade-up delay-2 block">
-				Full-Stack
+				Websites für Selbständige,
 			</span>
 			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl animate-fade-up delay-3 block">
-				Webentwickler<span class="text-copper">.</span>
+				die sich bezahlt machen<span class="text-copper">.</span>
 			</span>
 		</h1>
 
-		<!-- Secondary headline with italic emphasis -->
+		<!-- Subtitle -->
 		<p class="mb-12 max-w-2xl font-display text-2xl text-ink-muted md:text-3xl animate-fade-up delay-4">
-			Vom Frontend bis zum Server<span class="text-copper">—</span><br class="hidden sm:block" />
-			<em class="text-ink">end-to-end</em>.
+			Webentwicklung mit unternehmerischem Verstand<span class="text-copper">—</span><br class="hidden sm:block" />
+			für <em class="text-ink">Freelancer und kleine Unternehmen</em>.
 		</p>
 
-		<!-- Subline / description -->
+		<!-- Body -->
 		<div class="mb-16 max-w-xl animate-fade-up delay-5">
 			<p class="text-lg leading-relaxed text-ink-muted">
-				Ich entwickle und betreibe Webanwendungen end-to-end — von der Benutzeroberfläche über
-				die Backend-Architektur bis zum Deployment. Seit fast zehn Jahren, mit eigenem Unternehmen
-				und dem Anspruch, Software zu liefern, die im echten Betrieb funktioniert.
+				Knapp zehn Jahre Erfahrung, über 50 umgesetzte Projekte — und ein eigenes Unternehmen,
+				das mir beigebracht hat, was eine Website leisten muss und wann sie rausgeworfenes Geld ist.
 			</p>
 		</div>
 
 		<!-- CTA -->
 		<div class="flex flex-wrap items-center gap-6 animate-fade-up delay-6">
 			<a
-				href="#projekte"
+				href="#leistungen"
 				class="group inline-flex items-center gap-3 border-b-2 border-ink pb-2 font-mono text-sm font-medium text-ink transition-all hover:border-copper hover:text-copper"
 			>
-				Projekte ansehen
+				Leistungen ansehen
 				<span class="transition-transform group-hover:translate-x-1">↓</span>
 			</a>
 			<a
@@ -72,7 +71,7 @@
 				class="inline-flex items-center gap-2 font-mono text-sm text-ink-soft transition-colors hover:text-copper"
 			>
 				<span class="h-2 w-2 rounded-full bg-sage animate-pulse"></span>
-				Verfügbar für neue Projekte
+				Aktuell Kapazitäten frei
 			</a>
 		</div>
 
