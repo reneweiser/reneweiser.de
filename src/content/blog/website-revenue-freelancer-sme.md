@@ -9,7 +9,9 @@ tags:
   - Freelance
   - Kundengewinnung
   - Entscheidungshilfe
-published: false
+image: "/blog/brauchen-freelancer-eine-website/titel.webp"
+imageAlt: "Cartoon-Illustration: Ein Freelancer arbeitet am Laptop im Café, während potenzielle Kunden auf ein Smartphone mit Google-Suchergebnissen zeigen"
+published: true
 ---
 
 Ein IT-Berater aus meinem Netzwerk wurde einem Projektleiter eines Mittelständlers empfohlen. Der Projektleiter hat den Namen gegoogelt, nichts gefunden und stattdessen jemanden mit Website beauftragt. Der Berater hat es nie erfahren. Ich nur, weil der Projektleiter es mir erzählt hat.
@@ -85,7 +87,7 @@ Das ist genau das, was ich für jeden Kunden einrichte, der mit dem Wunsch nach 
 
 In Österreich kann das [KMU.DIGITAL-Programm](https://www.bmwet.gv.at/Services/Foerderungen/aws/KMU-DIGITAL.html) einen Teil der Kosten decken. Das Budget liegt bei EUR 35 Mio. für 2024–2026, maximal EUR 12.000 pro Unternehmen. Die Verfügbarkeit variiert zwischen den Förderrunden.
 
-Und zum Einwand "Ich habe keine Zeit": Eine One-Page-Website ist an einem Nachmittag mit einem Baukasten aufgesetzt oder in einem Termin mit einem Entwickler, wenn du einigermaßen sicher mit digitalen Tools umgehst. Wenn du ein Baukasten-System nutzt, kannst du Texte und Bilder selbst aktualisieren. Das ist eine halbe Stunde pro Monat.
+Und zum Einwand "Ich habe keine Zeit": Wer technisch versiert ist, kann einen [statischen Blog mit SvelteKit](/blog/sveltekit-static-blog) auch selbst aufbauen — ohne laufende Serverkosten. Eine One-Page-Website ist an einem Nachmittag mit einem Baukasten aufgesetzt oder in einem Termin mit einem Entwickler, wenn du einigermaßen sicher mit digitalen Tools umgehst. Wenn du ein Baukasten-System nutzt, kannst du Texte und Bilder selbst aktualisieren. Das ist eine halbe Stunde pro Monat.
 
 ## Wann eine Website sich nicht lohnt
 
@@ -108,6 +110,16 @@ Und ein ehrlicher Punkt: Wenn du als Freelancer in einem Bereich arbeitest, in d
 Eine Website ersetzt nicht die Art, wie du heute schon Kunden findest. Sie kann jeden anderen Kanal wirksamer machen: Empfehlungen, Networking, Branchenverzeichnisse, Mundpropaganda.
 
 Fang mit einer Seite an. Google Unternehmensprofil einrichten, Kontaktdaten drauf, drei Kundenstimmen dazu. Das kostet einen Nachmittag oder ein paar hundert Euro beim Entwickler. Wenn die Person, die deinen Namen googelt, danach weiß, was du machst und wie sie dich erreicht, bist du vielen Mitbewerbern ohne Online-Präsenz einen Schritt voraus.
+
+<script>
+  import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
+</script>
+
+<FurtherReading
+  posts={[
+    { slug: "hello-world", description: "Was dieser Blog behandelt: Technik-Entscheidungen und Kosten aus Freelancer-Perspektive." }
+  ]}
+/>
 
 ## Häufige Fragen
 

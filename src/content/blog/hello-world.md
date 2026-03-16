@@ -25,8 +25,8 @@ Mein Fokus ist der Schnittpunkt zwischen technischer Umsetzung und geschäftlich
 
 - **Performance & Core Web Vitals:** Laut [Google-Daten](https://web.dev/vitals/) korrelieren gute Core Web Vitals mit deutlich weniger Seitenabbrüchen (Google nennt 24 % als Referenzwert). Ich zeige, wo die typischen Bremsen sitzen und wie du sie loswirst.
 - **Moderne Frontend-Entwicklung:** SvelteKit, Vue.js, und wann welcher Ansatz passt
-- **Backend & Deployment:** Laravel, Docker, CI/CD ohne Overengineering
-- **Freelance-Praxis im DACH-Raum:** Marktpreise, Projektstruktur, Kundenkommunikation
+- **Backend & Deployment:** z. B. [Laravel mit Coolify deployen](/blog/deploy-laravel-coolify), Docker, CI/CD ohne Overengineering
+- **Freelance-Praxis im DACH-Raum:** [aktuelle Marktpreise](/blog/freelancer-market-rates-2026), Projektstruktur, Kundenkommunikation
 
 Jeder Artikel behandelt ein konkretes Problem, das mir in der Praxis begegnet ist, mit der Lösung, die funktioniert hat.
 

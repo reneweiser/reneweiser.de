@@ -15,6 +15,7 @@ slug: freelancer-stundensaetze-2026
 
 <script>
   import RelatedPost from '$lib/components/blog/RelatedPost.svelte';
+  import FurtherReading from '$lib/components/blog/FurtherReading.svelte';
 </script>
 
 Es gibt keine einzige verlässliche Quelle dafür, was Freelancer branchenübergreifend und regionenübergreifend verlangen. Branchenumfragen decken immer nur eine Nische ab. Plattformdaten verzerren nach unten. Agenturen publizieren Listenpreise, nicht das, was Freelancer tatsächlich verdienen. Ich habe Daten aus [20+ Quellen](#quellen) zu Landing Pages, SEO und Social Media zusammengetragen, um ein klareres Bild zu gewinnen.
@@ -164,3 +165,9 @@ Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Prei
 - [Buffer — State of Remote Work](https://buffer.com/state-of-remote-work)
 - [HubSpot — Marketing Statistics](https://www.hubspot.com/marketing-statistics)
 - [Hootsuite — Social Media Management Costs](https://www.hootsuite.com/research/social-trends)
+
+<FurtherReading
+  posts={[
+    { slug: "wrapping-ai-skills", description: "Was hinter einem KI-Produkt steckt — und warum die Infrastruktur den Großteil des Budgets ausmacht, nicht die KI-Generierung." }
+  ]}
+/>
