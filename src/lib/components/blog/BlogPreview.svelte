@@ -24,9 +24,23 @@
 			<div class="grid gap-8 lg:grid-cols-2">
 				{#each posts.slice(0, 2) as post (post.slug)}
 					<article
-						class="group relative overflow-hidden rounded-lg border border-ink/10 bg-paper p-6 transition-all duration-300 hover:border-copper/30 hover:shadow-lg hover:shadow-copper/5 lg:p-8"
+						class="group relative overflow-hidden rounded-lg border border-ink/10 bg-paper transition-all duration-300 hover:border-copper/30 hover:shadow-lg hover:shadow-copper/5"
 					>
 						<a href="/blog/{post.slug}" class="block">
+							{#if post.image}
+								<div class="overflow-hidden">
+									<img
+										src={post.image}
+										alt={post.imageAlt || post.title}
+										width="1536"
+										height="1024"
+										loading="lazy"
+										class="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+									/>
+								</div>
+							{/if}
+
+							<div class="p-6 lg:p-8">
 							<header class="mb-4">
 								<h3
 									class="font-display text-xl text-ink transition-colors group-hover:text-copper lg:text-2xl"
@@ -58,6 +72,7 @@
 										{tag}
 									</span>
 								{/each}
+							</div>
 							</div>
 						</a>
 
