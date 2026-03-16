@@ -1,7 +1,7 @@
 ---
 title: "Brauchen Freelancer eine Website? Was die Daten sagen"
 description: "Statista- und Google-Daten zeigen, wie eine einzige Webseite Freelancern und Kleinunternehmern in der DACH-Region hilft, mehr Kunden zu gewinnen."
-date: "2026-03-25"
+date: "2026-03-16"
 slug: "brauchen-freelancer-eine-website"
 lang: de
 tags:
