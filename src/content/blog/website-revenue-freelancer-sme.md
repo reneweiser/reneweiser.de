@@ -14,9 +14,9 @@ imageAlt: "Cartoon-Illustration: Ein Freelancer arbeitet am Laptop im Café, wä
 published: true
 ---
 
-Ein IT-Berater aus meinem Netzwerk wurde einem Projektleiter eines Mittelständlers empfohlen. Der Projektleiter hat den Namen gegoogelt, nichts gefunden und stattdessen jemanden mit Website beauftragt. Der Berater hat es nie erfahren. Ich nur, weil der Projektleiter es mir erzählt hat.
+„Jeder braucht eine Website." Diesen Satz höre ich ständig — von Marketingleuten, Beratern, anderen Freelancern. Er wird als Selbstverständlichkeit behandelt, aber selten belegt. Stimmt er überhaupt?
 
-In meinem Netzwerk habe ich das mehrfach erlebt. Mehrere Studien zeigen, dass Freelancer ohne Online-Präsenz bei der Kundengewinnung im Nachteil sind. Die Details folgen in den nächsten Abschnitten.
+Ich wollte eine Antwort, die auf Daten basiert, nicht auf Bauchgefühl. In diesem Artikel gehe ich die Zahlen durch: Wer sucht online nach Freelancern, was passiert ohne Website und wann lohnt sich eine eigentlich nicht.
 
 ## Deine Kunden suchen dich online
 
@@ -31,7 +31,7 @@ Laut dem [BrightLocal Local Consumer Review Survey 2024](https://www.brightlocal
 
 Der häufigste Einwand, den ich höre: "Ich bekomme meine Aufträge alle über Empfehlungen." Für viele Freelancer sind Empfehlungen die wichtigste Quelle für neue Aufträge. Aber in meiner Erfahrung googelt die empfohlene Person fast immer als Nächstes. Findet sie nichts, sinkt die Wahrscheinlichkeit eines Auftrags deutlich.
 
-Du erfährst es nie. Eine Website ersetzt keine Mundpropaganda. Sie sorgt dafür, dass Mundpropaganda tatsächlich konvertiert.
+Und du erfährst es nie. Eine Website ersetzt keine Mundpropaganda. Sie sorgt dafür, dass Mundpropaganda tatsächlich konvertiert.
 
 ## Erster Eindruck online: Warum deine Website Vertrauen schafft
 
