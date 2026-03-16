@@ -1,79 +1,102 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 480" role="img" aria-label="Hexagonal architecture diagram showing domain core surrounded by port interfaces and infrastructure adapters">
-  <rect width="780" height="480" fill="#faf8f5" rx="6"/>
-
-  <!-- Outer ring: Framework & Infrastructure -->
-  <ellipse cx="390" cy="230" rx="340" ry="190" fill="none" stroke="#d5d0c8" stroke-width="1.5" stroke-dasharray="6 4"/>
-
-  <!-- Adapters ring -->
-  <ellipse cx="390" cy="230" rx="260" ry="150" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
-
-  <!-- Ports ring -->
-  <ellipse cx="390" cy="230" rx="170" ry="100" fill="#faf8f5" stroke="#c17f59" stroke-width="2"/>
-
-  <!-- Domain core -->
-  <ellipse cx="390" cy="230" rx="90" ry="55" fill="#c17f59" stroke="#8b5a3c" stroke-width="1.5"/>
-
-  <!-- Domain label -->
-  <text x="390" y="222" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="15" fill="#faf8f5" font-weight="600">Domain</text>
-  <text x="390" y="242" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#faf8f5">Entities, Value Objects</text>
-
-  <!-- Ports labels -->
-  <text x="390" y="150" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="600">Ports</text>
-  <text x="280" y="190" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">InvoiceRepositoryInterface</text>
-  <text x="510" y="270" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">PdfGeneratorInterface</text>
-
-  <!-- Adapters labels -->
-  <text x="170" y="110" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">Adapters</text>
-
-  <!-- Adapter boxes -->
-  <rect x="100" y="250" width="140" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
-  <text x="170" y="266" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">EloquentInvoiceRepo</text>
-
-  <rect x="540" y="150" width="140" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
-  <text x="610" y="166" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">DompdfGenerator</text>
-
-  <rect x="540" y="300" width="140" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
-  <text x="610" y="316" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">InvoiceController</text>
-
-  <!-- Framework labels (outside dashed ring) -->
-  <text x="390" y="40" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560">Framework &amp; Infrastructure</text>
-
-  <!-- External labels -->
-  <rect x="60" y="56" width="90" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
-  <text x="105" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Eloquent</text>
-
-  <rect x="630" y="56" width="90" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
-  <text x="675" y="70" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">HTTP</text>
-
-  <rect x="60" y="370" width="90" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
-  <text x="105" y="384" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Laravel</text>
-
-  <rect x="630" y="370" width="90" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
-  <text x="675" y="384" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Stripe SDK</text>
-
-  <!-- Inward arrows -->
+  <title>Hexagonal Architecture Concept — Domain core with ports and adapters layers</title>
   <defs>
-    <marker id="arrow-in" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+    <marker id="hc-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M1,0.5 L7,3 L1,5.5" fill="#b0aaa3"/>
+    </marker>
+    <marker id="hc-arr-c" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#c17f59"/>
     </marker>
   </defs>
 
-  <!-- Arrow from Eloquent box to EloquentInvoiceRepo adapter -->
-  <line x1="105" y1="86" x2="140" y2="248" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#arrow-in)"/>
+  <rect width="780" height="480" fill="#faf8f5" rx="6"/>
 
-  <!-- Arrow from HTTP box to InvoiceController adapter -->
-  <line x1="675" y1="86" x2="640" y2="298" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#arrow-in)"/>
+  <!-- Framework label -->
+  <text x="390" y="28" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560">Framework &amp; Infrastructure</text>
+
+  <!-- Outer ring: Framework & Infrastructure -->
+  <ellipse cx="390" cy="235" rx="340" ry="185" fill="none" stroke="#d5d0c8" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Adapters ring -->
+  <ellipse cx="390" cy="235" rx="260" ry="145" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+
+  <!-- Ports ring -->
+  <ellipse cx="390" cy="235" rx="170" ry="100" fill="#faf8f5" stroke="#c17f59" stroke-width="2"/>
+
+  <!-- Domain core -->
+  <ellipse cx="390" cy="235" rx="90" ry="55" fill="#c17f59" stroke="#8b5a3c" stroke-width="1.5"/>
+
+  <!-- Domain label -->
+  <text x="390" y="227" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="15" fill="#faf8f5" font-weight="600">Domain</text>
+  <text x="390" y="247" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#faf8f5">Entities, Value Objects</text>
+
+  <!-- === LEFT SIDE: Driving (input) === -->
+
+  <!-- External: HTTP (far left) -->
+  <rect x="20" y="221" width="70" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="55" y="235" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">HTTP</text>
+
+  <!-- HTTP connection (dashed — external, not a dependency) -->
+  <line x1="92" y1="235" x2="108" y2="235" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Adapter: InvoiceController (left side of adapters ring) -->
+  <rect x="110" y="219" width="130" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="175" y="235" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">InvoiceController</text>
+
+  <!-- Dependency arrow: InvoiceController depends on CreateInvoicePort (arrow points right/inward) -->
+  <line x1="242" y1="235" x2="265" y2="235" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#hc-arr)"/>
+
+  <!-- "Adapters" label (left) -->
+  <text x="175" y="195" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">Adapters</text>
+
+  <!-- Port label (left, between adapter and domain) -->
+  <text x="285" y="200" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#8b5a3c" font-weight="600">Ports</text>
+  <text x="290" y="270" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">CreateInvoicePort</text>
+
+  <!-- === RIGHT SIDE: Driven (output) === -->
+
+  <!-- Port labels (right, between domain and adapters) -->
+  <text x="500" y="180" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">InvoiceRepositoryInterface</text>
+  <text x="500" y="295" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#6b6560">PdfGeneratorInterface</text>
+
+  <!-- Adapter: EloquentInvoiceRepo (right-top of adapters ring) -->
+  <rect x="545" y="174" width="140" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="615" y="190" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">EloquentInvoiceRepo</text>
+
+  <!-- Adapter: DompdfGenerator (right-bottom of adapters ring) -->
+  <rect x="545" y="260" width="140" height="32" rx="6" fill="#faf8f5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="615" y="276" text-anchor="middle" dominant-baseline="central" font-family="JetBrains Mono, Fira Code, monospace" font-size="9.5" fill="#3d3a37">DompdfGenerator</text>
+
+  <!-- Dependency arrows: adapters point inward toward ports -->
+  <!-- EloquentInvoiceRepo depends on InvoiceRepositoryInterface (arrow points left/inward) -->
+  <line x1="543" y1="190" x2="520" y2="190" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#hc-arr)"/>
+
+  <!-- DompdfGenerator depends on PdfGeneratorInterface (arrow points left/inward) -->
+  <line x1="543" y1="276" x2="520" y2="276" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#hc-arr)"/>
+
+  <!-- External infra labels (no arrows — runtime detail, not dependency) -->
+  <rect x="710" y="176" width="55" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="737" y="190" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">DB</text>
+  <line x1="687" y1="190" x2="708" y2="190" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <rect x="700" y="262" width="65" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="732" y="276" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Stripe</text>
+  <line x1="687" y1="276" x2="698" y2="276" stroke="#d5d0c8" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- External: Laravel (bottom, general framework) -->
+  <rect x="345" y="408" width="90" height="28" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="390" y="422" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Laravel</text>
 
   <!-- Direction note -->
-  <text x="390" y="445" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Dependencies point inward — adapters depend on ports, ports depend on domain, never the reverse.</text>
+  <text x="390" y="450" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Dependencies point inward — adapters depend on ports, ports depend on domain, never the reverse.</text>
 
   <!-- Legend -->
-  <rect x="215" y="456" width="14" height="14" rx="3" fill="#c17f59"/>
-  <text x="235" y="463" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Domain core</text>
+  <rect x="215" y="462" width="14" height="14" rx="3" fill="#c17f59"/>
+  <text x="235" y="469" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Domain core</text>
 
-  <rect x="330" y="456" width="14" height="14" rx="3" fill="none" stroke="#c17f59" stroke-width="2"/>
-  <text x="350" y="463" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Port interfaces</text>
+  <rect x="330" y="462" width="14" height="14" rx="3" fill="none" stroke="#c17f59" stroke-width="2"/>
+  <text x="350" y="469" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Port interfaces</text>
 
-  <rect x="460" y="456" width="14" height="14" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
-  <text x="480" y="463" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Adapters &amp; infra</text>
+  <rect x="460" y="462" width="14" height="14" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="480" y="469" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560" dominant-baseline="central">Adapters &amp; infra</text>
 </svg>

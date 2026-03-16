@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Side-by-side comparison of direct freelancer rates versus platform rates, showing a 30 to 50 percent gap with SEO as a concrete example">
+  <title>Direct Freelancer vs Platform Rates — 30–50% Price Gap</title>
+  <defs>
+    <marker id="pd-arr-l" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M6,0 L0,3 L6,6" fill="none" stroke="#c17f59" stroke-width="1"/>
+    </marker>
+    <marker id="pd-arr-r" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#c17f59" stroke-width="1"/>
+    </marker>
+  </defs>
   <rect width="780" height="300" fill="#faf8f5" rx="6"/>
 
   <!-- Title -->
@@ -58,18 +67,12 @@
   <text x="390" y="166" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#c17f59" font-weight="500">gap</text>
 
   <!-- Arrows -->
-  <line x1="340" y1="152" x2="350" y2="152" stroke="#c17f59" stroke-width="1.5" marker-start="url(#arrowLeft)"/>
-  <line x1="430" y1="152" x2="440" y2="152" stroke="#c17f59" stroke-width="1.5" marker-end="url(#arrowRight)"/>
-
-  <defs>
-    <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
-      <path d="M6,0 L0,3 L6,6" fill="none" stroke="#c17f59" stroke-width="1"/>
-    </marker>
-    <marker id="arrowRight" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#c17f59" stroke-width="1"/>
-    </marker>
-  </defs>
+  <line x1="340" y1="152" x2="350" y2="152" stroke="#c17f59" stroke-width="1.5" marker-start="url(#pd-arr-l)"/>
+  <line x1="430" y1="152" x2="440" y2="152" stroke="#c17f59" stroke-width="1.5" marker-end="url(#pd-arr-r)"/>
 
   <!-- Bottom note -->
   <text x="390" y="280" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#b0aaa3">SEO example: direct $75–250/h vs Upwork median ~$21/h</text>
+
+  <!-- Source attribution -->
+  <text x="745" y="295" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">Sources: Upwork, Fiverr, industry surveys 2025–2026</text>
 </svg>

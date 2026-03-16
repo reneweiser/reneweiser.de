@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 200" role="img" aria-label="Agency markup visualization showing freelancer rates multiplied by 2.5 to 4 times to reach agency rates">
+  <title>Agency Markup on Freelancer Rates — 2.5 to 4x Multiplier</title>
+  <defs>
+    <marker id="am-arr" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#c17f59" stroke-width="1.5"/>
+    </marker>
+  </defs>
   <rect width="780" height="200" fill="#faf8f5" rx="6"/>
 
   <!-- Title -->
@@ -12,15 +18,9 @@
   <text x="170" y="140" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">mid-level SEO example</text>
 
   <!-- Arrow with multiplier -->
-  <line x1="290" y1="110" x2="480" y2="110" stroke="#c17f59" stroke-width="2" marker-end="url(#arrowMarkup)"/>
+  <line x1="290" y1="110" x2="480" y2="110" stroke="#c17f59" stroke-width="2" marker-end="url(#am-arr)"/>
   <rect x="340" y="80" width="80" height="30" rx="6" fill="#c17f59" opacity="0.12"/>
   <text x="380" y="100" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="16" fill="#c17f59" font-weight="700">2.5–4×</text>
-
-  <defs>
-    <marker id="arrowMarkup" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#c17f59" stroke-width="1.5"/>
-    </marker>
-  </defs>
 
   <!-- Agency box -->
   <rect x="500" y="60" width="220" height="100" rx="6" fill="none" stroke="#c17f59" stroke-width="1.5"/>

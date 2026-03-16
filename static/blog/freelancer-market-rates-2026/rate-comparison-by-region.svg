@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" role="img" aria-label="Grouped horizontal bar chart comparing mid-level hourly rates for Landing Pages, SEO, and Social Media across US, UK, and DACH regions">
+  <title>Mid-Level Hourly Rates by Region — Landing Pages, SEO, and Social Media</title>
   <rect width="780" height="400" fill="#faf8f5" rx="6"/>
 
   <!-- Title -->
@@ -34,68 +35,69 @@
   <text x="525" y="385" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#b0aaa3">150</text>
   <text x="655" y="385" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="10" fill="#b0aaa3">200</text>
 
-  <!-- LANDING PAGES (mid-level) — scale: 2.6px per unit -->
-  <!-- US: $40–75 -->
-  <rect x="135" y="88" width="91" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
-  <rect x="239" y="88" width="0" height="14" rx="0"/>
-  <line x1="239" y1="88" x2="239" y2="102" stroke="#c17f59" stroke-width="2"/>
-  <line x1="135" y1="88" x2="135" y2="102" stroke="#c17f59" stroke-width="1" opacity="0.5"/>
-  <text x="234" y="99" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$40–75</text>
+  <!-- LANDING PAGES (mid-level) — scale: 2.6px per unit, origin x=135 -->
+  <!-- US: $40–75 → x=239, w=91, end=330 -->
+  <rect x="239" y="88" width="91" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
+  <line x1="330" y1="88" x2="330" y2="102" stroke="#c17f59" stroke-width="2"/>
+  <text x="336" y="99" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$40–75</text>
 
-  <!-- UK: £40–70 -->
-  <rect x="135" y="106" width="78" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
-  <line x1="226" y1="106" x2="226" y2="120" stroke="#7d8471" stroke-width="2"/>
-  <text x="221" y="117" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£40–70</text>
+  <!-- UK: £40–70 → x=239, w=78, end=317 -->
+  <rect x="239" y="106" width="78" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
+  <line x1="317" y1="106" x2="317" y2="120" stroke="#7d8471" stroke-width="2"/>
+  <text x="323" y="117" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£40–70</text>
 
-  <!-- DACH: €65–90 -->
-  <rect x="135" y="124" width="65" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
-  <line x1="213" y1="124" x2="213" y2="138" stroke="#3d3a37" stroke-width="2"/>
-  <text x="208" y="135" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€65–90</text>
+  <!-- DACH: €65–90 → x=304, w=65, end=369 -->
+  <rect x="304" y="124" width="65" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
+  <line x1="369" y1="124" x2="369" y2="138" stroke="#3d3a37" stroke-width="2"/>
+  <text x="375" y="135" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€65–90</text>
 
-  <!-- Platforms: $30–60 -->
-  <rect x="135" y="142" width="78" height="14" rx="2" fill="#b0aaa3" opacity="0.3"/>
-  <line x1="213" y1="142" x2="213" y2="156" stroke="#b0aaa3" stroke-width="2"/>
-  <text x="208" y="153" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#b0aaa3" font-weight="500">$30–60</text>
+  <!-- Platforms: $30–60 → x=213, w=78, end=291 -->
+  <rect x="213" y="142" width="78" height="14" rx="2" fill="#b0aaa3" opacity="0.3"/>
+  <line x1="291" y1="142" x2="291" y2="156" stroke="#b0aaa3" stroke-width="2"/>
+  <text x="297" y="153" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#b0aaa3" font-weight="500">$30–60</text>
 
   <!-- Divider -->
   <line x1="135" y1="170" x2="745" y2="170" stroke="#f0ece5" stroke-width="1"/>
 
   <!-- SEO (mid-level) -->
-  <!-- US: $75–150 -->
-  <rect x="135" y="198" width="195" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
-  <line x1="343" y1="198" x2="343" y2="212" stroke="#c17f59" stroke-width="2"/>
-  <text x="338" y="209" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$75–150</text>
+  <!-- US: $75–150 → x=330, w=195, end=525 -->
+  <rect x="330" y="198" width="195" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
+  <line x1="525" y1="198" x2="525" y2="212" stroke="#c17f59" stroke-width="2"/>
+  <text x="531" y="209" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$75–150</text>
 
-  <!-- UK: £60–100 -->
-  <rect x="135" y="216" width="104" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
-  <line x1="252" y1="216" x2="252" y2="230" stroke="#7d8471" stroke-width="2"/>
-  <text x="247" y="227" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£60–100</text>
+  <!-- UK: £60–100 → x=291, w=104, end=395 -->
+  <rect x="291" y="216" width="104" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
+  <line x1="395" y1="216" x2="395" y2="230" stroke="#7d8471" stroke-width="2"/>
+  <text x="401" y="227" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£60–100</text>
 
-  <!-- DACH: €75–150 -->
-  <rect x="135" y="234" width="195" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
-  <line x1="343" y1="234" x2="343" y2="248" stroke="#3d3a37" stroke-width="2"/>
-  <text x="338" y="245" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€75–150</text>
+  <!-- DACH: €75–150 → x=330, w=195, end=525 -->
+  <rect x="330" y="234" width="195" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
+  <line x1="525" y1="234" x2="525" y2="248" stroke="#3d3a37" stroke-width="2"/>
+  <text x="531" y="245" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€75–150</text>
 
   <!-- DACH-US parity annotation -->
-  <rect x="355" y="210" width="110" height="24" rx="4" fill="#c17f59" opacity="0.1"/>
-  <text x="410" y="226" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#c17f59" font-weight="600">≈ DACH-US parity</text>
+  <rect x="535" y="210" width="110" height="24" rx="4" fill="#c17f59" opacity="0.1"/>
+  <text x="590" y="226" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#c17f59" font-weight="600">≈ DACH-US parity</text>
 
   <!-- Divider -->
   <line x1="135" y1="280" x2="745" y2="280" stroke="#f0ece5" stroke-width="1"/>
 
   <!-- SOCIAL MEDIA (mid-level) -->
-  <!-- US: $35–75 -->
-  <rect x="135" y="308" width="104" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
-  <line x1="252" y1="308" x2="252" y2="322" stroke="#c17f59" stroke-width="2"/>
-  <text x="247" y="319" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$35–75</text>
+  <!-- US: $35–75 → x=226, w=104, end=330 -->
+  <rect x="226" y="308" width="104" height="14" rx="2" fill="#c17f59" opacity="0.3"/>
+  <line x1="330" y1="308" x2="330" y2="322" stroke="#c17f59" stroke-width="2"/>
+  <text x="336" y="319" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#c17f59" font-weight="500">$35–75</text>
 
-  <!-- UK: £40–60 -->
-  <rect x="135" y="326" width="52" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
-  <line x1="200" y1="326" x2="200" y2="340" stroke="#7d8471" stroke-width="2"/>
-  <text x="195" y="337" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£40–60</text>
+  <!-- UK: £40–60 → x=239, w=52, end=291 -->
+  <rect x="239" y="326" width="52" height="14" rx="2" fill="#7d8471" opacity="0.3"/>
+  <line x1="291" y1="326" x2="291" y2="340" stroke="#7d8471" stroke-width="2"/>
+  <text x="297" y="337" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#7d8471" font-weight="500">£40–60</text>
 
-  <!-- DACH: €50–90 -->
-  <rect x="135" y="344" width="104" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
-  <line x1="252" y1="344" x2="252" y2="358" stroke="#3d3a37" stroke-width="2"/>
-  <text x="247" y="355" text-anchor="end" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€50–90</text>
+  <!-- DACH: €50–90 → x=265, w=104, end=369 -->
+  <rect x="265" y="344" width="104" height="14" rx="2" fill="#3d3a37" opacity="0.2"/>
+  <line x1="369" y1="344" x2="369" y2="358" stroke="#3d3a37" stroke-width="2"/>
+  <text x="375" y="355" text-anchor="start" font-family="JetBrains Mono, Fira Code, monospace" font-size="9" fill="#3d3a37" font-weight="500">€50–90</text>
+
+  <!-- Source attribution -->
+  <text x="745" y="395" text-anchor="end" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="9" fill="#b0aaa3">Sources: Glassdoor, Upwork, industry surveys 2025–2026</text>
 </svg>

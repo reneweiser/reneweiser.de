@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" role="img" aria-label="Timeline comparison showing 51 serial queries with lazy loading versus 2 batch queries with eager loading">
+  <title>N+1 lazy loading vs eager loading query comparison</title>
   <rect width="780" height="400" fill="#faf8f5" rx="6"/>
 
   <!-- Divider -->
