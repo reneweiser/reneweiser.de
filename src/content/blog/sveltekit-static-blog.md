@@ -89,4 +89,4 @@ Die Wartung beschränkt sich auf das Schreiben von Markdown-Dateien. Kein CMS-Up
 
 Aber: Framework-Updates (SvelteKit, mdsvex, Shiki) fallen trotzdem an. Du brauchst ein funktionierendes Dev-Setup mit Node oder Bun, und du musst mit Git umgehen können. Für jemanden ohne Entwickler-Hintergrund ist das keine praktikable Lösung. In dem Fall ist ein gemanagtes CMS wie WordPress oder ein Baukasten die bessere Wahl.
 
-Wenn du eine Website oder einen Blog brauchst und nicht sicher bist, welcher Ansatz für dich passt, [melde dich](/kontakt).
+Wenn du eine Website oder einen Blog brauchst und nicht sicher bist, welcher Ansatz für dich passt, [melde dich](/#kontakt).

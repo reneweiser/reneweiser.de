@@ -112,7 +112,7 @@ public function boot(): void
 
 Das fängt N+1-Probleme, bevor sie Produktion erreichen. Nuno Maduros [`essentials`](https://github.com/nunomaduro/essentials)-Paket geht weiter: Es ruft `Model::shouldBeStrict()` standardmäßig auf, was `preventLazyLoading` zusammen mit `preventSilentlyDiscardingAttributes` und `preventAccessingMissingAttributes` aktiviert. Ein `composer require`, und du bekommst strengere Eloquent-Defaults ohne weitere Konfiguration.
 
-Wer solche Performance-Probleme in einer bestehenden Laravel-App vermutet, kann mit Debugbar und `preventLazyLoading` in wenigen Minuten Klarheit schaffen. Falls du dabei Unterstützung brauchst, [melde dich](/kontakt).
+Wer solche Performance-Probleme in einer bestehenden Laravel-App vermutet, kann mit Debugbar und `preventLazyLoading` in wenigen Minuten Klarheit schaffen. Falls du dabei Unterstützung brauchst, [melde dich](/#kontakt).
 
 ## Das Problem mit Eager Loading beheben
 

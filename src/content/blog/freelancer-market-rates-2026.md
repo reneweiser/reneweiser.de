@@ -129,7 +129,7 @@ Ein US-Freelancer bei 100 USD/h in Texas zahlt rund 30 % Bundes- und Self-Employ
 
 ## Fazit
 
-Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Preisleitfaden. Was ein einzelner Freelancer berechnet, hängt von Spezialisierung, Positionierung, Akquisitionskanal und den lokalen wirtschaftlichen Rahmenbedingungen ab. Die Daten zeigen breite Muster. Wo man sich darin einordnet, ergibt sich aus diesen Spezifika. Für eine projektbezogene Einschätzung stehe ich [per E-Mail oder Kontaktformular](/kontakt) zur Verfügung.
+Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Preisleitfaden. Was ein einzelner Freelancer berechnet, hängt von Spezialisierung, Positionierung, Akquisitionskanal und den lokalen wirtschaftlichen Rahmenbedingungen ab. Die Daten zeigen breite Muster. Wo man sich darin einordnet, ergibt sich aus diesen Spezifika. Für eine projektbezogene Einschätzung stehe ich [per E-Mail oder Kontaktformular](/#kontakt) zur Verfügung.
 
 ---
 
