@@ -30,11 +30,11 @@ Die Projektpreise hängen stark vom Umfang ab. Eine einfache Landing Page mit He
 
 Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) | Plattformen (USD/h) |
-|---|---|---|---|---|
-| Einsteiger | 20–40 | 30–40 | 50–65 | 15–30 |
-| Mid-Level | 40–75 | 40–70 | 65–90 | 30–60 |
-| Senior | 75–150+ | 70–90+ | 90–120+ | 60–150+ |
+| Level      | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) | Plattformen (USD/h) |
+| ---------- | ----------- | ---------- | ------------ | ------------------- |
+| Einsteiger | 20–40       | 30–40      | 50–65        | 15–30               |
+| Mid-Level  | 40–75       | 40–70      | 65–90        | 30–60               |
+| Senior     | 75–150+     | 70–90+     | 90–120+      | 60–150+             |
 
 Quellen: [Apexure](https://www.apexure.com/blog/landing-page-design-cost-break-down), [LanderLab](https://landerlab.io/blog/how-much-does-a-landing-page-cost), [Kopf und Stift](https://kopfundstift.de/webdesign-kosten/), [HeadOn](https://headon.pro/webdesigner-preise)
 
@@ -53,12 +53,12 @@ Monatliche Retainer reichen von 750–1.500 USD für Einstiegspakete bis 3.500�
 
 Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
-|---|---|---|---|
-| Einsteiger | 50–75 | 40–60 | 40–70 |
-| Mid-Level | 75–150 | 60–100 | 75–150 |
-| Senior | 150–250 | 100–150+ | 120–220 |
-| Technischer Spezialist | 200–300+ | 150+ | 150–220+ |
+| Level                  | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
+| ---------------------- | ----------- | ---------- | ------------ |
+| Einsteiger             | 50–75       | 40–60      | 40–70        |
+| Mid-Level              | 75–150      | 60–100     | 75–150       |
+| Senior                 | 150–250     | 100–150+   | 120–220      |
+| Technischer Spezialist | 200–300+    | 150+       | 150–220+     |
 
 Quellen: [Backlinko](https://backlinko.com/seo-pricing), [Ahrefs](https://ahrefs.com/blog/seo-pricing/), [SICHTBAR SEO](https://sichtbar-online.com/blog/was-kostet-ein-seo-freelancer-2026/), [Evergreen Media](https://www.evergreen.media/ratgeber/seo-kosten/)
 
@@ -72,11 +72,11 @@ Die Einzelpreise für Content variieren stark: 25–150 USD pro Text-Post, 100�
 
 Stundensätze nach Region und Erfahrungsstufe:
 
-| Level | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
-|---|---|---|---|
-| Einsteiger | 15–35 | 25–40 | 25–50 |
-| Mid-Level | 35–75 | 40–60 | 50–90 |
-| Experte | 75–150+ | 60–100 | 90–150 |
+| Level      | USA (USD/h) | UK (GBP/h) | DACH (EUR/h) |
+| ---------- | ----------- | ---------- | ------------ |
+| Einsteiger | 15–35       | 25–40      | 25–50        |
+| Mid-Level  | 35–75       | 40–60      | 50–90        |
+| Experte    | 75–150+     | 60–100     | 90–150       |
 
 Quellen: [Sprout Social — Social Media Pricing](https://sproutsocial.com/insights/social-media-management-costs/), [Buffer — State of Remote Work](https://buffer.com/state-of-remote-work), [HubSpot — Marketing Statistics](https://www.hubspot.com/marketing-statistics)
 
@@ -137,6 +137,7 @@ Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Prei
 ## Quellen
 
 ### Landing Pages
+
 - [Apexure — Landing Page Design Cost 2026](https://www.apexure.com/blog/landing-page-design-cost-break-down)
 - [LanderLab — Landing Page Cost 2026](https://landerlab.io/blog/how-much-does-a-landing-page-cost)
 - [Landingi — Landing Page Cost 2025](https://landingi.com/landing-page/cost/)
@@ -147,6 +148,7 @@ Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Prei
 - [Jobbers.io — Platform Comparison 2026](https://www.jobbers.io/hidden-costs-of-hiring-on-upwork-fiverr-vs-direct-platforms-in-2026-the-complete-financial-analysis-for-employers/)
 
 ### SEO
+
 - [Backlinko — SEO Pricing 2026](https://backlinko.com/seo-pricing)
 - [Ahrefs — SEO Pricing (439 respondents)](https://ahrefs.com/blog/seo-pricing/)
 - [SoloHourly — Freelance SEO Rates 2026](https://solohourly.com/guides/freelance-seo-consultant-rates/)
@@ -161,13 +163,14 @@ Diese Spannen sind ein Ausgangspunkt für die Einordnung in den Markt, kein Prei
 - [Janina Ruth — Stundensatz Freelancer](https://janina-ruth-seo-sem.de/preise/stundensatz-freelancer/)
 
 ### Social Media
+
 - [Sprout Social — Social Media Management Costs](https://sproutsocial.com/insights/social-media-management-costs/)
 - [Buffer — State of Remote Work](https://buffer.com/state-of-remote-work)
 - [HubSpot — Marketing Statistics](https://www.hubspot.com/marketing-statistics)
 - [Hootsuite — Social Media Management Costs](https://www.hootsuite.com/research/social-trends)
 
 <FurtherReading
-  posts={[
-    { slug: "wrapping-ai-skills", description: "Was hinter einem KI-Produkt steckt — und warum die Infrastruktur den Großteil des Budgets ausmacht, nicht die KI-Generierung." }
-  ]}
+posts={[
+{ slug: "wrapping-ai-skills", description: "Was hinter einem KI-Produkt steckt — und warum die Infrastruktur den Großteil des Budgets ausmacht, nicht die KI-Generierung." }
+]}
 />

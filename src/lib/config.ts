@@ -1,1 +1,1 @@
-export const siteUrl = 'https://reneweiser.de';
+export const siteUrl = "https://reneweiser.de";

@@ -50,7 +50,7 @@ Die Arbeit spricht für sich, sobald du im Raum stehst. Das Problem ist, überha
 
 ## Mehr Umsatz durch eine eigene Website: Was die Daten zeigen
 
-Eine [Google/Deloitte-Studie mit über 2.000 kleinen Unternehmen](https://www2.deloitte.com/content/dam/Deloitte/us/Documents/technology-media-telecommunications/us-tmt-connected-small-businesses-Dec2017.pdf) zeigt, dass digital aktive KMU, also solche mit Online-Marketing, Social Media und E-Commerce, beim Umsatzwachstum fast viermal besser abschneiden. Eine Website allein erklärt diesen Unterschied nicht. Aber sie ist die Grundlage, auf der die meisten anderen Online-Maßnahmen aufbauen: Ohne Website kannst du keine Google Ads schalten und keine Empfehlungen auf eine eigene Seite leiten.
+Eine [Google/Deloitte-Studie mit über 2.000 kleinen Unternehmen](https://www.deloitte.com/au/en/services/economics/perspectives/connected-small-businesses-google.html) zeigt, dass digital aktive KMU, also solche mit Online-Marketing, Social Media und E-Commerce, beim Umsatzwachstum fast viermal besser abschneiden. Eine Website allein erklärt diesen Unterschied nicht. Aber sie ist die Grundlage, auf der die meisten anderen Online-Maßnahmen aufbauen: Ohne Website kannst du keine Google Ads schalten und keine Empfehlungen auf eine eigene Seite leiten.
 
 Gleichzeitig berichten [51 % der Freelancer von Schwierigkeiten bei der Projektakquise](https://www.freelance.de/blog/studie-die-haelfte-der-freelancer-haben-2024-schwierigkeiten-bei-projektakquise/) (freelance.de, Umfrage unter 1.615 Freelancern, Q1 2024). Wie viele davon keine eigene Website haben, sagt die Studie nicht. Aber eine Website ist 24/7 erreichbar, auch wenn du es nicht bist. Sie ersetzt kein Networking, aber sie gibt deinem Networking ein Ziel, auf das du verweisen kannst.
 
@@ -116,9 +116,9 @@ Fang mit einer Seite an. Google Unternehmensprofil einrichten, Kontaktdaten drau
 </script>
 
 <FurtherReading
-  posts={[
-    { slug: "hello-world", description: "Was dieser Blog behandelt: Technik-Entscheidungen und Kosten aus Freelancer-Perspektive." }
-  ]}
+posts={[
+{ slug: "hello-world", description: "Was dieser Blog behandelt: Technik-Entscheidungen und Kosten aus Freelancer-Perspektive." }
+]}
 />
 
 ## Häufige Fragen

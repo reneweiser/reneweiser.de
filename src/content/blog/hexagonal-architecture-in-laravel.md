@@ -121,13 +121,13 @@ Die pragmatische Entscheidung: Models in `app/Models/` belassen und den Zugriff 
 
 ## Hexagonal vs. Convention: Der praktische Vergleich
 
-| Kriterium | Convention-First | Hexagonal |
-|-----------|-----------------|-----------|
-| **Einarbeitungszeit** | Niedrig — bekannte Struktur | Mittel — Domänenkarte muss gelernt werden |
-| **Feature-Geschwindigkeit (neue Domäne)** | Anfangs niedrig, steigt mit der Codebasis | Konstant — auf eine Domäne beschränkt |
-| **Testbarkeit der Geschäftslogik** | An das Framework gekoppelt | Unit-testbar mit gemockten Ports |
-| **KI-Agenten-Effizienz** | Höhere Token-Kosten — verstreute Änderungen | Niedrigere Token-Kosten — eingegrenzter Kontext |
-| **Paket-Kompatibilität** | Vollständig | Gelegentliche Reibung (Model-Position) |
+| Kriterium                                 | Convention-First                            | Hexagonal                                       |
+| ----------------------------------------- | ------------------------------------------- | ----------------------------------------------- |
+| **Einarbeitungszeit**                     | Niedrig — bekannte Struktur                 | Mittel — Domänenkarte muss gelernt werden       |
+| **Feature-Geschwindigkeit (neue Domäne)** | Anfangs niedrig, steigt mit der Codebasis   | Konstant — auf eine Domäne beschränkt           |
+| **Testbarkeit der Geschäftslogik**        | An das Framework gekoppelt                  | Unit-testbar mit gemockten Ports                |
+| **KI-Agenten-Effizienz**                  | Höhere Token-Kosten — verstreute Änderungen | Niedrigere Token-Kosten — eingegrenzter Kontext |
+| **Paket-Kompatibilität**                  | Vollständig                                 | Gelegentliche Reibung (Model-Position)          |
 
 Zur **Testbarkeit**: Wenn dein Use Case von Interfaces statt von konkreten Eloquent-Abfragen abhängt, kannst du Domänenlogik testen, ohne das Framework zu starten.
 
@@ -166,7 +166,7 @@ Nehmen wir die Rechnungs-PDF-Generierung. In der konventionellen Struktur benöt
   <figcaption>Änderungsumfang pro Feature: Convention-First berührt 6 Dateien in 4 Verzeichnissen; hexagonal berührt 2 Dateien in 1 Domäne.</figcaption>
 </figure>
 
-Es geht um weniger *berührte Dateien pro Änderung*, nicht um weniger Dateien insgesamt. Eine hexagonale Codebasis hat durch Interfaces, Adapter und DTOs mehr Dateien. Aber der Änderungsumfang pro Feature schrumpft. Wenn du einem KI-Agenten sagst „Implementiere Use Case X in der Billing-Domäne, respektiere die Port-Interfaces", ist die Anweisung eingegrenzt und überprüfbar:
+Es geht um weniger _berührte Dateien pro Änderung_, nicht um weniger Dateien insgesamt. Eine hexagonale Codebasis hat durch Interfaces, Adapter und DTOs mehr Dateien. Aber der Änderungsumfang pro Feature schrumpft. Wenn du einem KI-Agenten sagst „Implementiere Use Case X in der Billing-Domäne, respektiere die Port-Interfaces", ist die Anweisung eingegrenzt und überprüfbar:
 
 ```text
 Implement the ApplyLateFee use case in app/Domain/Billing/UseCases/.
@@ -189,7 +189,7 @@ Ein Agent, der an Billing arbeitet, berührt `app/Domain/Billing/` und `app/Infr
 
 ### Der Bootstrap-Einwand
 
-Ein berechtigter Einwand: KI kann eine bestehende hexagonale Struktur *pflegen*, sicher. Aber kann sie eine solche *aufbauen*? Kann sie die schwierigen Entscheidungen über Domänengrenzen treffen?
+Ein berechtigter Einwand: KI kann eine bestehende hexagonale Struktur _pflegen_, sicher. Aber kann sie eine solche _aufbauen_? Kann sie die schwierigen Entscheidungen über Domänengrenzen treffen?
 
 Teilweise. KI-Skills und System-Prompts können das vollständige hexagonale Regelwerk kodieren: Namenskonventionen, Verzeichnisstruktur, Port/Adapter-Muster, wo Domänengrenzen zu ziehen sind. Ein [praktisches Experiment von Notch](https://wearenotch.com/blog/claude-code-meets-hexagonal-architecture/) zeigte, dass Claude Code korrekten hexagonalen Code generiert, wenn explizite Anweisungen in CLAUDE.md vorhanden sind, aber Belange vermengt, wenn diese fehlen. Mit der richtigen Konfiguration hält sich die KI an die Muster.
 
@@ -267,10 +267,10 @@ Wenn du vor einer konkreten Architektur-Entscheidung stehst: [Schreib mir](/#kon
 <!-- internal link: service classes vs actions post (pipeline/2-outline/260331) — insert once published -->
 
 <FurtherReading
-  posts={[
-    { slug: "eloquent-eager-loading-n-plus-1", description: "Sobald der Datenzugriff hinter Repository-Interfaces liegt, hält Eager Loading die Abfragen schnell." },
-    { slug: "deploy-laravel-coolify", description: "Die gesamte Applikation auf einem 5-Dollar-VPS mit Coolify und Nixpacks deployen." }
-  ]}
+posts={[
+{ slug: "eloquent-eager-loading-n-plus-1", description: "Sobald der Datenzugriff hinter Repository-Interfaces liegt, hält Eager Loading die Abfragen schnell." },
+{ slug: "deploy-laravel-coolify", description: "Die gesamte Applikation auf einem 5-Dollar-VPS mit Coolify und Nixpacks deployen." }
+]}
 />
 
 ---

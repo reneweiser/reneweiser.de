@@ -96,8 +96,8 @@ Wenn du eine Website oder einen Blog brauchst und nicht sicher bist, welcher Ans
 </script>
 
 <FurtherReading
-  posts={[
-    { slug: "hello-world", description: "Alle Themen dieses Blogs: Technik-Entscheidungen und Kosten aus Unternehmersicht." },
-    { slug: "deploy-laravel-coolify", description: "Kein statisches Hosting, sondern ein vollwertiger Server? Laravel mit Coolify deployen — ab 5 Euro im Monat." }
-  ]}
+posts={[
+{ slug: "hello-world", description: "Alle Themen dieses Blogs: Technik-Entscheidungen und Kosten aus Unternehmersicht." },
+{ slug: "deploy-laravel-coolify", description: "Kein statisches Hosting, sondern ein vollwertiger Server? Laravel mit Coolify deployen — ab 5 Euro im Monat." }
+]}
 />

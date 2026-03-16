@@ -207,11 +207,11 @@ Wenn du die Architektur so aufbaust, dass Eager-Loading-Entscheidungen in der In
 
 Die Tabelle unten vergleicht die vier Ansätze auf dem Beispieldatensatz mit 50 Kunden und rund 500 Rechnungen. Alle Messungen wurden lokal mit Debugbar durchgeführt. Absolute Zahlen werden abweichen; die Verhältnisse bleiben gleich.
 
-| Kennzahl | Vorher (lazy) | Nachher (`with`) | Nachher (`withCount`) | Nachher (auto) |
-|----------|---------------|------------------|-----------------------|----------------|
-| Queries | 51 | 2 | 1 | 2 |
-| Query-Zeit | ~38 ms | ~4 ms | ~2 ms | ~4 ms |
-| Speicher | ~6 MB | ~5,8 MB | ~4,2 MB | ~5,8 MB |
+| Kennzahl   | Vorher (lazy) | Nachher (`with`) | Nachher (`withCount`) | Nachher (auto) |
+| ---------- | ------------- | ---------------- | --------------------- | -------------- |
+| Queries    | 51            | 2                | 1                     | 2              |
+| Query-Zeit | ~38 ms        | ~4 ms            | ~2 ms                 | ~4 ms          |
+| Speicher   | ~6 MB         | ~5,8 MB          | ~4,2 MB               | ~5,8 MB        |
 
 Der Speicherbedarf ändert sich zwischen Lazy und Eager Loading kaum. Beide Ansätze laden dieselben Invoice-Models in den Speicher. Der Unterschied liegt in der Anzahl der Datenbank-Round-Trips. Die `withCount`-Strategie ist der Ausreißer: Sie gibt nur die Anzahl über ein Subselect zurück und vermeidet das Hydrisieren von Invoice-Models vollständig. Daher der Rückgang auf 4,2 MB.
 
@@ -249,8 +249,8 @@ Eager Loading gehört zu den wirkungsvollsten Query-Optimierungen in Eloquent, w
 Die Strategie ist klar: `with()` verwenden, wenn bekannt ist, welche Relationen die View braucht; `withCount()`, wenn nur Zahlen gefragt sind; automatisches Eager Loading die Lücken schließen lassen.
 
 <FurtherReading
-  posts={[
-    { slug: "hexagonal-architecture-in-laravel", description: "Wie eine Laravel-App strukturiert wird, damit Eager-Loading-Entscheidungen in der Infrastrukturschicht bleiben." },
-    { slug: "deploy-laravel-coolify", description: "Wenn die Queries schnell sind, kommt das Deployment auf einen 5-Dollar-VPS." }
-  ]}
+posts={[
+{ slug: "hexagonal-architecture-in-laravel", description: "Wie eine Laravel-App strukturiert wird, damit Eager-Loading-Entscheidungen in der Infrastrukturschicht bleiben." },
+{ slug: "deploy-laravel-coolify", description: "Wenn die Queries schnell sind, kommt das Deployment auf einen 5-Dollar-VPS." }
+]}
 />

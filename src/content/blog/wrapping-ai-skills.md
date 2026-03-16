@@ -73,7 +73,7 @@ Zwei Bereiche zeigen das besonders deutlich.
 
 ### Memory über Sessions hinweg
 
-OpenClaw liefert eine `MEMORY.md`-Datei, einen Ort, um Fakten zwischen Konversationen zu persistieren. Ein Social-Media-Produkt entscheidet, *was* gespeichert wird (Engagement-Raten nach Plattform, Zielgruppendemografie, tatsächlich funktionierende Posting-Kadenz) und *wie* es genutzt wird (automatische Anpassung des Schedulings, Verfeinerung der Content-Strategie, Aufdecken von Mustern, die der Nutzer nicht bemerken würde). Die Designentscheidungen sind der Wert, nicht der Speichermechanismus.
+OpenClaw liefert eine `MEMORY.md`-Datei, einen Ort, um Fakten zwischen Konversationen zu persistieren. Ein Social-Media-Produkt entscheidet, _was_ gespeichert wird (Engagement-Raten nach Plattform, Zielgruppendemografie, tatsächlich funktionierende Posting-Kadenz) und _wie_ es genutzt wird (automatische Anpassung des Schedulings, Verfeinerung der Content-Strategie, Aufdecken von Mustern, die der Nutzer nicht bemerken würde). Die Designentscheidungen sind der Wert, nicht der Speichermechanismus.
 
 <figure>
   <img src="/blog/wrapping-ai-skills/figure-4-memory-comparison.svg" alt="Vergleich: Dateibasiertes Memory in einem Agent-Framework versus strukturiertes, akkumulierendes Memory in einem domänenspezifischen Produkt" />
@@ -104,7 +104,7 @@ Dieses Muster zeigt sich auf jeder Ebene. Ein Solo-Entwickler, der ein Content-T
 Der Unterschied zwischen einem KI-Feature und einem KI-Produkt sind keine besseren Prompts. Es sind besseres Scheduling, besseres Memory und bessere Feedback-Schleifen. Das ist Software-Engineering, dieselbe Arbeit, die Produkte wertvoll gemacht hat, bevor KI beteiligt war.
 
 <FurtherReading
-  posts={[
-    { slug: "hexagonal-architecture-in-laravel", description: "Architekturgrenzen sind genauso wichtig, wenn KI-Agenten den Code schreiben — hexagonale Struktur hält sie im Rahmen." }
-  ]}
+posts={[
+{ slug: "hexagonal-architecture-in-laravel", description: "Architekturgrenzen sind genauso wichtig, wenn KI-Agenten den Code schreiben — hexagonale Struktur hält sie im Rahmen." }
+]}
 />

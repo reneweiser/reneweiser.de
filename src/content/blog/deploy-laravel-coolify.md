@@ -231,9 +231,9 @@ Alle Services teilen sich Ressourcen auf einem einzelnen VPS. Ein 2-GB-Server ve
 <!-- internal link: Coolify advanced configuration post -->
 
 <FurtherReading
-  posts={[
-    { slug: "hexagonal-architecture-in-laravel", description: "Die App strukturieren, die du deployst. Hexagonale Architektur hält Domains sauber, während die Codebasis wächst." }
-  ]}
+posts={[
+{ slug: "hexagonal-architecture-in-laravel", description: "Die App strukturieren, die du deployst. Hexagonale Architektur hält Domains sauber, während die Codebasis wächst." }
+]}
 />
 
 ---

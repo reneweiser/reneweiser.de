@@ -87,7 +87,9 @@ function buildSvg(options: {
     ? `<text x="600" y="${subtitleY}" text-anchor="middle" fill="${COPPER}" font-family="'Segoe UI', system-ui, sans-serif" font-size="24">${escapeXml(subtitle)}</text>`
     : "";
 
-  const footerY = subtitle ? subtitleY + 50 : startY + lines.length * lineHeight + 40;
+  const footerY = subtitle
+    ? subtitleY + 50
+    : startY + lines.length * lineHeight + 40;
 
   return `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="${INK}"/>
