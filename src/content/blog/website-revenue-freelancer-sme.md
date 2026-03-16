@@ -56,7 +56,7 @@ Gleichzeitig berichten [51 % der Freelancer von Schwierigkeiten bei der Projekta
 
 Wenn dich jemand auf einer Konferenz trifft oder deinen Namen in einem Forum liest, ist der nächste Schritt in meiner Erfahrung meistens eine Google-Suche. Führt diese Suche zu einer Seite, die zeigt, was du machst, mit wem du gearbeitet hast und wie man dich erreicht, geht das Gespräch weiter.
 
-Haben Kunden dich erst gefunden, ist die nächste Herausforderung, [den Auftrag sauber abzugrenzen](/blog/scoping-freelance-project), damit beide Seiten wissen, was "fertig" bedeutet. Aber du kannst keinen Auftrag abgrenzen mit jemandem, der sich nie bei dir gemeldet hat.
+Haben Kunden dich erst gefunden, ist die nächste Herausforderung, den Auftrag sauber abzugrenzen, damit beide Seiten wissen, was "fertig" bedeutet. Aber du kannst keinen Auftrag abgrenzen mit jemandem, der sich nie bei dir gemeldet hat.
 
 ## One-Page-Website: Eine Seite reicht, wenn du sie richtig aufbaust
 
