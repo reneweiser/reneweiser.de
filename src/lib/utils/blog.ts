@@ -103,8 +103,5 @@ export function getAllTags(): string[] {
 }
 
 export function getAllSlugs(): string[] {
-  const modules = import.meta.glob("/src/content/blog/*.md", { eager: true });
-  return Object.keys(modules).map((path) =>
-    path.split("/").pop()!.replace(/\.md$/, ""),
-  );
+  return loadBlogPosts().map((post) => post.slug);
 }

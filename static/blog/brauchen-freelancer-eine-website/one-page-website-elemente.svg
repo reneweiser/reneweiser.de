@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" role="img" aria-label="Schematische Darstellung einer One-Page-Website mit sechs Elementen: Headline, Beweis, Kontakt, Kontaktdaten sichtbar, Google Profil, Mobilfreundlich.">
+  <rect width="780" height="400" fill="#faf8f5" rx="6"/>
+
+  <!-- Title -->
+  <text x="390" y="32" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#3d3a37" font-weight="600">Anatomie einer One-Page-Website</text>
+
+  <!-- Page outline (left side) -->
+  <rect x="40" y="55" width="280" height="320" rx="4" fill="none" stroke="#d5d0c8" stroke-width="1.5"/>
+
+  <!-- Section 1: Headline + Leistung (top of page) -->
+  <rect x="52" y="62" width="256" height="42" rx="3" fill="#c17f59" opacity="0.15" stroke="#c17f59" stroke-width="1"/>
+  <text x="180" y="78" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#8b5a3c" font-weight="600">Wer du bist + was du machst</text>
+  <text x="180" y="95" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Headline mit Ort + Gewerk</text>
+
+  <!-- Section 2: Kontaktdaten sichtbar -->
+  <rect x="52" y="110" width="256" height="28" rx="3" fill="#c17f59" stroke="#8b5a3c" stroke-width="1"/>
+  <text x="180" y="128" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#faf8f5" font-weight="600">Kontaktdaten — ohne Scrollen sichtbar</text>
+
+  <!-- Section 3: Beweis -->
+  <rect x="52" y="148" width="256" height="50" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="180" y="168" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Beweis</text>
+  <text x="180" y="185" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Kundenstimmen · Logos · Bewertungen</text>
+
+  <!-- Section 4: Leistungen -->
+  <rect x="52" y="208" width="256" height="42" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="180" y="225" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Leistungen</text>
+  <text x="180" y="242" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Was du anbietest, kurz und klar</text>
+
+  <!-- Section 5: Kontaktformular -->
+  <rect x="52" y="260" width="256" height="50" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="180" y="280" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Klarer nächster Schritt</text>
+  <text x="180" y="297" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Kontaktformular · Telefon · E-Mail</text>
+
+  <!-- Section 6: Mobilfreundlich -->
+  <rect x="52" y="320" width="256" height="42" rx="3" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1"/>
+  <text x="180" y="337" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Mobilfreundlich + schnell</text>
+  <text x="180" y="353" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">63 % suchen mobil</text>
+
+  <!-- Right side: numbered annotations -->
+  <!-- Annotation 1 -->
+  <circle cx="380" cy="83" r="12" fill="#c17f59"/>
+  <text x="380" y="87" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">1</text>
+  <line x1="310" y1="83" x2="366" y2="83" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="78" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Seitentitel mit Ort + Gewerk</text>
+  <text x="400" y="94" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">"Elektriker Stuttgart — Notdienst"</text>
+
+  <!-- Annotation 2 -->
+  <circle cx="380" cy="124" r="12" fill="#c17f59"/>
+  <text x="380" y="128" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">2</text>
+  <line x1="310" y1="124" x2="366" y2="124" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="119" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Kontaktdaten sofort sichtbar</text>
+  <text x="400" y="135" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">44 % verlassen Seiten ohne Kontakt</text>
+
+  <!-- Annotation 3 -->
+  <circle cx="380" cy="173" r="12" fill="#c17f59"/>
+  <text x="380" y="177" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">3</text>
+  <line x1="310" y1="173" x2="366" y2="173" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="168" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Beweis statt Behauptung</text>
+  <text x="400" y="184" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Kundenstimmen, Logos, Bewertungen</text>
+
+  <!-- Annotation 4 -->
+  <circle cx="380" cy="229" r="12" fill="#c17f59"/>
+  <text x="380" y="233" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">4</text>
+  <line x1="310" y1="229" x2="366" y2="229" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="224" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Leistungen auf den Punkt</text>
+  <text x="400" y="240" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Was du anbietest — kein Fließtext</text>
+
+  <!-- Annotation 5 -->
+  <circle cx="380" cy="285" r="12" fill="#c17f59"/>
+  <text x="380" y="289" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">5</text>
+  <line x1="310" y1="285" x2="366" y2="285" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="280" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Ein klarer nächster Schritt</text>
+  <text x="400" y="296" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">Eine Aktion, nicht fünf Buttons</text>
+
+  <!-- Annotation 6 -->
+  <circle cx="380" cy="341" r="12" fill="#c17f59"/>
+  <text x="380" y="345" text-anchor="middle" font-family="JetBrains Mono, Fira Code, monospace" font-size="11" fill="#faf8f5" font-weight="600">6</text>
+  <line x1="310" y1="341" x2="366" y2="341" stroke="#c17f59" stroke-width="1" opacity="0.4"/>
+  <text x="400" y="336" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#3d3a37" font-weight="600">Mobilfreundlich + schnell</text>
+  <text x="400" y="352" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#6b6560">53 % verlassen nach 3 Sek. Ladezeit</text>
+
+  <!-- Bottom note -->
+  <text x="390" y="388" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#b0aaa3">+ Google Unternehmensprofil (kostenlos, extern)</text>
+</svg>

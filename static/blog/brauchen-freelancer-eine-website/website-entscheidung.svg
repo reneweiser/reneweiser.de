@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" role="img" aria-label="Entscheidungsbaum: Brauchst du neue Kunden? Bist du voll ausgelastet? Hörst du bald auf? Ergebnis: Website lohnt sich oder Website optional.">
+  <defs>
+    <marker id="we-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#b0aaa3"/>
+    </marker>
+    <marker id="we-arr-copper" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1,0.5 L7,3 L1,5.5" fill="#c17f59"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="500" fill="#faf8f5" rx="6"/>
+
+  <!-- Q1: Brauchst du neue Kunden? -->
+  <polygon points="280,30 430,80 280,130 130,80" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="280" y="72" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">Brauchst du</text>
+  <text x="280" y="90" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">neue Kunden?</text>
+
+  <!-- Q1 → Nein (right): Website optional -->
+  <line x1="430" y1="80" x2="560" y2="80" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#we-arr)"/>
+  <text x="490" y="70" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Nein</text>
+
+  <rect x="562" y="58" width="180" height="44" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="652" y="75" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560" font-weight="600">Website optional</text>
+  <text x="652" y="92" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#b0aaa3">Schadet nicht, Return ≈ 0</text>
+
+  <!-- Q1 → Ja (down) -->
+  <line x1="280" y1="130" x2="280" y2="165" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#we-arr)"/>
+  <text x="295" y="152" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#c17f59" font-weight="600">Ja</text>
+
+  <!-- Q2: Bist du voll ausgelastet? -->
+  <polygon points="280,170 430,220 280,270 130,220" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="280" y="212" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">Bist du voll</text>
+  <text x="280" y="230" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">ausgelastet?</text>
+
+  <!-- Q2 → Ja (right): Website optional -->
+  <line x1="430" y1="220" x2="560" y2="220" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#we-arr)"/>
+  <text x="490" y="210" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Ja</text>
+
+  <rect x="562" y="198" width="180" height="44" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="652" y="215" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560" font-weight="600">Website optional</text>
+  <text x="652" y="232" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#b0aaa3">Kapazität zuerst klären</text>
+
+  <!-- Q2 → Nein (down) -->
+  <line x1="280" y1="270" x2="280" y2="305" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#we-arr)"/>
+  <text x="295" y="292" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#c17f59" font-weight="600">Nein</text>
+
+  <!-- Q3: Hörst du bald auf? -->
+  <polygon points="280,310 430,360 280,410 130,360" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="280" y="352" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">Hörst du in</text>
+  <text x="280" y="370" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#3d3a37" font-weight="600">1–2 Jahren auf?</text>
+
+  <!-- Q3 → Ja (right): Website optional -->
+  <line x1="430" y1="360" x2="560" y2="360" stroke="#b0aaa3" stroke-width="1.5" marker-end="url(#we-arr)"/>
+  <text x="490" y="350" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#6b6560">Ja</text>
+
+  <rect x="562" y="338" width="180" height="44" rx="6" fill="#f0ece5" stroke="#d5d0c8" stroke-width="1.5"/>
+  <text x="652" y="355" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="12" fill="#6b6560" font-weight="600">Website optional</text>
+  <text x="652" y="372" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="10" fill="#b0aaa3">Investition rechnet sich nicht</text>
+
+  <!-- Q3 → Nein (down): Website lohnt sich! -->
+  <line x1="280" y1="410" x2="280" y2="445" stroke="#c17f59" stroke-width="1.5" marker-end="url(#we-arr-copper)"/>
+  <text x="295" y="432" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="11" fill="#c17f59" font-weight="600">Nein</text>
+
+  <!-- Main result: Website lohnt sich -->
+  <rect x="200" y="448" width="160" height="40" rx="6" fill="#c17f59" stroke="#8b5a3c" stroke-width="1.5"/>
+  <text x="280" y="472" text-anchor="middle" font-family="DM Sans, Segoe UI, system-ui, sans-serif" font-size="14" fill="#faf8f5" font-weight="700">Website lohnt sich</text>
+</svg>
