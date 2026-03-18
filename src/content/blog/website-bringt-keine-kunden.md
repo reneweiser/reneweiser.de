@@ -198,7 +198,7 @@ Diese Punkte setzen voraus, dass du deine Website selbst bearbeiten kannst. Wenn
 - Grundlegende Struktur falsch — falsche Seiten, falsche Zielgruppe, kein klarer Weg zur Anfrage
 - Nach dem Selbsttest bleibt unklar, was das eigentliche Problem ist
 
-Ich baue Websites, bei denen deine Telefonnummer auf der Startseite ohne Scrollen sichtbar ist und der Kontaktweg in maximal drei Klicks erreichbar — beides sind prüfbare Kriterien, kein Designversprechen.
+Ich baue Websites, bei denen der PageSpeed-Score auf dem Smartphone über 85 liegt und der Kontaktweg in maximal drei Klicks erreichbar ist — prüfbare Kriterien, kein Designversprechen.
 
 Wenn du die URL und die Check-Ergebnisse mitbringst, kann ich dir in 20 Minuten sagen, was mir auf den ersten Blick auffällt — und ob das, was ich sehe, eher ein isoliertes Problem oder ein strukturelles ist. Kein Pitch, kein Angebot.
 
