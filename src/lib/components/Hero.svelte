@@ -35,10 +35,10 @@
 
 		<!-- Main headline -->
 		<h1 class="mb-6 max-w-4xl">
-			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl animate-fade-up delay-2 block">
+			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl block">
 				Websites für Selbständige,
 			</span>
-			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl animate-fade-up delay-3 block">
+			<span class="font-display text-5xl leading-[1.1] tracking-tight text-ink md:text-7xl lg:text-8xl block">
 				die sich bezahlt machen<span class="text-copper">.</span>
 			</span>
 		</h1>
