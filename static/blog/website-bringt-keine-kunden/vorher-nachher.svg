@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap');
+    text {
+      font-family: 'Caveat', 'Comic Sans MS', 'Segoe Script', cursive;
+      fill: #3d3a37;
+    }
+  </style>
+  <defs>
+    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" seed="4" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d3a37"/>
+    </marker>
+  </defs>
+
+  <!-- === ROW 0: Vorher (copper) === -->
+  <!-- Row label -->
+  <text x="60" y="95" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">Vorher</text>
+
+  <!-- Box 1: Besucher -->
+  <rect x="120" y="50" width="160" height="80" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="200" y="96" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Besucher</text>
+
+  <!-- Arrow -->
+  <path d="M 280 90 L 320 90"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Website -->
+  <rect x="320" y="50" width="160" height="80" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="400" y="96" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Website</text>
+
+  <!-- Arrow -->
+  <path d="M 480 90 L 520 90"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: ??? -->
+  <rect x="520" y="50" width="160" height="80" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="600" y="96" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" fill="#3d3a37">???</text>
+
+  <!-- Arrow -->
+  <path d="M 680 90 L 720 90"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: Zurück zu Google -->
+  <rect x="720" y="50" width="190" height="80" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="815" y="88" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">
+    <tspan x="815" dy="0">Zurück zu</tspan>
+    <tspan x="815" dy="1.2em">Google</tspan>
+  </text>
+
+  <!-- === ROW 1: Nachher (sage) === -->
+  <!-- Row label -->
+  <text x="60" y="265" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">Nachher</text>
+
+  <!-- Box 1: Besucher -->
+  <rect x="120" y="220" width="160" height="80" rx="8"
+        fill="#a8b09c" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="200" y="266" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Besucher</text>
+
+  <!-- Arrow -->
+  <path d="M 280 260 L 320 260"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 2: Website -->
+  <rect x="320" y="220" width="160" height="80" rx="8"
+        fill="#a8b09c" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="400" y="266" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Website</text>
+
+  <!-- Arrow -->
+  <path d="M 480 260 L 520 260"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 3: Kontakt sichtbar -->
+  <rect x="520" y="220" width="160" height="80" rx="8"
+        fill="#a8b09c" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="600" y="266" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Kontakt sichtbar</text>
+
+  <!-- Arrow -->
+  <path d="M 680 260 L 720 260"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Box 4: Anruf -->
+  <rect x="720" y="220" width="190" height="80" rx="8"
+        fill="#a8b09c" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="815" y="268" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="20" fill="#3d3a37">Anruf</text>
+</svg>

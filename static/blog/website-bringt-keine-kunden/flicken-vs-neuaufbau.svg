@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 500">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap');
+    text {
+      font-family: 'Caveat', 'Comic Sans MS', 'Segoe Script', cursive;
+      fill: #3d3a37;
+    }
+  </style>
+  <defs>
+    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" seed="3" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Left column header: Flicken reicht -->
+  <rect x="30" y="30" width="220" height="60" rx="8"
+        fill="#a8b09c" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="140" y="68" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="20" font-weight="700" fill="#3d3a37">Flicken reicht</text>
+
+  <!-- Right column header: Neuaufbau nötig -->
+  <rect x="270" y="30" width="220" height="60" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="380" y="68" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="20" font-weight="700" fill="#3d3a37">Neuaufbau nötig</text>
+
+  <!-- Left item 1 -->
+  <rect x="30" y="110" width="220" height="60" rx="8"
+        fill="#a8b09c" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="140" y="146" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Isolierte Probleme</text>
+
+  <!-- Right item 1 -->
+  <rect x="270" y="110" width="220" height="60" rx="8"
+        fill="#d4a484" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="380" y="146" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Kein CMS-Zugang</text>
+
+  <!-- Left item 2 -->
+  <rect x="30" y="190" width="220" height="60" rx="8"
+        fill="#a8b09c" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="140" y="226" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Struktur stimmt</text>
+
+  <!-- Right item 2 -->
+  <rect x="270" y="190" width="220" height="60" rx="8"
+        fill="#d4a484" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="380" y="226" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Struktur falsch</text>
+
+  <!-- Left item 3 -->
+  <rect x="30" y="270" width="220" height="60" rx="8"
+        fill="#a8b09c" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="140" y="306" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">CMS-Zugang da</text>
+
+  <!-- Right item 3 -->
+  <rect x="270" y="270" width="220" height="60" rx="8"
+        fill="#d4a484" fill-opacity="0.45"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="380" y="306" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Mobil kaputt</text>
+
+  <!-- Divider line -->
+  <path d="M 260 40 L 260 340" stroke="#3d3a37" stroke-width="1.5" fill="none"
+        stroke-dasharray="6,4" stroke-linecap="round"/>
+
+  <!-- Price annotations -->
+  <text x="140" y="380" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="20" font-weight="700" fill="#3d3a37">500 - 2.000 EUR</text>
+
+  <text x="380" y="380" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="20" font-weight="700" fill="#3d3a37">2.000 - 8.000 EUR</text>
+</svg>

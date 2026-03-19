@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 200">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap');
+    text {
+      font-family: 'Caveat', 'Comic Sans MS', 'Segoe Script', cursive;
+      fill: #3d3a37;
+    }
+  </style>
+  <defs>
+    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" seed="2" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d3a37"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1: PageSpeed -->
+  <text x="130" y="32" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">1</text>
+  <rect x="50" y="40" width="160" height="80" rx="8"
+        fill="#f0ece5" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="130" y="86" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">PageSpeed</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M 210 80 L 270 80"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Mobil -->
+  <text x="350" y="32" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">2</text>
+  <rect x="270" y="40" width="160" height="80" rx="8"
+        fill="#f0ece5" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="350" y="86" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Mobil</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M 430 80 L 490 80"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Kontaktpfad -->
+  <text x="570" y="32" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">3</text>
+  <rect x="490" y="40" width="160" height="80" rx="8"
+        fill="#f0ece5" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="570" y="86" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Kontaktpfad</text>
+
+  <!-- Arrow 3→4 -->
+  <path d="M 650 80 L 710 80"
+        stroke="#3d3a37" stroke-width="2" fill="none"
+        stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Vertrauen -->
+  <text x="790" y="32" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="22" font-weight="700" fill="#3d3a37">4</text>
+  <rect x="710" y="40" width="160" height="80" rx="8"
+        fill="#f0ece5" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <text x="790" y="86" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="18" fill="#3d3a37">Vertrauen</text>
+
+  <!-- Annotation -->
+  <text x="480" y="168" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="16" fill="#3d3a37" font-style="italic">~15 Min · kein Tool nötig</text>
+</svg>

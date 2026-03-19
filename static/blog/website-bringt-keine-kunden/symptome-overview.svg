@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;display=swap');
+    text {
+      font-family: 'Caveat', 'Comic Sans MS', 'Segoe Script', cursive;
+      fill: #3d3a37;
+    }
+  </style>
+  <defs>
+    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="4" seed="1" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Row 0, Col 0: Schlechte Mobile-Ansicht -->
+  <rect x="40" y="40" width="200" height="110" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <!-- Phone icon with crack -->
+  <rect x="118" y="54" width="24" height="36" rx="3"
+        fill="none" stroke="#3d3a37" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 124 84 L 136 84" stroke="#3d3a37" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 126 62 L 134 72 L 128 76" stroke="#3d3a37" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- X mark -->
+  <path d="M 198 50 L 210 62 M 210 50 L 198 62" stroke="#3d3a37" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="140" y="126" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Schlechte Mobile-Ansicht</text>
+
+  <!-- Row 0, Col 1: Langsame Ladezeit -->
+  <rect x="280" y="40" width="200" height="110" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <!-- Hourglass icon -->
+  <path d="M 366 54 L 394 54 M 366 86 L 394 86 M 370 54 L 370 62 Q 380 72 380 70 Q 380 72 390 62 L 390 54 M 370 86 L 370 78 Q 380 68 380 70 Q 380 68 390 78 L 390 86"
+        stroke="#3d3a37" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- X mark -->
+  <path d="M 438 50 L 450 62 M 450 50 L 438 62" stroke="#3d3a37" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="380" y="126" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Langsame Ladezeit</text>
+
+  <!-- Row 1, Col 0: Kein klarer nächster Schritt -->
+  <rect x="40" y="200" width="200" height="110" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <!-- Question mark icon -->
+  <text x="130" y="258" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="36" font-weight="700" fill="#3d3a37">?</text>
+  <!-- X mark -->
+  <path d="M 198 210 L 210 222 M 210 210 L 198 222" stroke="#3d3a37" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="140" y="286" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Kein klarer nächster Schritt</text>
+
+  <!-- Row 1, Col 1: Fehlendes Vertrauen -->
+  <rect x="280" y="200" width="200" height="110" rx="8"
+        fill="#d4a484" fill-opacity="0.85"
+        stroke="#3d3a37" stroke-width="2"
+        filter="url(#sketch)"/>
+  <!-- Empty shield icon -->
+  <path d="M 380 218 L 362 228 L 362 248 Q 362 268 380 276 Q 398 268 398 248 L 398 228 Z"
+        fill="none" stroke="#3d3a37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- X mark -->
+  <path d="M 438 210 L 450 222 M 450 210 L 438 222" stroke="#3d3a37" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="380" y="286" text-anchor="middle"
+        font-family="'Caveat', 'Comic Sans MS', 'Segoe Script', cursive"
+        font-size="17" fill="#3d3a37">Fehlendes Vertrauen</text>
+</svg>
