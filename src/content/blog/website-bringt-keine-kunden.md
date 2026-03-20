@@ -1,7 +1,7 @@
 ---
 title: "Website bringt keine Kunden? So findest du den Grund"
 description: "Deine Website hat Besucher, aber keine Anfragen? Dieser Selbsttest zeigt dir, warum deine Website Kunden kostet, und was du dagegen tun kannst."
-date: "2026-03-19"
+date: "2026-03-20"
 slug: "website-bringt-keine-kunden"
 lang: de
 tags:
